@@ -1,438 +1,500 @@
-/* Fuentes */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-/* Variables CSS */
+/* General Styling */
 :root {
-    --primary-blue: #0A192F; /* Azul oscuro, similar a Baliatekks */
-    --secondary-blue: #007bff; /* Azul brillante para acentos */
-    --accent-color: #61DAFB; /* Cian para highlights */
-    --text-light: #F0F2F5; /* Gris claro para texto */
-    --text-dark: #333;
-    --main-bg-color: #0A192F;
-    --card-bg-color: #1a2a47; /* Azul oscuro ligeramente más claro para tarjetas */
-    --light-bg-color: #e9ecef; /* Fondo claro para algunas secciones */
+    --primary-bg: #0a192f; /* Darker blue, similar to Baliatekks */
+    --secondary-bg: #112240; /* Slightly lighter dark blue for cards/sections */
+    --accent-color: #00e0ff; /* Electric blue/cyan */
+    --text-color: #ccd6f6; /* Light grey-blue */
+    --heading-color: #e6f1ff; /* Lighter white-blue for headings */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
 }
 
-/* Reset y Estilos Generales */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-secondary);
     line-height: 1.6;
-    color: var(--text-light);
-    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    background-color: var(--primary-bg);
     overflow-x: hidden;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
+    font-family: var(--font-primary);
+    color: var(--heading-color);
+    margin-bottom: 1rem;
     line-height: 1.2;
-    color: var(--text-light);
 }
 
-h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-h3 {
-    font-size: 1.7em;
-    margin-bottom: 15px;
-}
-
-p {
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    font-size: 1.1em;
-    text-align: center;
-    margin-bottom: 50px;
-    color: rgba(240, 242, 245, 0.8);
-}
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.8rem; }
+p { font-size: 1.1rem; }
 
 a {
-    color: var(--secondary-blue);
+    color: var(--accent-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--accent-color);
+    color: #fff;
 }
 
-.btn {
-    display: inline-block;
-    background-color: var(--secondary-blue);
-    color: var(--text-light);
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    border: none;
-    cursor: pointer;
+ul {
+    list-style: none;
 }
 
-.btn:hover {
-    background-color: var(--accent-color);
-    transform: translateY(-2px);
-}
-
-/* Header */
-.header {
-    background-color: rgba(10, 25, 47, 0.95); /* Semi-transparente oscuro */
-    position: sticky;
+/* Navbar */
+.navbar {
+    position: fixed;
     top: 0;
-    z-index: 1000;
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.nav-container {
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1.5rem 5%;
+    z-index: 1000;
+    background-color: rgba(10, 25, 47, 0.8); /* Slightly transparent dark blue */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding: 1rem 5%;
+    background-color: var(--primary-bg); /* Solid color when scrolled */
 }
 
 .logo {
-    font-size: 1.8em;
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
     font-weight: 700;
-    color: var(--text-light);
+    color: var(--heading-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.logo span {
+.logo .accent-text {
     color: var(--accent-color);
 }
 
-.nav-menu a {
-    color: var(--text-light);
-    margin-left: 30px;
-    font-weight: 400;
+.navbar nav ul {
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-left: 2.5rem;
+}
+
+.navbar nav ul li a {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 600;
     position: relative;
 }
 
-.nav-menu a::after {
+.navbar nav ul li a::after {
     content: '';
     position: absolute;
-    width: 0%;
+    width: 0;
     height: 2px;
     background-color: var(--accent-color);
-    bottom: -5px;
     left: 0;
+    bottom: -5px;
     transition: width 0.3s ease;
 }
 
-.nav-menu a:hover::after {
+.navbar nav ul li a:hover::after {
     width: 100%;
 }
 
-/* Hero Parallax Section */
-.hero-parallax {
-    background-image: url('../IIOT_Prueba.jpeg'); /* Ruta de la imagen */
-    background-attachment: fixed;
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background-image: url('../IIOT_Prueba.jpeg'); /* User specified image */
     background-size: cover;
     background-position: center;
-    height: 100vh; /* Altura completa de la ventana */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    padding: 20px;
+    background-attachment: fixed; /* Parallax effect */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    z-index: 1; /* Place overlay behind content but above background image */
 }
 
 .hero-content {
     position: relative;
-    z-index: 2; /* Asegura que el contenido esté por encima del fondo */
-    color: var(--text-light);
-    max-width: 800px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente para el texto */
-    border-radius: 10px;
+    z-index: 2; /* Ensure content is above the overlay */
+    max-width: 900px;
+    padding: 2rem;
 }
 
 .hero-content h1 {
-    font-size: 3.8em;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 15px rgba(0, 224, 255, 0.7); /* Subtle glow */
 }
 
 .hero-content p {
-    font-size: 1.4em;
-    margin-bottom: 40px;
-    opacity: 0.9;
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Secciones de Contenido */
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-color);
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 224, 255, 0.4);
+}
+
+/* Content Sections */
 .content-section {
-    padding: 100px 0;
-    position: relative; /* Necesario para que el z-index funcione correctamente */
-    z-index: 1; /* Para asegurar que las secciones cubran el fondo fijo */
+    padding: 8rem 5%;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.light-bg {
-    background-color: var(--light-bg-color);
-    color: var(--text-dark);
+.content-section h2 {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    position: relative;
+    display: inline-block;
 }
 
-.light-bg h2, .light-bg h3 {
-    color: var(--primary-blue);
+.content-section h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    background-color: var(--accent-color);
+    left: 20%;
+    bottom: -15px;
+    border-radius: 5px;
 }
 
-.light-bg .subtitle {
-    color: var(--text-dark);
-}
-
-.dark-bg {
-    background-color: var(--main-bg-color);
-}
-
-/* Post-it Grid (Tarjetas de Servicios/Características) */
-.post-it-grid {
+/* Card Grid for "Post-its" */
+.card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+    gap: 2.5rem;
+    margin-top: 3rem;
 }
 
-.post-it-card {
-    background-color: var(--card-bg-color);
-    padding: 30px;
-    border-radius: 10px;
+.card {
+    background-color: var(--secondary-bg);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 224, 255, 0.2); /* Subtle accent border */
 }
 
-.light-bg .post-it-card {
-    background-color: #ffffff;
-    color: var(--text-dark);
-}
-.light-bg .post-it-card h3 {
-    color: var(--primary-blue);
-}
-
-.post-it-card:hover {
+.card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px var(--accent-color);
 }
 
-.post-it-card .icon {
-    font-size: 3.5em;
+.card .icon {
+    font-size: 3.5rem;
     color: var(--accent-color);
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 10px rgba(0, 224, 255, 0.6));
 }
 
-/* Feature Card Grid (Imágenes con texto) */
-.feature-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
+.card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color);
 }
 
-.feature-card {
-    background-color: var(--card-bg-color);
-    border-radius: 10px;
+.card p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.5;
+    max-height: 150px; /* Limit for approx. 10 lines of text */
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
 }
 
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-}
-
-.feature-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.feature-card:hover img {
-    transform: scale(1.05);
-}
-
-.feature-card h3 {
-    padding: 20px 20px 0;
-    color: var(--accent-color);
-}
-
-.feature-card p {
-    padding: 0 20px 20px;
-    color: var(--text-light);
-    font-size: 0.95em;
-}
-
-/* Secciones Parallax Adicionales */
+/* Parallax Sections */
 .parallax-section {
-    background-attachment: fixed;
+    height: 70vh; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
     background-size: cover;
     background-position: center;
-    min-height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: var(--text-light);
+    background-attachment: fixed; /* Parallax effect */
     position: relative;
-    overflow: hidden;
-    padding: 20px;
+    padding: 5rem 5%; /* Ensure padding for smaller screens */
 }
 
-#parallax1 {
-    background-image: url('https://source.unsplash.com/random/1920x1080/?factory,industry');
-}
-
-#parallax2 {
-    background-image: url('https://source.unsplash.com/random/1920x1080/?technology,robotics');
+.parallax-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
 }
 
 .parallax-content {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 40px;
-    border-radius: 10px;
+    position: relative;
+    z-index: 2;
     max-width: 800px;
 }
 
 .parallax-content h2 {
-    font-size: 3em;
-    margin-bottom: 20px;
+    font-size: 3.5rem;
+    text-shadow: 0 0 15px rgba(0, 224, 255, 0.7);
+    margin-bottom: 1.5rem;
 }
 
 .parallax-content p {
-    font-size: 1.2em;
-}
-
-/* Formulario de Contacto */
-.contact-form {
+    font-size: 1.3rem;
     max-width: 600px;
-    margin: 50px auto 0;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    margin: 0 auto;
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1em;
-    background-color: #fff;
-    color: var(--text-dark);
+/* Specific Parallax Background Images (Unsplash) */
+.parallax-1 {
+    background-image: url('https://source.unsplash.com/random/1920x1080/?factory,robot,automation');
 }
 
-.contact-form textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-.contact-form input::placeholder, .contact-form textarea::placeholder {
-    color: #888;
-}
-
-.contact-form .btn {
-    width: fit-content;
-    align-self: flex-end;
+.parallax-2 {
+    background-image: url('https://source.unsplash.com/random/1920x1080/?industrial,technology,data');
 }
 
 /* Footer */
-.footer {
-    background-color: var(--primary-blue);
-    padding: 40px 0;
+footer {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    padding: 4rem 5% 2rem;
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(240, 242, 245, 0.7);
+    border-top: 1px solid rgba(0, 224, 255, 0.2);
 }
 
-.footer .social-links a {
-    color: var(--text-light);
-    font-size: 1.5em;
-    margin: 0 10px;
-    transition: color 0.3s ease;
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
 }
 
-.footer .social-links a:hover {
+.contact-info, .social-media {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+}
+
+.contact-info h3, .social-media h3 {
+    color: var(--heading-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.contact-info p .fas {
     color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.social-media a {
+    font-size: 1.8rem;
+    margin: 0 1rem;
+    color: var(--text-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-media a:hover {
+    color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.copyright {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: rgba(204, 214, 246, 0.7);
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+    .navbar {
+        padding: 1rem 3%;
+    }
+    .navbar nav ul li {
+        margin-left: 1.5rem;
+    }
     .hero-content h1 {
-        font-size: 2.5em;
+        font-size: 3.5rem;
     }
-
     .hero-content p {
-        font-size: 1.1em;
+        font-size: 1.2rem;
     }
-
-    h2 {
-        font-size: 2em;
-    }
-
-    .nav-menu {
-        display: none; /* Simplificado para móviles, se podría implementar un menú hamburguesa con JS si fuera necesario */
-    }
-
-    .nav-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .header {
-        padding: 10px 0;
-    }
-
     .content-section, .parallax-section {
-        padding: 60px 0;
+        padding: 6rem 3%;
     }
-
-    .post-it-grid, .feature-card-grid {
-        grid-template-columns: 1fr;
+    .content-section h2 {
+        font-size: 2.5rem;
     }
-
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+    .card {
+        padding: 2rem;
+    }
     .parallax-content h2 {
-        font-size: 2em;
+        font-size: 2.8rem;
+    }
+    .parallax-content p {
+        font-size: 1.1rem;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .contact-info, .social-media {
+        text-align: center;
+        width: 100%;
+    }
+    .contact-info p {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 3%;
+    }
+    .navbar nav {
+        margin-top: 1rem;
+        width: 100%;
+    }
+    .navbar nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .navbar nav ul li {
+        margin: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+    .content-section, .parallax-section {
+        padding: 4rem 3%;
+    }
+    .content-section h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    .parallax-content h2 {
+        font-size: 2.2rem;
+    }
+    .parallax-content p {
+        font-size: 1rem;
+    }
+    .card {
+        padding: 1.5rem;
+    }
+    .card .icon {
+        font-size: 3rem;
+    }
+    .card h3 {
+        font-size: 1.4rem;
+    }
+    .card p {
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
     .hero-content h1 {
-        font-size: 2em;
+        font-size: 2.2rem;
     }
-
     .hero-content p {
-        font-size: 1em;
+        font-size: 0.9rem;
     }
-
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
+    .content-section h2 {
+        font-size: 1.8rem;
     }
-
-    h2 {
-        font-size: 1.8em;
-    }
-
-    .subtitle {
-        font-size: 1em;
-        margin-bottom: 30px;
+    .parallax-content h2 {
+        font-size: 1.8rem;
     }
 }
