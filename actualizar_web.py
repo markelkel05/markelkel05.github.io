@@ -59,3 +59,4 @@ try:
 
 except json.JSONDecodeError:
     print("Error: La IA no devolvió un formato JSON válido.")
+    print("Respuesta cruda de la IA:", respuesta_texto)
