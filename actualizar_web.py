@@ -13,6 +13,8 @@ print("Generando el código de la web...")
 prompt = """
 Eres un desarrollador web experto. Crea una página web para una empresa de IIOT (Industrial Internet of Things) que ha generado un nuevo programa para el mantenimiento y el OEE de las máquinas. 
 Somos desarrolladores a pie de planta. El diseño debe ser futurista, similar a "Baliatekks", con azul oscuro como color principal.
+Tambien quiero que haya un apartado donde haya una imagen donde se aplique el efecto Parallax (una de las imagenes puede ser en donde el titulo, en vez de teer un fondo con solo color,
+se puede poner una imagen, por ahora, n es necesario que vaya a corde con el tema de la página)
 
 IMPORTANTE: 
 1. Divide el código en HTML, CSS y JavaScript.
