@@ -1,60 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('nav ul li a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
 
-            // Close mobile menu after clicking a link
-            if (window.innerWidth <= 768) {
-                const navList = document.querySelector('.nav-list');
-                const hamburger = document.querySelector('.hamburger');
-                navList.classList.remove('active');
-                hamburger.classList.remove('active');
-            }
-        });
-    });
+            if (targetElement) {
+                // Adjust scroll position to account for fixed header
+                const headerOffset = document.querySelector('.navbar').offsetHeight;
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerOffset;
 
-    // Hamburger menu functionality
-    const hamburger = document.querySelector('.hamburger');
-    const navList = document.querySelector('.nav-list');
-
-    hamburger.addEventListener('click', () => {
-        navList.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
-
-    // Highlight active navigation link on scroll
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-list a');
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').substring(1) === entry.target.id) {
-                        link.classList.add('active');
-                    }
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
                 });
             }
         });
-    }, { threshold: 0.5 }); // Adjust threshold as needed
-
-    sections.forEach(section => {
-        observer.observe(section);
     });
-
-    // Special handling for hero section if its ID is not 'hero'
-    const heroSection = document.getElementById('hero');
-    if (heroSection) {
-        // If the hero section is at the very top, ensure 'Inicio' is active
-        // This might be redundant if the observer handles it, but good for explicit initial state.
-        if (window.scrollY === 0) {
-            document.querySelector('a[href="#hero"]').classList.add('active');
-        }
-    }
 });

@@ -1,19 +1,19 @@
 /* General Styling */
 :root {
-    --primary-blue: #0A1D37; /* Darker blue, similar to Baliatekks base */
-    --secondary-blue: #1A3E5D; /* Slightly lighter for accents */
-    --accent-blue: #00BFFF; /* Bright blue for highlights/buttons */
-    --text-light: #E0E6EF;
-    --text-dark: #333;
-    --bg-dark: #071221; /* Very dark background */
-    --gradient-start: #0a192f;
-    --gradient-end: #071221;
+    --primary-dark-blue: #0A192F;
+    --secondary-dark-blue: #1C2D4A;
+    --accent-blue: #00bcd4; /* A brighter, techy blue */
+    --text-light: #e0e0e0;
+    --text-white: #ffffff;
+    --text-dark: #333333;
+    --gradient-overlay: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+    --container-width: 1200px;
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -24,12 +24,11 @@ body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: var(--text-light);
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-    background-attachment: fixed; /* Ensures gradient stays fixed for a smoother feel */
+    background-color: var(--primary-dark-blue);
 }
 
 .container {
-    max-width: 1200px;
+    max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -41,559 +40,436 @@ a {
 }
 
 a:hover {
-    color: #00aaff;
+    color: var(--text-white);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Orbitron', sans-serif; /* Futuristic font for headings */
-    margin-bottom: 1em;
-    color: var(--text-light);
-    text-shadow: 0 0 5px rgba(0, 191, 255, 0.3); /* Subtle glow */
+    font-family: 'Orbitron', sans-serif;
+    color: var(--text-white);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
 }
 
 p {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 }
 
-.btn {
-    display: inline-block;
-    background-color: var(--accent-blue);
-    color: var(--bg-dark);
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
-}
-
-.btn:hover {
-    background-color: #00aaff;
-    transform: translateY(-2px);
-    box-shadow: 0 0 25px rgba(0, 191, 255, 0.6);
-}
-
-/* Header */
-.header {
-    background-color: rgba(10, 25, 47, 0.9); /* Semi-transparent dark blue */
-    padding: 15px 0;
+/* Navbar */
+.navbar {
     position: fixed;
     width: 100%;
-    top: 0;
+    background-color: rgba(10, 25, 47, 0.95); /* Slightly translucent dark blue */
+    padding: 15px 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.header .container {
+.navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
+.navbar .logo {
     font-family: 'Orbitron', sans-serif;
-    font-size: 2em;
+    font-size: 1.8rem;
     font-weight: 700;
-    color: var(--text-light);
-    text-shadow: 0 0 10px var(--accent-blue);
+    color: var(--text-white);
 }
 
-.logo span {
-    color: var(--accent-blue);
-}
-
-.nav-list {
+.navbar ul {
     list-style: none;
     display: flex;
 }
 
-.nav-list li {
+.navbar ul li {
     margin-left: 30px;
 }
 
-.nav-list a {
+.navbar ul li a {
     color: var(--text-light);
-    font-weight: 400;
-    font-size: 1.1em;
-    position: relative;
+    font-weight: 600;
+    font-size: 1.05rem;
     padding: 5px 0;
+    position: relative;
 }
 
-.nav-list a::after {
+.navbar ul li a::after {
     content: '';
     position: absolute;
-    left: 0;
-    bottom: 0;
     width: 0;
     height: 2px;
     background-color: var(--accent-blue);
+    left: 0;
+    bottom: -5px;
     transition: width 0.3s ease;
 }
 
-.nav-list a:hover::after,
-.nav-list a.active::after {
+.navbar ul li a:hover::after {
     width: 100%;
 }
 
-.hamburger {
-    display: none;
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--accent-blue);
+    color: var(--text-white);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
     cursor: pointer;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
 }
 
-.hamburger .bar {
-    height: 3px;
-    width: 100%;
-    background-color: var(--text-light);
-    border-radius: 10px;
-    transition: all 0.3s ease;
+.btn:hover {
+    background-color: #0097a7; /* Slightly darker accent blue */
+    transform: translateY(-3px);
 }
 
-/* Hero Section (First Parallax with IIOT_Prueba.jpeg) */
+/* Hero Section */
 .hero {
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: var(--text-light);
-    position: relative; /* Needed for overlay */
-}
-
-/* This is where IIOT_Prueba.jpeg is applied with parallax */
-.hero.parallax-section {
-    background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed; /* Parallax effect */
     position: relative;
+    padding-top: 80px; /* Account for fixed navbar */
 }
 
-.hero::before { /* Overlay for better text readability */
+.hero::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    z-index: 1;
+    background: var(--gradient-overlay);
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
-    padding: 20px;
+    max-width: 900px;
 }
 
-.hero-title {
-    font-size: 3.8em;
+.hero-content h1 {
+    font-size: 4.5rem;
     margin-bottom: 20px;
-    line-height: 1.2;
-    text-transform: uppercase;
-    text-shadow: 0 0 20px var(--accent-blue);
 }
 
-.hero-subtitle {
-    font-size: 1.5em;
+.hero-content p {
+    font-size: 1.5rem;
     margin-bottom: 40px;
-    font-weight: 300;
+    color: var(--text-light);
 }
 
 /* Content Sections */
 .content-section {
-    padding: 80px 0;
-    position: relative;
-    z-index: 5; /* Ensure content is above parallax if needed */
+    padding: 100px 0;
 }
 
-.section-title {
-    font-size: 2.8em;
-    text-align: center;
-    margin-bottom: 20px;
-    color: var(--accent-blue);
+.dark-bg {
+    background-color: var(--primary-dark-blue);
 }
 
-.section-description {
-    text-align: center;
+.light-bg {
+    background-color: var(--secondary-dark-blue);
+}
+
+.content-section p {
     max-width: 800px;
-    margin: 0 auto 50px auto;
-    font-size: 1.1em;
-    opacity: 0.8;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
-/* Solutions Section */
-.solutions-grid {
+/* Parallax Sections (IIOT_2.jpeg, IIOT_3.jpeg, and other random Unsplash ones) */
+.parallax-section {
+    height: 60vh; /* Make it ample as requested */
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; /* Parallax effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.parallax-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-overlay); /* Dark overlay for text readability */
+}
+
+.parallax-overlay {
+    position: relative;
+    z-index: 2;
+    color: var(--text-white);
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.parallax-overlay h3 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.parallax-overlay p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* Features Grid */
+.features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 50px;
 }
 
-.solution-card {
-    background-color: var(--secondary-blue);
+.feature-item {
+    background-color: var(--primary-dark-blue);
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 8px;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-bottom: 3px solid var(--accent-blue);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.solution-card:hover {
+.feature-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 191, 255, 0.2);
+    background-color: var(--secondary-dark-blue);
 }
 
-.solution-card h3 {
+.feature-item .icon {
+    font-size: 3rem;
     color: var(--accent-blue);
-    font-size: 1.6em;
-    margin-bottom: 15px;
-}
-
-.solution-card p {
-    font-size: 0.95em;
-    opacity: 0.9;
-}
-
-/* Technology Section */
-.tech-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
-    text-align: center;
-}
-
-.tech-item {
-    background-color: var(--secondary-blue);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    border-left: 2px solid var(--accent-blue);
-    transition: transform 0.3s ease;
-}
-
-.tech-item:hover {
-    transform: scale(1.03);
-}
-
-.tech-item .icon {
-    font-size: 3em;
-    color: var(--accent-blue);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     display: block;
 }
 
-.tech-item h3 {
-    font-size: 1.4em;
-    margin-bottom: 10px;
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    font-size: 1rem;
     color: var(--text-light);
+    text-align: center; /* Override content-section p */
 }
 
-/* About Section */
-.about-vision {
-    background-color: var(--secondary-blue);
-    padding: 40px;
-    margin-top: 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-    border-right: 3px solid var(--accent-blue);
-}
-
-.about-vision h3 {
-    color: var(--accent-blue);
-    font-size: 2em;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.about-vision p {
-    font-size: 1.1em;
-    text-align: center;
-    max-width: 900px;
+/* Benefits List */
+.benefits-list ul {
+    list-style: none;
+    max-width: 600px;
     margin: 0 auto;
+    text-align: left;
 }
 
-/* Parallax Sections (General) */
-.parallax-section {
-    height: 70vh; /* Adjust height as needed */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: var(--text-light);
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    margin: 50px 0; /* Space between content sections and parallax */
-}
-
-.parallax-section::before { /* Overlay for better text readability */
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
-    z-index: 1;
-}
-
-.parallax-overlay {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    padding: 20px;
-}
-
-.parallax-overlay h2 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    color: var(--accent-blue);
-    text-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
-}
-
-.parallax-overlay p {
-    font-size: 1.4em;
-    font-weight: 300;
-    opacity: 0.9;
-}
-
-/* Specific Parallax backgrounds (Unsplash) */
-.parallax-1 {
-    background-image: url('https://source.unsplash.com/random/1920x1080/?factory,robot,automation');
-}
-
-.parallax-2 {
-    background-image: url('https://source.unsplash.com/random/1920x1080/?industrial-engineer,data,technology');
-}
-
-
-/* Contact Section */
-.contact-section {
-    background-color: var(--primary-blue);
-    border-top: 3px solid var(--accent-blue);
-}
-
-.contact-form {
-    max-width: 700px;
-    margin: 50px auto 0 auto;
-    background-color: var(--secondary-blue);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-}
-
-.form-group {
-    margin-bottom: 25px;
-}
-
-.form-group label {
-    display: block;
+.benefits-list li {
+    background-color: var(--secondary-dark-blue);
+    padding: 15px 20px;
     margin-bottom: 10px;
-    font-weight: 600;
-    color: var(--accent-blue);
-    font-size: 1.1em;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--gradient-end);
-    border: 1px solid var(--primary-blue);
     border-radius: 5px;
-    color: var(--text-light);
-    font-size: 1em;
-    transition: border-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.benefits-list li .icon {
+    /* For the Font Awesome checkmark, override generic icon style */
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border-radius: 0;
+    line-height: initial;
+    font-size: 1.5rem; /* Specific size for benefit checks */
+    margin-right: 15px;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 50px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid var(--primary-dark-blue);
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.2); /* Slightly transparent */
+    color: var(--text-white);
+    font-size: 1rem;
+    width: 100%;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-light);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
     outline: none;
     border-color: var(--accent-blue);
-    box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+    box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.3);
 }
-
-.contact-form button {
-    width: 100%;
-    padding: 15px;
-    font-size: 1.2em;
-}
-
 
 /* Footer */
 .footer {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    background-color: var(--primary-dark-blue);
+    padding: 40px 0;
     text-align: center;
-    padding: 30px 0;
-    border-top: 2px solid var(--accent-blue);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+.footer p {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: var(--text-light);
 }
 
-.social-links {
-    margin-top: 10px;
-}
-
-.social-icon {
-    font-size: 1.8em;
+.footer-links a {
     color: var(--text-light);
     margin: 0 15px;
-    transition: color 0.3s ease;
+    font-size: 0.9rem;
 }
 
-.social-icon:hover {
+.footer-links a:hover {
     color: var(--accent-blue);
-    transform: scale(1.1);
 }
-
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    .hero-title {
-        font-size: 3em;
+    .hero-content h1 {
+        font-size: 3.5rem;
     }
-    .hero-subtitle {
-        font-size: 1.3em;
+
+    .hero-content p {
+        font-size: 1.2rem;
     }
-    .section-title {
-        font-size: 2.2em;
+
+    h2 {
+        font-size: 2rem;
     }
-    .parallax-overlay h2 {
-        font-size: 2.5em;
+    .navbar ul li {
+        margin-left: 20px;
     }
-    .parallax-overlay p {
-        font-size: 1.2em;
+    .parallax-overlay h3 {
+        font-size: 2.2rem;
     }
 }
 
 @media (max-width: 768px) {
-    .nav-menu {
-        position: relative;
-    }
-
-    .nav-list {
-        display: none;
+    .navbar .container {
         flex-direction: column;
-        background-color: rgba(10, 25, 47, 0.95);
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 20px 0;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
     }
-
-    .nav-list.active {
-        display: flex;
+    .navbar .logo {
+        margin-bottom: 15px;
     }
-
-    .nav-list li {
-        margin: 10px 0;
-        text-align: center;
+    .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
-    .nav-list a {
-        font-size: 1.2em;
-        padding: 10px 0;
-        display: block;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
+    .navbar ul li {
+        margin: 0 10px 10px 10px;
     }
 
     .hero {
-        height: 80vh;
+        padding-top: 150px;
     }
-    .hero-title {
-        font-size: 2.5em;
-    }
-    .hero-subtitle {
-        font-size: 1.1em;
+    .hero-content h1 {
+        font-size: 2.8rem;
     }
 
-    .content-section {
-        padding: 60px 0;
+    .hero-content p {
+        font-size: 1rem;
     }
-    .section-title {
-        font-size: 1.8em;
+
+    h2 {
+        font-size: 1.8rem;
     }
-    .solution-card, .tech-item {
-        padding: 20px;
-    }
-    .solution-card h3 {
-        font-size: 1.4em;
-    }
+
     .parallax-section {
         height: 50vh;
     }
-    .parallax-overlay h2 {
-        font-size: 2em;
+    .parallax-overlay h3 {
+        font-size: 1.8rem;
     }
     .parallax-overlay p {
-        font-size: 1em;
+        font-size: 1rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 480px) {
-    .logo {
-        font-size: 1.8em;
+    .hero-content h1 {
+        font-size: 2rem;
     }
-    .hero-title {
-        font-size: 2em;
-    }
-    .hero-subtitle {
-        font-size: 0.9em;
+    .hero-content p {
+        font-size: 0.9rem;
     }
     .btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
+        padding: 12px 20px;
+        font-size: 0.9rem;
     }
-    .section-title {
-        font-size: 1.6em;
+    h2 {
+        font-size: 1.5rem;
     }
-    .section-description {
-        font-size: 0.9em;
+    .parallax-section {
+        height: 40vh;
     }
-    .solutions-grid, .tech-features {
-        grid-template-columns: 1fr;
-    }
-    .parallax-overlay h2 {
-        font-size: 1.8em;
+    .parallax-overlay h3 {
+        font-size: 1.5rem;
     }
     .parallax-overlay p {
-        font-size: 0.9em;
+        font-size: 0.9rem;
     }
-    .footer p {
-        font-size: 0.9em;
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .footer-links a {
+        margin: 0;
     }
 }
