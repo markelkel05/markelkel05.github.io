@@ -1,12 +1,13 @@
 /* General Styling */
 :root {
-    --primary-bg: #0a192f; /* Darker blue, similar to Baliatekks */
-    --secondary-bg: #112240; /* Slightly lighter dark blue for cards/sections */
-    --accent-color: #00e0ff; /* Electric blue/cyan */
-    --text-color: #ccd6f6; /* Light grey-blue */
-    --heading-color: #e6f1ff; /* Lighter white-blue for headings */
-    --font-primary: 'Montserrat', sans-serif;
-    --font-secondary: 'Poppins', sans-serif;
+    --primary-blue: #0A1D37; /* Darker blue, similar to Baliatekks base */
+    --secondary-blue: #1A3E5D; /* Slightly lighter for accents */
+    --accent-blue: #00BFFF; /* Bright blue for highlights/buttons */
+    --text-light: #E0E6EF;
+    --text-dark: #333;
+    --bg-dark: #071221; /* Very dark background */
+    --gradient-start: #0a192f;
+    --gradient-end: #071221;
 }
 
 * {
@@ -20,481 +21,579 @@ html {
 }
 
 body {
-    font-family: var(--font-secondary);
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--primary-bg);
-    overflow-x: hidden;
+    color: var(--text-light);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    background-attachment: fixed; /* Ensures gradient stays fixed for a smoother feel */
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-primary);
-    color: var(--heading-color);
-    margin-bottom: 1rem;
-    line-height: 1.2;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-
-h1 { font-size: 3.5rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 1.8rem; }
-p { font-size: 1.1rem; }
 
 a {
-    color: var(--accent-color);
+    color: var(--accent-blue);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #fff;
+    color: #00aaff;
 }
 
-ul {
-    list-style: none;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif; /* Futuristic font for headings */
+    margin-bottom: 1em;
+    color: var(--text-light);
+    text-shadow: 0 0 5px rgba(0, 191, 255, 0.3); /* Subtle glow */
 }
 
-/* Navbar */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 5%;
-    z-index: 1000;
-    background-color: rgba(10, 25, 47, 0.8); /* Slightly transparent dark blue */
-    backdrop-filter: blur(5px); /* Frosted glass effect */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease, padding 0.3s ease;
-}
-
-.navbar.scrolled {
-    padding: 1rem 5%;
-    background-color: var(--primary-bg); /* Solid color when scrolled */
-}
-
-.logo {
-    font-family: var(--font-primary);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--heading-color);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.logo .accent-text {
-    color: var(--accent-color);
-}
-
-.navbar nav ul {
-    display: flex;
-}
-
-.navbar nav ul li {
-    margin-left: 2.5rem;
-}
-
-.navbar nav ul li a {
-    color: var(--text-color);
-    font-size: 1.1rem;
-    font-weight: 600;
-    position: relative;
-}
-
-.navbar nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    left: 0;
-    bottom: -5px;
-    transition: width 0.3s ease;
-}
-
-.navbar nav ul li a:hover::after {
-    width: 100%;
-}
-
-/* Hero Section */
-.hero-section {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-    background-image: url('../IIOT_Prueba.jpeg'); /* User specified image */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Parallax effect */
-}
-
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
-    z-index: 1; /* Place overlay behind content but above background image */
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2; /* Ensure content is above the overlay */
-    max-width: 900px;
-    padding: 2rem;
-}
-
-.hero-content h1 {
-    font-size: 4.5rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 0 15px rgba(0, 224, 255, 0.7); /* Subtle glow */
-}
-
-.hero-content p {
-    font-size: 1.4rem;
-    margin-bottom: 2.5rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+p {
+    margin-bottom: 1em;
 }
 
 .btn {
     display: inline-block;
-    background-color: var(--accent-color);
-    color: var(--primary-bg);
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 700;
+    background-color: var(--accent-blue);
+    color: var(--bg-dark);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    border: 2px solid var(--accent-color);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
 }
 
 .btn:hover {
-    background-color: transparent;
-    color: var(--accent-color);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 224, 255, 0.4);
+    background-color: #00aaff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.6);
 }
 
-/* Content Sections */
-.content-section {
-    padding: 8rem 5%;
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Header */
+.header {
+    background-color: rgba(10, 25, 47, 0.9); /* Semi-transparent dark blue */
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.content-section h2 {
-    font-size: 3rem;
-    margin-bottom: 4rem;
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--text-light);
+    text-shadow: 0 0 10px var(--accent-blue);
+}
+
+.logo span {
+    color: var(--accent-blue);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    margin-left: 30px;
+}
+
+.nav-list a {
+    color: var(--text-light);
+    font-weight: 400;
+    font-size: 1.1em;
     position: relative;
-    display: inline-block;
+    padding: 5px 0;
 }
 
-.content-section h2::after {
+.nav-list a::after {
     content: '';
     position: absolute;
-    width: 60%;
-    height: 4px;
-    background-color: var(--accent-color);
-    left: 20%;
-    bottom: -15px;
-    border-radius: 5px;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-blue);
+    transition: width 0.3s ease;
 }
 
-/* Card Grid for "Post-its" */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
-    margin-top: 3rem;
+.nav-list a:hover::after,
+.nav-list a.active::after {
+    width: 100%;
 }
 
-.card {
-    background-color: var(--secondary-bg);
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-    text-align: center;
-    display: flex;
+.hamburger {
+    display: none;
+    cursor: pointer;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(0, 224, 255, 0.2); /* Subtle accent border */
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px var(--accent-color);
+.hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--text-light);
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
-.card .icon {
-    font-size: 3.5rem;
-    color: var(--accent-color);
-    margin-bottom: 1.5rem;
-    filter: drop-shadow(0 0 10px rgba(0, 224, 255, 0.6));
-}
-
-.card h3 {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-    color: var(--heading-color);
-}
-
-.card p {
-    font-size: 1rem;
-    color: var(--text-color);
-    line-height: 1.5;
-    max-height: 150px; /* Limit for approx. 10 lines of text */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 10;
-    -webkit-box-orient: vertical;
-}
-
-/* Parallax Sections */
-.parallax-section {
-    height: 70vh; /* Adjust height as needed */
+/* Hero Section (First Parallax with IIOT_Prueba.jpeg) */
+.hero {
+    height: 100vh; /* Full viewport height */
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    color: #fff;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Parallax effect */
-    position: relative;
-    padding: 5rem 5%; /* Ensure padding for smaller screens */
+    color: var(--text-light);
+    position: relative; /* Needed for overlay */
 }
 
-.parallax-section::before {
+/* This is where IIOT_Prueba.jpeg is applied with parallax */
+.hero.parallax-section {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero::before { /* Overlay for better text readability */
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
 }
 
-.parallax-content {
+.hero-content {
     position: relative;
     z-index: 2;
     max-width: 800px;
+    padding: 20px;
 }
 
-.parallax-content h2 {
-    font-size: 3.5rem;
-    text-shadow: 0 0 15px rgba(0, 224, 255, 0.7);
-    margin-bottom: 1.5rem;
+.hero-title {
+    font-size: 3.8em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px var(--accent-blue);
 }
 
-.parallax-content p {
-    font-size: 1.3rem;
-    max-width: 600px;
+.hero-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 80px 0;
+    position: relative;
+    z-index: 5; /* Ensure content is above parallax if needed */
+}
+
+.section-title {
+    font-size: 2.8em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--accent-blue);
+}
+
+.section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    font-size: 1.1em;
+    opacity: 0.8;
+}
+
+/* Solutions Section */
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.solution-card {
+    background-color: var(--secondary-blue);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 3px solid var(--accent-blue);
+}
+
+.solution-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 191, 255, 0.2);
+}
+
+.solution-card h3 {
+    color: var(--accent-blue);
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+.solution-card p {
+    font-size: 0.95em;
+    opacity: 0.9;
+}
+
+/* Technology Section */
+.tech-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.tech-item {
+    background-color: var(--secondary-blue);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-left: 2px solid var(--accent-blue);
+    transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+    transform: scale(1.03);
+}
+
+.tech-item .icon {
+    font-size: 3em;
+    color: var(--accent-blue);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.tech-item h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+/* About Section */
+.about-vision {
+    background-color: var(--secondary-blue);
+    padding: 40px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    border-right: 3px solid var(--accent-blue);
+}
+
+.about-vision h3 {
+    color: var(--accent-blue);
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-vision p {
+    font-size: 1.1em;
+    text-align: center;
+    max-width: 900px;
     margin: 0 auto;
 }
 
-/* Specific Parallax Background Images (Unsplash) */
+/* Parallax Sections (General) */
+.parallax-section {
+    height: 70vh; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin: 50px 0; /* Space between content sections and parallax */
+}
+
+.parallax-section::before { /* Overlay for better text readability */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: 1;
+}
+
+.parallax-overlay {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.parallax-overlay h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--accent-blue);
+    text-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+}
+
+.parallax-overlay p {
+    font-size: 1.4em;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Specific Parallax backgrounds (Unsplash) */
 .parallax-1 {
     background-image: url('https://source.unsplash.com/random/1920x1080/?factory,robot,automation');
 }
 
 .parallax-2 {
-    background-image: url('https://source.unsplash.com/random/1920x1080/?industrial,technology,data');
+    background-image: url('https://source.unsplash.com/random/1920x1080/?industrial-engineer,data,technology');
 }
+
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--primary-blue);
+    border-top: 3px solid var(--accent-blue);
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 50px auto 0 auto;
+    background-color: var(--secondary-blue);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--accent-blue);
+    font-size: 1.1em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--gradient-end);
+    border: 1px solid var(--primary-blue);
+    border-radius: 5px;
+    color: var(--text-light);
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+}
+
 
 /* Footer */
-footer {
-    background-color: var(--primary-bg);
-    color: var(--text-color);
-    padding: 4rem 5% 2rem;
+.footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
     text-align: center;
-    border-top: 1px solid rgba(0, 224, 255, 0.2);
+    padding: 30px 0;
+    border-top: 2px solid var(--accent-blue);
 }
 
-.footer-content {
+.footer .container {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto 3rem;
-}
-
-.contact-info, .social-media {
-    flex: 1;
-    min-width: 250px;
-    text-align: left;
-}
-
-.contact-info h3, .social-media h3 {
-    color: var(--heading-color);
-    margin-bottom: 1.5rem;
-    font-size: 1.6rem;
-}
-
-.contact-info p {
-    margin-bottom: 1rem;
-    display: flex;
+    flex-direction: column;
     align-items: center;
-    font-size: 1rem;
+    gap: 15px;
 }
 
-.contact-info p .fas {
-    color: var(--accent-color);
-    margin-right: 10px;
-    font-size: 1.2rem;
+.social-links {
+    margin-top: 10px;
 }
 
-.social-media a {
-    font-size: 1.8rem;
-    margin: 0 1rem;
-    color: var(--text-color);
-    transition: color 0.3s ease, transform 0.3s ease;
+.social-icon {
+    font-size: 1.8em;
+    color: var(--text-light);
+    margin: 0 15px;
+    transition: color 0.3s ease;
 }
 
-.social-media a:hover {
-    color: var(--accent-color);
-    transform: translateY(-5px);
+.social-icon:hover {
+    color: var(--accent-blue);
+    transform: scale(1.1);
 }
 
-.copyright {
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    color: rgba(204, 214, 246, 0.7);
-}
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    .navbar {
-        padding: 1rem 3%;
+    .hero-title {
+        font-size: 3em;
     }
-    .navbar nav ul li {
-        margin-left: 1.5rem;
+    .hero-subtitle {
+        font-size: 1.3em;
     }
-    .hero-content h1 {
-        font-size: 3.5rem;
+    .section-title {
+        font-size: 2.2em;
     }
-    .hero-content p {
-        font-size: 1.2rem;
+    .parallax-overlay h2 {
+        font-size: 2.5em;
     }
-    .content-section, .parallax-section {
-        padding: 6rem 3%;
-    }
-    .content-section h2 {
-        font-size: 2.5rem;
-    }
-    .card-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
-    .card {
-        padding: 2rem;
-    }
-    .parallax-content h2 {
-        font-size: 2.8rem;
-    }
-    .parallax-content p {
-        font-size: 1.1rem;
-    }
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .contact-info, .social-media {
-        text-align: center;
-        width: 100%;
-    }
-    .contact-info p {
-        justify-content: center;
+    .parallax-overlay p {
+        font-size: 1.2em;
     }
 }
 
 @media (max-width: 768px) {
-    .navbar {
+    .nav-menu {
+        position: relative;
+    }
+
+    .nav-list {
+        display: none;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem 3%;
-    }
-    .navbar nav {
-        margin-top: 1rem;
+        background-color: rgba(10, 25, 47, 0.95);
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
     }
-    .navbar nav ul {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
+
+    .nav-list.active {
+        display: flex;
     }
-    .navbar nav ul li {
-        margin: 0.5rem 0;
-        width: 100%;
+
+    .nav-list li {
+        margin: 10px 0;
         text-align: center;
     }
-    .hero-content h1 {
-        font-size: 2.8rem;
+
+    .nav-list a {
+        font-size: 1.2em;
+        padding: 10px 0;
+        display: block;
     }
-    .hero-content p {
-        font-size: 1rem;
+
+    .hamburger {
+        display: flex;
     }
-    .btn {
-        padding: 0.8rem 2rem;
-        font-size: 1rem;
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
     }
-    .content-section, .parallax-section {
-        padding: 4rem 3%;
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
     }
-    .content-section h2 {
-        font-size: 2rem;
-        margin-bottom: 3rem;
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
     }
-    .parallax-content h2 {
-        font-size: 2.2rem;
+
+    .hero {
+        height: 80vh;
     }
-    .parallax-content p {
-        font-size: 1rem;
+    .hero-title {
+        font-size: 2.5em;
     }
-    .card {
-        padding: 1.5rem;
+    .hero-subtitle {
+        font-size: 1.1em;
     }
-    .card .icon {
-        font-size: 3rem;
+
+    .content-section {
+        padding: 60px 0;
     }
-    .card h3 {
-        font-size: 1.4rem;
+    .section-title {
+        font-size: 1.8em;
     }
-    .card p {
-        font-size: 0.9rem;
+    .solution-card, .tech-item {
+        padding: 20px;
+    }
+    .solution-card h3 {
+        font-size: 1.4em;
+    }
+    .parallax-section {
+        height: 50vh;
+    }
+    .parallax-overlay h2 {
+        font-size: 2em;
+    }
+    .parallax-overlay p {
+        font-size: 1em;
     }
 }
 
 @media (max-width: 480px) {
     .logo {
-        font-size: 1.5rem;
+        font-size: 1.8em;
     }
-    .hero-content h1 {
-        font-size: 2.2rem;
+    .hero-title {
+        font-size: 2em;
     }
-    .hero-content p {
-        font-size: 0.9rem;
+    .hero-subtitle {
+        font-size: 0.9em;
     }
-    .content-section h2 {
-        font-size: 1.8rem;
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
     }
-    .parallax-content h2 {
-        font-size: 1.8rem;
+    .section-title {
+        font-size: 1.6em;
+    }
+    .section-description {
+        font-size: 0.9em;
+    }
+    .solutions-grid, .tech-features {
+        grid-template-columns: 1fr;
+    }
+    .parallax-overlay h2 {
+        font-size: 1.8em;
+    }
+    .parallax-overlay p {
+        font-size: 0.9em;
+    }
+    .footer p {
+        font-size: 0.9em;
     }
 }
