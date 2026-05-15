@@ -60,8 +60,7 @@ respuesta_texto = response.text.strip()
 # Limpieza de seguridad
 if respuesta_texto.startswith('```json'):
     respuesta_texto = respuesta_texto[7:-3]
-elif respuesta_texto.startswith('
-```'):
+elif respuesta_texto.startswith('```'):
     respuesta_texto = respuesta_texto[3:-3]
 
 try:
