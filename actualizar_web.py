@@ -14,9 +14,8 @@ prompt = """
 Eres un desarrollador web experto. Crea una página web para una empresa de IIOT (Industrial Internet of Things) que ha generado un nuevo programa para el mantenimiento y el OEE de las máquinas. 
 Somos desarrolladores a pie de planta. El diseño debe ser futurista, similar (casi igual) a "www.Baliatekks.com", con azul oscuro como color principal.
 
-Ocurre esto, te estoy pidiendo que añadas una foto llamada "IIOT_Prueba.jpeg", pero no la estas implementando, tambien hay momentos en los que o el css rompen completamente el html, 
-o lo esta rompiendo el javascript. Quiero que mantengas la estructura, pero en el titulo de la pagina (body) añadas un <img src="IIOT_Prueba.jpeg"> donde se vea la imageen y que por via css sea una imagen
-con efecto Parallax (que la imagen se mantenga en el sitio incluso cuando se hace scroll). Tambien quiero que sepas que somos la empresa Kentu, para emmpezar a darle nombre a esta pagina web.
+Por ahora la estructura esta bien, pero queiro que repitas el estilo de la imagen del titulo (El que tiene el efecto Parallax) y en donde hay espacios en negro, lo repitas, en este caso,
+los archivos se llaman "IIOT_2.jpeg" y "IIOT_3.jpeg", agregalos con <img src="*aqui van el nombre de uno de los archivos*">. tambien en el menu aparece Kentu.IIOT, quitale el ".IIOT"
 
 IMPORTANTE: 
 1. Divide el código en HTML, CSS y JavaScript.
