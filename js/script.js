@@ -1,5 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for navigation links
+// script.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Función simple para un efecto de scroll suave en los enlaces de ancla
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -8,50 +10,36 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
-                // Calculate offset for fixed header
-                const headerOffset = document.querySelector('.navbar').offsetHeight;
-                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - headerOffset - 20; // -20 for a little extra padding
-
                 window.scrollTo({
-                    top: offsetPosition,
+                    top: targetElement.offsetTop - (document.querySelector('.header').offsetHeight || 80), // Ajusta para el header fijo
                     behavior: 'smooth'
                 });
-
-                // Optional: Add/remove active class from navbar links
-                document.querySelectorAll('.navbar nav ul li a').forEach(link => {
-                    link.classList.remove('active');
-                });
-                this.classList.add('active');
             }
         });
     });
 
-    // Optional: Highlight active nav link on scroll
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.navbar nav ul li a');
+    // Opcional: Cambiar el estilo del header al hacer scroll
+    const header = document.querySelector('.header');
+    const heroSection = document.getElementById('hero');
 
-    const options = {
-        root: null,
-        rootMargin: '-50% 0px -50% 0px', // Trigger when section is roughly in the middle of the viewport
-        threshold: 0 // No threshold needed with rootMargin
+    const changeHeaderStyle = () => {
+        if (heroSection) {
+            const heroHeight = heroSection.offsetHeight;
+            if (window.scrollY > heroHeight - 100) { // Cambia el color del header cuando se sale de la sección hero
+                header.style.backgroundColor = 'var(--primary-blue)';
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.4)';
+            } else {
+                header.style.backgroundColor = 'rgba(10, 28, 44, 0.9)';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+            }
+        }
     };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.id;
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
-    }, options);
+    window.addEventListener('scroll', changeHeaderStyle);
+    changeHeaderStyle(); // Ejecutar al cargar para establecer el estado inicial
 
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+    // Aquí no se necesita JavaScript para el efecto parallax básico
+    // porque background-attachment: fixed ya lo maneja. 
+    // JS sería necesario para efectos parallax más complejos (ej. diferentes velocidades de elementos).
+    // Pero para este requisito, el CSS es suficiente.
 });
