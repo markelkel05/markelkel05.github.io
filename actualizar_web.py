@@ -22,12 +22,10 @@ response = client.models.generate_content(
 # Obtenemos la respuesta de la IA
 codigo_html = response.text.strip()
 
-# Pequeño truco de seguridad por si la IA añade las comillas de código (
-```html) por error
+# Pequeño truco de seguridad por si la IA añade las comillas de código (```html) por error
 if codigo_html.startswith("```html"):
     codigo_html = codigo_html[7:-3]
-elif codigo_html.startswith("
-```"):
+elif codigo_html.startswith("```"):
     codigo_html = codigo_html[3:-3]
 
 # Guardamos TODO el código nuevo reemplazando el viejo index.html
