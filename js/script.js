@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
@@ -8,57 +8,50 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
-                // Get the height of the fixed header
+                // Calculate offset for fixed header
                 const headerOffset = document.querySelector('.navbar').offsetHeight;
                 const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - headerOffset - 20; // Added 20px for extra space
+                const offsetPosition = elementPosition - headerOffset - 20; // -20 for a little extra padding
 
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: 'smooth'
                 });
 
-                // Optional: Add active class to the current navigation item
-                document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+                // Optional: Add/remove active class from navbar links
+                document.querySelectorAll('.navbar nav ul li a').forEach(link => {
+                    link.classList.remove('active');
+                });
                 this.classList.add('active');
             }
         });
     });
 
-    // Optional: Add a class to the header on scroll for styling (e.g., box-shadow)
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) { // Adjust scroll threshold as needed
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    // Add active class to nav links based on scroll position
+    // Optional: Highlight active nav link on scroll
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav a');
+    const navLinks = document.querySelectorAll('.navbar nav ul li a');
 
-    const observerOptions = {
+    const options = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.3 // Adjust threshold as needed
+        rootMargin: '-50% 0px -50% 0px', // Trigger when section is roughly in the middle of the viewport
+        threshold: 0 // No threshold needed with rootMargin
     };
 
-    const sectionObserver = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                const id = entry.target.id;
                 navLinks.forEach(link => {
                     link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${entry.target.id}`) {
+                    if (link.getAttribute('href') === `#${id}`) {
                         link.classList.add('active');
                     }
                 });
             }
         });
-    }, observerOptions);
+    }, options);
 
     sections.forEach(section => {
-        sectionObserver.observe(section);
+        observer.observe(section);
     });
 });
