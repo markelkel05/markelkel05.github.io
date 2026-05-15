@@ -2,15 +2,586 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Web Automática</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIOT Innovación para el Mantenimiento y OEE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
-        h1 { color: #333; }
-        p { color: #555; font-size: 1.2em; }
+        :root {
+            --dark-blue-bg: #0A1128;
+            --main-blue: #1C3F7A;
+            --accent-blue: #4A90E2;
+            --light-blue: #70A2FF;
+            --text-color: #E0E0E0;
+            --text-light: #FFFFFF;
+            --gradient-start: #0F1D46;
+            --gradient-end: #172A52;
+            --border-glow: rgba(74, 144, 226, 0.4);
+            --transition-speed: 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark-blue-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Exo 2', sans-serif;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 1.8rem; }
+
+        a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        a:hover {
+            color: var(--light-blue);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background: rgba(10, 17, 40, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .logo::before {
+            content: 'IIOT';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-blue);
+            opacity: 0.2;
+            filter: blur(2px);
+            transform: translate(-2px, -2px);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 2.5rem;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            font-weight: 300;
+            font-size: 1.1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-blue);
+            transition: width var(--transition-speed);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px; /* Adjust for fixed header */
+            background: radial-gradient(circle at 50% 10%, var(--gradient-end) 0%, transparent 70%),
+                        linear-gradient(135deg, var(--dark-blue-bg) 0%, var(--main-blue) 100%);
+            overflow: hidden;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.05);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="rgba(27, 59, 111, 0)" /><path d="M 0 0 L 100 0 L 100 100 L 0 100 Z M 1 1 L 99 1 L 99 99 L 1 99 Z" fill="none" stroke="rgba(74, 144, 226, 0.1)" stroke-width="0.5" /><path d="M 0 50 L 50 0 L 100 50 L 50 100 Z" fill="none" stroke="rgba(74, 144, 226, 0.05)" stroke-width="0.5" /></svg>') repeat;
+            opacity: 0.3;
+            z-index: 1;
+            animation: gridMove 60s linear infinite;
+        }
+
+        @keyframes gridMove {
+            from { background-position: 0 0; }
+            to { background-position: 100px 100px; }
+        }
+
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 0 0 15px rgba(74, 144, 226, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            opacity: 0.9;
+            color: var(--text-color);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--accent-blue), var(--light-blue));
+            color: var(--text-light);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all var(--transition-speed);
+            box-shadow: 0 0 20px rgba(74, 144, 226, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 0 30px rgba(74, 144, 226, 0.7);
+            filter: brightness(1.1);
+        }
+
+        section {
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.05);
+            background: linear-gradient(180deg, var(--dark-blue-bg), var(--gradient-start));
+        }
+
+        section:nth-of-type(even) {
+            background: linear-gradient(180deg, var(--gradient-start), var(--gradient-end));
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+            border-radius: 2px;
+        }
+
+        .features-grid, .workflow-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card, .workflow-step {
+            background-color: var(--gradient-start);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.1);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover, .workflow-step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 40px rgba(74, 144, 226, 0.3);
+            border-color: var(--accent-blue);
+        }
+
+        .feature-card::before, .workflow-step::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(74, 144, 226, 0.08) 0%, transparent 60%);
+            animation: pulseBackground 10s infinite alternate;
+            opacity: 0;
+            transition: opacity var(--transition-speed);
+        }
+
+        .feature-card:hover::before, .workflow-step:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes pulseBackground {
+            from { transform: scale(0.8) rotate(0deg); }
+            to { transform: scale(1.2) rotate(360deg); }
+        }
+
+        .icon {
+            font-size: 3rem;
+            color: var(--light-blue);
+            margin-bottom: 1.5rem;
+            display: block;
+            line-height: 1;
+        }
+        /* Custom icons using pseudo-elements */
+        .icon-data::before { content: '⚙️'; }
+        .icon-analytics::before { content: '📊'; }
+        .icon-predictive::before { content: '🔮'; }
+        .icon-oee::before { content: '🎯'; }
+        .icon-plant::before { content: '👷'; }
+        .icon-future::before { content: '🚀'; }
+        .icon-support::before { content: '🛠️'; }
+        .icon-solution::before { content: '💡'; }
+        .icon-integration::before { content: '🔗'; }
+
+
+        .feature-card h3, .workflow-step h3 {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            font-size: 1.5rem;
+        }
+
+        .about-us-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-us-content img {
+            max-width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(74, 144, 226, 0.1);
+            filter: grayscale(20%) brightness(80%);
+            transition: filter var(--transition-speed);
+        }
+        .about-us-content img:hover {
+            filter: grayscale(0%) brightness(100%);
+        }
+
+        .about-us-text {
+            flex: 1;
+            padding: 1.5rem;
+            background-color: var(--gradient-start);
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.1);
+        }
+
+        .about-us-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        .call-to-action {
+            text-align: center;
+            padding: 8rem 0;
+            background: linear-gradient(135deg, var(--main-blue), var(--dark-blue-bg));
+            position: relative;
+        }
+
+        .call-to-action h2 {
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            text-shadow: 0 0 10px rgba(74, 144, 226, 0.4);
+        }
+
+        .call-to-action p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            color: var(--text-color);
+        }
+
+        footer {
+            background-color: var(--dark-blue-bg);
+            color: var(--text-color);
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(74, 144, 226, 0.05);
+        }
+
+        /* Scroll reveal effects */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Typing effect for hero subtitle */
+        .typing-effect {
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the text appears */
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            border-right: .15em solid var(--accent-blue); /* The typing cursor */
+            width: 0; /* Starts with 0 width */
+            animation-fill-mode: forwards; /* Keep the last state of the animation */
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--accent-blue); }
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2rem; }
+            .hero h1 { font-size: 3.5rem; }
+            .hero p { font-size: 1.2rem; }
+            nav ul {
+                display: none; /* Hide for smaller screens, could add a burger menu here */
+            }
+            header .container {
+                justify-content: center;
+            }
+            .about-us-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-us-content img {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero { height: auto; padding: 10rem 0 5rem 0; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1rem; }
+            .cta-button { padding: 1rem 2rem; font-size: 1rem; }
+            section { padding: 5rem 0; }
+            h2 { font-size: 1.8rem; }
+            .features-grid, .workflow-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-us-content {
+                gap: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Dato Curioso del Día 🤖</h1>
-    <p>El primer "bug" informático real fue una polilla encontrada en un relé del ordenador Mark II en 1947.</p>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">NexusTech</a>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#solucion">Nuestra Solución</a></li>
+                    <li><a href="#equipo">El Equipo</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content reveal">
+            <h1>Revolucionando el Mantenimiento Industrial</h1>
+            <p class="typing-effect">IIOT al servicio de tus máquinas: Eficiencia, Productividad y OEE optimizados.</p>
+            <a href="#solucion" class="cta-button">Descubre Nuestro Software</a>
+        </div>
+    </section>
+
+    <section id="solucion">
+        <div class="container">
+            <h2 class="reveal">Una Nueva Era en el Mantenimiento y OEE</h2>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <span class="icon icon-data"></span>
+                    <h3>Recolección de Datos en Tiempo Real</h3>
+                    <p>Sensores IIOT avanzados capturan cada pulso de tu maquinaria, proporcionando una visión instantánea de su estado.</p>
+                </div>
+                <div class="feature-card reveal" style="transition-delay: 0.1s;">
+                    <span class="icon icon-analytics"></span>
+                    <h3>Análisis Predictivo Avanzado</h3>
+                    <p>Algoritmos de IA detectan patrones y anomalías, anticipando fallos antes de que ocurran, minimizando el tiempo de inactividad.</p>
+                </div>
+                <div class="feature-card reveal" style="transition-delay: 0.2s;">
+                    <span class="icon icon-predictive"></span>
+                    <h3>Mantenimiento Proactivo Inteligente</h3>
+                    <p>Pasa de un mantenimiento reactivo a uno proactivo. Nuestro programa te sugiere las acciones precisas en el momento justo.</p>
+                </div>
+                <div class="feature-card reveal" style="transition-delay: 0.3s;">
+                    <span class="icon icon-oee"></span>
+                    <h3>Optimización Directa del OEE</h3>
+                    <p>Identifica y elimina cuellos de botella para maximizar la Eficiencia General del Equipo (OEE) de forma tangible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipo">
+        <div class="container">
+            <h2 class="reveal">Desarrolladores a Pie de Planta: Nuestra Filosofía</h2>
+            <div class="about-us-content">
+                <div class="about-us-text reveal">
+                    <h3>Conocemos tus Retos</h3>
+                    <p>No somos solo programadores; somos ingenieros y técnicos con años de experiencia en el corazón de la industria. Hemos vivido y respirado el ambiente de fábrica, comprendiendo de primera mano los desafíos que enfrentas.</p>
+                    <p>Esta experiencia nos permite desarrollar soluciones IIOT que no solo son tecnológicamente avanzadas, sino también intuitivas, robustas y adaptadas a la realidad de tu operativa diaria. Creemos en la tecnología que sirve al operario, no al revés.</p>
+                    <p>Nuestra visión es empoderar a tu equipo con herramientas que faciliten su trabajo, reduzcan el estrés y transformen el mantenimiento en una ventaja competitiva. ¡Hablamos tu idioma, entendemos tus procesos!</p>
+                </div>
+                <img src="https://via.placeholder.com/600x400/1C3F7A/E0E0E0?text=Desarrolladores+en+Planta" alt="Desarrolladores IIOT en Planta" class="reveal">
+            </div>
+        </div>
+    </section>
+
+    <section id="workflow">
+        <div class="container">
+            <h2 class="reveal">Cómo Funciona Nuestro Programa</h2>
+            <div class="workflow-grid">
+                <div class="workflow-step reveal">
+                    <span class="icon icon-integration"></span>
+                    <h3>Integración Sencilla</h3>
+                    <p>Instalamos nuestros sensores inteligentes en tus máquinas existentes, sin interrupciones mayores en la producción.</p>
+                </div>
+                <div class="workflow-step reveal" style="transition-delay: 0.1s;">
+                    <span class="icon icon-solution"></span>
+                    <h3>Plataforma Intuitiva</h3>
+                    <p>Accede a todos tus datos y análisis desde un panel de control fácil de usar, diseñado para operarios y gerentes.</p>
+                </div>
+                <div class="workflow-step reveal" style="transition-delay: 0.2s;">
+                    <span class="icon icon-support"></span>
+                    <h3>Soporte Personalizado</h3>
+                    <p>Te acompañamos en cada paso, desde la implementación hasta la optimización continua, con nuestro equipo experto.</p>
+                </div>
+                <div class="workflow-step reveal" style="transition-delay: 0.3s;">
+                    <span class="icon icon-future"></span>
+                    <h3>Escalabilidad Futura</h3>
+                    <p>Nuestro sistema crece contigo, adaptándose a nuevas máquinas y necesidades operativas a medida que tu empresa evoluciona.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="call-to-action">
+        <div class="container reveal">
+            <h2>Transforma tu Mantenimiento Hoy</h2>
+            <p>¿Listo para llevar tu eficiencia y productividad al siguiente nivel? Contáctanos para una demostración personalizada.</p>
+            <a href="mailto:info@nexustech.com" class="cta-button">¡Hablemos!</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 NexusTech IIOT. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Scroll reveal effect
+            const revealElements = document.querySelectorAll('.reveal');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Stop observing once revealed
+                    }
+                });
+            }, {
+                threshold: 0.1, // Element is active when 10% visible
+                rootMargin: "0px 0px -50px 0px" // Start animating a bit before it enters the viewport fully
+            });
+
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
