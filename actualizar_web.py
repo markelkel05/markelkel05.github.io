@@ -13,13 +13,10 @@ print("Generando el código de la web...")
 prompt = """
 Eres un desarrollador web experto. Crea una página web para una empresa de IIOT (Industrial Internet of Things) que ha generado un nuevo programa para el mantenimiento y el OEE de las máquinas. 
 Somos desarrolladores a pie de planta. El diseño debe ser futurista, similar (casi igual) a "www.Baliatekks.com", con azul oscuro como color principal.
-Tambien quiero que haya un apartado donde haya una imagen donde se aplique el efecto Parallax (una de las imagenes puede ser en donde el titulo, en vez de teer un fondo con solo color,
-se puede poner una imagen, por ahora, n es necesario que vaya a corde con el tema de la página).
-En vez de centrarse en mostrar texto, yo quiero mostrar imagenes (separados de las imagenes con efecto Parallax), donde se ve como unos "post its" (cuadraditos) con iconos y un texto que sea una frase como maximo de 10 lineas.
 
-La estructura y css van bien, pero ahora tenemos una imagen llamada "IIOT_Prueba.jpeg" que quiero que añadas detras del titulo, teniendo un efecto Parallax (es decir, que aunque en la pagina hagas
-scroll, la imagen se mantiene estatica), que va a estar ubicado detras de todos los elementos (el titulo, otros divs, etc. pasen por delante de la imagen). si es necesario hacer cambios en el javascript, halos, pero sino mantenlo como est,
-eso si,el CSS(a menos que sea TOTALMENTE necesario) no los modifiques.
+Ocurre esto, te estoy pidiendo que añadas una foto llamada "IIOT_Prueba.jpeg", pero no la estas implementando, tambien hay momentos en los que o el css rompen completamente el html, 
+o lo esta rompiendo el javascript. Quiero que mantengas la estructura, pero en el titulo de la pagina (body) añadas un <img src="IIOT_Prueba.jpeg"> donde se vea la imageen y que por via css sea una imagen
+con efecto Parallax (que la imagen se mantenga en el sitio incluso cuando se hace scroll). Tambien quiero que sepas que somos la empresa Kentu, para emmpezar a darle nombre a esta pagina web.
 
 IMPORTANTE: 
 1. Divide el código en HTML, CSS y JavaScript.
