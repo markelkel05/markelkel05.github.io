@@ -7,8 +7,8 @@ client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 prompt = """
 Eres un desarrollador web experto. Crea el código HTML, CSS y JavaScript en un solo archivo 
 para una página web. 
-El tema de la página es: Un portfolio futurista oscuro para un desarrollador llamado Markel.
-Debe tener un título centrado, una breve descripción y una lista de 3 habilidades inventadas.
+El tema de la página es: Somos una empresa de IIOT (Industrial Internet of Things) que hemos generado un nueo programa para el manenimiento y el OEE de las maquinas. 
+Somos unos desarrolladores a pie de planta. Quiero que me hagas una pagina futurista, similar a la pagina "Baliatekks", pero el color que nosotros tenemos como principal es el azul oscuro
 IMPORTANTE: Devuelve ÚNICAMENTE el código HTML crudo. No incluyas explicaciones, 
 ni formato markdown (no uses ```html). Solo empieza con <!DOCTYPE html> y termina con </html>.
 """
