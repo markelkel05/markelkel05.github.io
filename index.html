@@ -3,137 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synapse IIOT - Conectando el Futuro Industrial</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Synapse IIOT - EvoCare Pro: Mantenimiento y OEE Inteligente</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300FFFF' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm-1 15H9v-2h2v2zm0-4H9v-2h2v2zm0-4H9V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z'/%3E%3C/svg%3E" type="image/svg+xml">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
+    <header class="navbar">
         <div class="container">
-            <a href="#hero" class="logo">SYNAPSE IIOT</a>
-            <nav class="nav-menu" id="navMenu">
+            <div class="logo">Synapse IIOT</div>
+            <nav>
                 <ul>
-                    <li><a href="#hero" class="active">Inicio</a></li>
+                    <li><a href="#hero">Inicio</a></li>
                     <li><a href="#about">Nosotros</a></li>
-                    <li><a href="#solutions">Soluciones</a></li>
-                    <li><a href="#industries">Industrias</a></li>
+                    <li><a href="#program">EvoCare Pro</a></li>
+                    <li><a href="#features">Características</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </header>
 
-    <main>
-        <section id="hero" class="hero-section">
-            <div class="container">
-                <h1 class="hero-title">Desbloquea el Potencial de Tu Industria</h1>
-                <p class="hero-subtitle">Conecta, Analiza y Transforma con Soluciones IIOT de Vanguardia.</p>
-                <a href="#solutions" class="btn btn-primary">Explorar Soluciones</a>
-            </div>
-        </section>
+    <section id="hero" class="hero parallax-section" style="background-image: url('https://source.unsplash.com/random/1920x1080/?factory,technology,data');">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Impulsa tu Producción con <span>Inteligencia IIOT</span></h1>
+            <p>EvoCare Pro: Mantenimiento Predictivo y OEE Optimizada para la Industria 4.0</p>
+            <a href="#program" class="btn btn-primary">Descubre EvoCare Pro</a>
+        </div>
+    </section>
 
-        <section id="about" class="about-section section-padding">
-            <div class="container">
-                <h2 class="section-title">Sobre Synapse IIOT</h2>
-                <p class="section-description">En Synapse IIOT, somos pioneros en la integración de tecnología avanzada para impulsar la eficiencia y la innovación en el sector industrial. Transformamos datos en inteligencia procesable, permitiendo a las empresas tomar decisiones estratégicas y optimizar sus operaciones.</p>
-                <div class="about-grid">
-                    <div class="about-item">
-                        <h3>Visión Conectada</h3>
-                        <p>Construimos redes robustas que interconectan cada componente de tu cadena de valor.</p>
-                    </div>
-                    <div class="about-item">
-                        <h3>Análisis Predictivo</h3>
-                        <p>Anticipa fallos y optimiza el mantenimiento con algoritmos de IA y Machine Learning.</p>
-                    </div>
-                    <div class="about-item">
-                        <h3>Seguridad Robusta</h3>
-                        <p>Protegemos tus datos y sistemas con protocolos de ciberseguridad de última generación.</p>
-                    </div>
+    <section id="about" class="section-content">
+        <div class="container">
+            <h2>Acerca de Synapse IIOT</h2>
+            <p class="lead">Somos desarrolladores a pie de planta, entendemos los desafíos de la industria. En Synapse IIOT, transformamos la operativa con soluciones innovadoras.</p>
+            <p>Nuestra experiencia en entornos industriales nos ha permitido diseñar un programa revolucionario que aborda las necesidades críticas de mantenimiento y eficiencia. Desde el análisis de datos en tiempo real hasta la anticipación de fallos, nuestro objetivo es maximizar la productividad y minimizar los tiempos de inactividad, garantizando que tus máquinas funcionen a su máximo potencial.</p>
+        </div>
+    </section>
+
+    <section id="program" class="section-content alternate-bg">
+        <div class="container">
+            <h2>Presentamos: <span>EvoCare Pro</span></h2>
+            <p class="lead">La próxima generación en gestión de activos y optimización de rendimiento.</p>
+            <div class="program-grid">
+                <div class="program-item">
+                    <h3>Mantenimiento Predictivo Inteligente</h3>
+                    <p>Anticipa fallos antes de que ocurran. Nuestro sistema analiza datos de sensores en tiempo real para predecir cuándo el equipo necesitará mantenimiento, evitando paradas inesperadas y costosas.</p>
+                </div>
+                <div class="program-item">
+                    <h3>Optimización de OEE en Tiempo Real</h3>
+                    <p>Monitorea y mejora la Eficiencia General del Equipo (OEE) con indicadores clave de rendimiento en tiempo real. Identifica cuellos de botella y oportunidades de mejora instantáneamente.</p>
+                </div>
+                <div class="program-item">
+                    <h3>Insights Basados en Datos</h3>
+                    <p>Recibe informes detallados y visualizaciones intuitivas que te permiten tomar decisiones informadas. Convierte tus datos de máquina en acciones estratégicas.</p>
                 </div>
             </div>
-        </section>
+            <a href="#features" class="btn btn-secondary">Ver todas las características</a>
+        </div>
+    </section>
 
-        <section id="solutions" class="solutions-section section-padding">
-            <div class="container">
-                <h2 class="section-title">Nuestras Soluciones IIOT</h2>
-                <div class="solutions-grid">
-                    <div class="solution-card">
-                        <h3>Monitorización Remota</h3>
-                        <p>Supervisa activos y procesos en tiempo real desde cualquier lugar del mundo.</p>
-                    </div>
-                    <div class="solution-card">
-                        <h3>Mantenimiento Predictivo</h3>
-                        <p>Reduce tiempos de inactividad y costos con modelos predictivos avanzados.</p>
-                    </div>
-                    <div class="solution-card">
-                        <h3>Optimización de Procesos</h3>
-                        <p>Identifica cuellos de botella y mejora la eficiencia operativa de forma continua.</p>
-                    </div>
-                    <div class="solution-card">
-                        <h3>Gestión de Activos Inteligente</h3>
-                        <p>Rastrea y gestiona tus activos con precisión para maximizar su vida útil.</p>
-                    </div>
-                    <div class="solution-card">
-                        <h3>Análisis de Datos Avanzado</h3>
-                        <p>Convierte grandes volúmenes de datos en insights accionables para la toma de decisiones.</p>
-                    </div>
-                    <div class="solution-card">
-                        <h3>Ciberseguridad Industrial</h3>
-                        <p>Blindamos tu infraestructura IIOT contra amenazas y ataques cibernéticos.</p>
-                    </div>
+    <section class="parallax-section" style="background-image: url('https://source.unsplash.com/random/1920x1080/?robotics,industry,automation');">
+        <div class="parallax-overlay"></div>
+        <div class="container parallax-content">
+            <h2>El Futuro de la Industria Empieza Aquí</h2>
+            <p>Con EvoCare Pro, tus operaciones serán más inteligentes, eficientes y rentables.</p>
+        </div>
+    </section>
+
+    <section id="features" class="section-content">
+        <div class="container">
+            <h2>Características Clave</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="icon-data"></i> <!-- Placeholder for icon -->
+                    <h3>Análisis de Datos Avanzado</h3>
+                    <p>Utilizamos algoritmos de IA y Machine Learning para procesar grandes volúmenes de datos de tus máquinas, identificando patrones y anomalías con una precisión sin precedentes.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="icon-dashboard"></i> <!-- Placeholder for icon -->
+                    <h3>Dashboards Personalizables</h3>
+                    <p>Crea paneles de control a medida para visualizar exactamente la información que necesitas, desde el estado de una máquina individual hasta el rendimiento global de tu planta.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="icon-alerts"></i> <!-- Placeholder for icon -->
+                    <h3>Alertas y Notificaciones</h3>
+                    <p>Recibe alertas instantáneas sobre cualquier desviación o posible problema, permitiendo una intervención rápida y minimizando el riesgo de fallos mayores.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="icon-integracion"></i> <!-- Placeholder for icon -->
+                    <h3>Integración Flexible</h3>
+                    <p>Nuestro sistema se integra fácilmente con tu infraestructura existente, incluyendo SCADA, MES y ERP, para una visión holística y un flujo de trabajo sin interrupciones.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="industries" class="industries-section section-padding">
-            <div class="container">
-                <h2 class="section-title">Industrias que Servimos</h2>
-                <div class="industries-grid">
-                    <div class="industry-card">
-                        <h3>Manufactura</h3>
-                        <p>Automatización de líneas de producción, control de calidad y gestión de inventarios.</p>
-                    </div>
-                    <div class="industry-card">
-                        <h3>Energía</h3>
-                        <p>Monitorización de redes eléctricas, optimización del consumo y mantenimiento de infraestructura.</p>
-                    </div>
-                    <div class="industry-card">
-                        <h3>Logística y Cadena de Suministro</h3>
-                        <p>Rastreo de envíos, gestión de flotas y optimización de rutas.</p>
-                    </div>
-                    <div class="industry-card">
-                        <h3>Petróleo y Gas</h3>
-                        <p>Monitorización de pozos, optimización de extracción y seguridad operativa.</p>
-                    </div>
-                    <div class="industry-card">
-                        <h3>Agricultura Inteligente</h3>
-                        <p>Sensores de suelo, riego preciso y monitorización de cultivos.</p>
-                    </div>
+    <section id="contact" class="section-content alternate-bg">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <p class="lead">¿Listo para transformar tu mantenimiento y OEE? Habla con nuestros expertos.</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Tu Nombre" required>
                 </div>
-            </div>
-        </section>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Tu Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" placeholder="Tu Mensaje" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+            </form>
+            <p class="contact-info">O envíanos un email a <a href="mailto:info@synapseiiot.com">info@synapseiiot.com</a> o llámanos al +34 123 45 67 89</p>
+        </div>
+    </section>
 
-        <section id="contact" class="cta-section section-padding">
-            <div class="container">
-                <h2 class="section-title">¿Listo para Transformar Tu Industria?</h2>
-                <p class="section-description">Contáctanos hoy mismo para discutir tus necesidades y cómo Synapse IIOT puede ayudarte a alcanzar tus objetivos.</p>
-                <a href="mailto:info@synapseiiot.com" class="btn btn-secondary">Contactar Ahora</a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
+    <footer>
         <div class="container">
             <p>&copy; 2023 Synapse IIOT. Todos los derechos reservados.</p>
             <div class="social-links">
-                <a href="#">LinkedIn</a>
-                <a href="#">Twitter</a>
+                <a href="#"><i class="icon-linkedin"></i></a> <!-- Placeholder for icon -->
+                <a href="#"><i class="icon-twitter"></i></a> <!-- Placeholder for icon -->
             </div>
         </div>
     </footer>

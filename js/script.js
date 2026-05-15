@@ -1,66 +1,64 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scroll for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
 
-            // Close mobile menu if open
-            const navMenu = document.getElementById('navMenu');
-            const hamburger = document.getElementById('hamburger');
-            if (navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('active');
+            if (targetElement) {
+                // Get the height of the fixed header
+                const headerOffset = document.querySelector('.navbar').offsetHeight;
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerOffset - 20; // Added 20px for extra space
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+
+                // Optional: Add active class to the current navigation item
+                document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
             }
         });
     });
 
-    // Mobile navigation toggle
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
-
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
+    // Optional: Add a class to the header on scroll for styling (e.g., box-shadow)
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) { // Adjust scroll threshold as needed
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     });
 
-    // Add 'active' class to nav links on scroll
+    // Add active class to nav links based on scroll position
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    const headerHeight = document.querySelector('.header').offsetHeight; // Get header height dynamically
+    const navLinks = document.querySelectorAll('nav a');
 
     const observerOptions = {
         root: null,
-        rootMargin: `-${headerHeight}px 0px 0px 0px`, // Adjust for fixed header height
-        threshold: 0.1 // Trigger when 10% of the section is visible (below the header)
+        rootMargin: '0px',
+        threshold: 0.3 // Adjust threshold as needed
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && entry.intersectionRatio >= 0.1) { 
-                // Remove active class from all links
-                navLinks.forEach(link => link.classList.remove('active'));
-
-                // Add active class to the link corresponding to the intersecting section
-                const targetId = entry.target.id;
-                const activeLink = document.querySelector(`.nav-menu a[href="#${targetId}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${entry.target.id}`) {
+                        link.classList.add('active');
+                    }
+                });
             }
         });
     }, observerOptions);
 
     sections.forEach(section => {
-        observer.observe(section);
+        sectionObserver.observe(section);
     });
-
-    // Ensure 'Inicio' is active on page load or when scrolled to the top
-    const initialActiveLink = document.querySelector('.nav-menu a[href="#hero"]');
-    if (initialActiveLink) {
-        initialActiveLink.classList.add('active');
-    }
 });
