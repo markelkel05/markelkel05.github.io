@@ -28,11 +28,10 @@ response = client.models.generate_content(
 
 respuesta_texto = response.text.strip()
 
-# Limpieza de seguridad
-if respuesta_texto.startswith("```json"):
+# Limpieza de seguridad con comillas simples para evitar el error del editor de GitHub
+if respuesta_texto.startswith('```json'):
     respuesta_texto = respuesta_texto[7:-3]
-elif respuesta_texto.startswith("
-```"):
+elif respuesta_texto.startswith('```'):
     respuesta_texto = respuesta_texto[3:-3]
 
 respuesta_texto = respuesta_texto.strip()
@@ -40,8 +39,7 @@ respuesta_texto = respuesta_texto.strip()
 try:
     codigo = json.loads(respuesta_texto)
     
-    # --- LA MAGIA DE LAS CARPETAS ESTÁ AQUÍ ---
-    # Python crea las carpetas si no existen (exist_ok=True evita errores si ya están creadas)
+    # Python crea las carpetas si no existen
     os.makedirs("css", exist_ok=True)
     os.makedirs("js", exist_ok=True)
     
