@@ -19,7 +19,7 @@ En vez de centrarse en mostrar texto, yo quiero mostrar imagenes (separados de l
 
 La estructura y css van bien, pero ahora tenemos una imagen llamada "IIOT_Prueba.jpeg" que quiero que añadas detras del titulo, teniendo un efecto Parallax (es decir, que aunque en la pagina hagas
 scroll, la imagen se mantiene estatica), que va a estar ubicado detras de todos los elementos (el titulo, otros divs, etc. pasen por delante de la imagen). si es necesario hacer cambios en el javascript, halos, pero sino mantenlo como est,
-eso si, el HTML y el CSS(a menos que sea TOTALMENTE necesario) nno los modifiques.
+eso si,el CSS(a menos que sea TOTALMENTE necesario) no los modifiques.
 
 IMPORTANTE: 
 1. Divide el código en HTML, CSS y JavaScript.
