@@ -1,37 +1,37 @@
 import os
 from google import genai
 
-# 1. Configurar el cliente usando el secreto de GitHub y la nueva librería
 client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
-# 2. Pedirle a la IA que genere contenido
-prompt = "Escribe un breve dato curioso sobre la historia de la tecnología en una sola línea, sin comillas."
+# --- AQUÍ PONES TU PROMPT DEL MILLÓN ---
+prompt = """
+Eres un desarrollador web experto. Crea el código HTML, CSS y JavaScript en un solo archivo 
+para una página web. 
+El tema de la página es: Un portfolio futurista oscuro para un desarrollador llamado Markel.
+Debe tener un título centrado, una breve descripción y una lista de 3 habilidades inventadas.
+IMPORTANTE: Devuelve ÚNICAMENTE el código HTML crudo. No incluyas explicaciones, 
+ni formato markdown (no uses ```html). Solo empieza con <!DOCTYPE html> y termina con </html>.
+"""
+# ---------------------------------------
+
 response = client.models.generate_content(
     model='gemini-2.5-flash',
     contents=prompt
 )
-dato_curioso = response.text.strip()
 
-# 3. Crear el nuevo código HTML con el dato incrustado
-html_content = f"""<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Web Automática</title>
-    <style>
-        body {{ font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }}
-        h1 {{ color: #333; }}
-        p {{ color: #555; font-size: 1.2em; }}
-    </style>
-</head>
-<body>
-    <h1>Dato Curioso del Día 🤖</h1>
-    <p>{dato_curioso}</p>
-</body>
-</html>"""
+# Obtenemos la respuesta de la IA
+codigo_html = response.text.strip()
 
-# 4. Guardar y sobrescribir el archivo index.html
+# Pequeño truco de seguridad por si la IA añade las comillas de código (
+```html) por error
+if codigo_html.startswith("```html"):
+    codigo_html = codigo_html[7:-3]
+elif codigo_html.startswith("
+```"):
+    codigo_html = codigo_html[3:-3]
+
+# Guardamos TODO el código nuevo reemplazando el viejo index.html
 with open("index.html", "w", encoding="utf-8") as file:
-    file.write(html_content)
+    file.write(codigo_html.strip())
     
-print("¡Archivo index.html actualizado con éxito!")
+print("¡Archivo index.html reconstruido desde cero con éxito!")
