@@ -17,7 +17,9 @@ Tambien quiero que haya un apartado donde haya una imagen donde se aplique el ef
 se puede poner una imagen, por ahora, n es necesario que vaya a corde con el tema de la página).
 En vez de centrarse en mostrar texto, yo quiero mostrar imagenes (separados de las imagenes con efecto Parallax), donde se ve como unos "post its" (cuadraditos) con iconos y un texto que sea una frase como maximo de 10 lineas.
 
-Por ahora la structura se ve bien, pero como el css no esta funcionando como debiese, no se si el javascript esta funcionando, arreglame por ahora solo el css, y si hay algo, ya te dire del js
+La estructura y css van bien, pero ahora tenemos una imagen llamada "IIOT_Prueba.jpeg" que quiero que añadas detras del titulo, teniendo un efecto Parallax (es decir, que aunque en la pagina hagas
+scroll, la imagen se mantiene estatica), que va a estar ubicado detras de todos los elementos (el titulo, otros divs, etc. pasen por delante de la imagen). si es necesario hacer cambios en el javascript, halos, pero sino mantenlo como est,
+eso si, el HTML y el CSS(a menos que sea TOTALMENTE necesario) nno los modifiques.
 
 IMPORTANTE: 
 1. Divide el código en HTML, CSS y JavaScript.
