@@ -49,7 +49,8 @@ CÓDIGO JS ACTUAL:
 ARCHIVOS DE IMAGEN DISPONIBLES EN EL REPOSITORIO:
 {texto_imagenes}
 
-En una de las secciones que tenemos (Tecnología en el Corazón de Kentu) el titulo de las etiquetas esta en azul, y los otros no, Haz que tods los titulos de las etiuetas sean azul(manten el contenido como esta).
+En una de las secciones que tenemos (Tecnología en el Corazón de Kentu) el titulo de las etiquetas esta en azul, y los otros no, Haz que tods los titulos de las etiuetas(por ejemplo:
+Mantenimiento Predictivo Inteligente) sean azul(manten el contenido como esta).
 
 }}
 Informes Personalizados
