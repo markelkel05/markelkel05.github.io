@@ -63,11 +63,12 @@ CÓDIGO JS ACTUAL:
 ARCHIVOS DE IMAGEN DISPONIBLES EN EL REPOSITORIO:
 {texto_imagenes}
 
-- Cmabios en geeneral:
+- Cambios en general: Las imagenes se ven muy pixeladas, si hay alguna manera de solucionarlo, hazlo, si no, busca en cualquier pagia de imagenes gratis "IIOT" y mete las imagenes (Es decir, conseguir las 
+url y cambiarlas por los archivos que ya esan puesas)
 - Cambios para index.html:
 - Cambios para mantenimiento.html:
 - Cambios para oee.html:
-- cambios para contacto.html: 
+- Cambios para contacto.html: 
 
 INSTRUCCIONES EXCLUSIVAS PARA ESTA ACTUALIZACIÓN:
 1. **MANTENER MULTIPÁGINA:** Revisa y actualiza los archivos HTML provistos. Si ya existen, mantén sus estructuras básicas y mejora su contenido basándote en lo que ya tienen escrito.
