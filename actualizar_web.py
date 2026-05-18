@@ -14,8 +14,8 @@ prompt = """
 Eres un desarrollador web experto. Crea una página web para una empresa de IIOT (Industrial Internet of Things) que ha generado un nuevo programa para el mantenimiento y el OEE de las máquinas. 
 Somos desarrolladores a pie de planta. El diseño debe ser futurista, similar (casi igual) a "www.Baliatekks.com", con azul oscuro como color principal.
 
-Por ahora la estructura esta bien, pero queiro que repitas el estilo de la imagen del titulo (El que tiene el efecto Parallax) y en donde hay espacios en negro, lo repitas, en este caso,
-los archivos se llaman "IIOT_2.jpeg" y "IIOT_3.jpeg", agregalos con <img src="*aqui van el nombre de uno de los archivos*">. tambien en el menu aparece Kentu.IIOT, quitale el ".IIOT"
+Por ahora la estructura esta bien, las dos imagenes tambien, pero te falta la imagen de titulo, no cambies el contenido ni la estructura, solo añade la imagen llamada "IIOT_Prueba.jpeg"
+detras del titulo con el efecto Parallax (como las otras dos fotos) con un <img src="IIOT_Prueba.jpeg">
 
 IMPORTANTE: 
 1. Divide el código en HTML, CSS y JavaScript.
