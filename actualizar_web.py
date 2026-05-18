@@ -49,11 +49,8 @@ CÓDIGO JS ACTUAL:
 ARCHIVOS DE IMAGEN DISPONIBLES EN EL REPOSITORIO:
 {texto_imagenes}
 
-Las etiquetas donde aparece el contenido(Poniendo uno commo ejemplo: 
-Mantenimiento Proactivo
-Anticipa fallos antes de que ocurran, reduciendo costes y tiempos de inactividad.
-), no se diferencian del fondo que tienen, puedes hacer que tengan un fondo mas claaro (es decir, el fondo donde estan las etiquetas mantenlas asi,
-pero el fondo del contenido de las etiquetas halo algo mas claro para que se puedan diferenciar)
+En Características Clave de la Plataforma Kentu, los contennidos de las etiquetas no estan centrados, tambien quiero que las cabezeras de las etiquetas (Las cabezeras que aparecen dentro) tengan un color
+de texto diferente al texto que aparecen debajo suyas
 
 }}
 Informes Personalizados
