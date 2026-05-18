@@ -1,14 +1,18 @@
-/* General Styles */
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+/* CSS Variables */
 :root {
-    --primary-blue: #0A192F; /* Dark Blue */
-    --accent-blue: #00ADB5; /* Teal Blue */
-    --accent-green: #64FFDA; /* Neon Green (for highlights) */
-    --text-light: #ccd6f6; /* Light Grey Blue */
-    --text-dark: #8892b0; /* Medium Grey Blue */
-    --background-dark: #000000; /* Pure Black for contrast with primary-blue */
-    --font-family-poppins: 'Poppins', sans-serif;
+    --primary-dark: #000F29; /* Deep dark blue, almost black */
+    --secondary-dark: #051A3B; /* Slightly lighter dark blue */
+    --accent-blue: #00BFFF; /* Deep Sky Blue, similar to Baliatekks */
+    --text-light: #E0E0E0;
+    --text-dark: #A0A0A0;
+    --font-orbitron: 'Orbitron', sans-serif;
+    --font-body: 'Roboto', sans-serif;
 }
 
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -20,117 +24,37 @@ html {
 }
 
 body {
-    font-family: var(--font-family-poppins);
+    font-family: var(--font-body);
     line-height: 1.6;
     color: var(--text-light);
-    background-color: var(--background-dark);
-    background-image: linear-gradient(180deg, var(--background-dark) 0%, var(--primary-blue) 100%); /* Subtle gradient for depth */
-    min-height: 100vh;
+    background-color: var(--primary-dark);
 }
 
+/* Container for content centering */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-h1, h2, h3 {
-    color: var(--accent-green);
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-h1 {
-    font-size: 3.5rem;
-    line-height: 1.2;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-}
-
-h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    position: relative;
-}
-
-h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--accent-blue);
-    margin: 15px auto 0;
-    border-radius: 5px;
-}
-
-h3 {
-    font-size: 1.75rem;
-    color: var(--accent-blue);
-}
-
-p {
-    margin-bottom: 1rem;
-    color: var(--text-dark);
-}
-
-a {
-    color: var(--accent-blue);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--accent-green);
-}
-
-.btn {
-    display: inline-block;
-    background-color: var(--accent-blue);
-    color: var(--primary-blue);
-    padding: 12px 25px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: var(--accent-green);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 173, 181, 0.4);
-}
-
-.secondary-btn {
-    background-color: transparent;
-    border: 2px solid var(--accent-blue);
-    color: var(--accent-blue);
-}
-
-.secondary-btn:hover {
-    background-color: var(--accent-blue);
-    color: var(--primary-blue);
-    box-shadow: 0 5px 15px rgba(0, 173, 181, 0.4);
-}
-
 /* Navbar */
 .navbar {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    padding: 15px 0;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-    background-color: rgba(10, 25, 47, 0.9); /* Slightly opaque dark blue */
-    padding: 15px 0;
-    transition: background-color 0.4s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar.scrolled {
-    background-color: var(--primary-blue);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 15, 41, 0.95); /* Slightly transparent dark blue */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    padding: 10px 0; /* Slightly reduce padding */
 }
 
 .navbar .container {
@@ -140,434 +64,339 @@ a:hover {
 }
 
 .navbar .logo {
-    color: var(--accent-green);
-    font-size: 1.8rem;
+    font-family: var(--font-orbitron);
     font-weight: 700;
-    letter-spacing: 1px;
+    font-size: 1.8em;
 }
 
-.navbar ul {
+.navbar .logo a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar .logo a:hover {
+    color: var(--text-light);
+}
+
+.navbar nav ul {
     list-style: none;
     display: flex;
 }
 
-.navbar ul li {
+.navbar nav ul li {
     margin-left: 30px;
 }
 
-.navbar ul li a {
+.navbar nav ul li a {
     color: var(--text-light);
-    font-weight: 400;
-    font-size: 1.1rem;
-    position: relative;
-    padding-bottom: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-.navbar ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--accent-blue);
-    transition: width 0.3s ease-in-out;
-}
-
-.navbar ul li a:hover::after {
-    width: 100%;
+.navbar nav ul li a:hover {
+    color: var(--accent-blue);
+    border-bottom: 2px solid var(--accent-blue);
 }
 
 /* Hero Section */
-.hero-section {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full viewport height */
+.hero {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    overflow: hidden;
-    padding-top: 80px; /* Account for fixed navbar */
+    color: var(--text-light);
+    background-image: url('IIOT_Prueba.jpeg'); /* First parallax image */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
-.parallax-img {
+.hero::before { /* Overlay for better text readability */
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    z-index: -1; /* Place behind content */
-    /* Transform will be applied via JS for parallax */
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
-    color: white;
-    max-width: 900px;
-    padding: 40px;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
-    border-radius: 15px;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 0 30px rgba(0, 173, 181, 0.3);
+    position: relative; /* Bring content above overlay */
+    z-index: 10;
 }
 
-.hero-content p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: var(--text-light);
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+.hero-title {
+    font-family: var(--font-orbitron);
+    font-size: 4.5em;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    color: var(--accent-blue);
+    text-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
+}
+
+.hero-subtitle {
+    font-size: 1.8em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-blue);
+    color: var(--primary-dark);
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: var(--font-orbitron);
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #00A6DA; /* Slightly darker accent */
+    transform: translateY(-3px);
 }
 
 /* Content Sections */
 .content-section {
     padding: 100px 0;
-    background-color: var(--primary-blue);
-    box-shadow: inset 0 8px 20px rgba(0, 0, 0, 0.2), inset 0 -8px 20px rgba(0, 0, 0, 0.2);
-    position: relative; /* For z-index stacking */
-    z-index: 2; /* Ensure content is above parallax backgrounds */
+    background-color: var(--secondary-dark);
+    text-align: center;
 }
 
 .content-section:nth-of-type(even) {
-    background-color: var(--background-dark); /* Alternate darker background */
+    background-color: var(--primary-dark);
 }
 
-.content-section .container {
-    max-width: 900px;
-}
-
-/* Background gradient for specific sections */
-.bg-gradient {
-    background: linear-gradient(to bottom, var(--primary-blue) 0%, #061220 100%);
-}
-
-/* Parallax Backgrounds */
-.parallax-background {
-    height: 60vh; /* Height for the parallax effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.section-title {
+    font-family: var(--font-orbitron);
+    font-size: 2.8em;
+    margin-bottom: 60px;
+    color: var(--accent-blue);
+    text-align: center;
     position: relative;
-    z-index: 1; /* Place behind content sections */
-    filter: brightness(0.7); /* Slightly darken for content contrast */
 }
 
-/* Problema Actual Section */
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-blue);
+    margin: 20px auto 0;
 }
 
-.feature-item {
-    background-color: rgba(10, 25, 47, 0.8);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 173, 181, 0.3);
-}
-
-.feature-item h3 {
-    color: var(--text-light);
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.feature-item p {
-    color: var(--text-dark);
-    font-size: 0.95rem;
-}
-
-.call-to-action-text {
-    text-align: center;
-    font-style: italic;
-    font-size: 1.1rem;
-    color: var(--accent-green);
-    margin-top: 2rem;
-    padding: 20px;
-    border: 1px solid var(--accent-blue);
-    border-radius: 8px;
-    background-color: rgba(0, 173, 181, 0.1);
-}
-
-/* Solucion Section */
-.solution-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 3rem;
-    text-align: center;
-}
-
-.solution-card {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 40px 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-    border-bottom: 3px solid var(--accent-blue);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.solution-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--accent-green);
-}
-
-.solution-card h3 {
-    color: var(--text-light);
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-}
-
-.solution-card p {
+.content-section p {
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    font-size: 1.1em;
     color: var(--text-dark);
 }
 
-/* Características Section */
-.features-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-top: 3rem;
+.content-section ul {
+    list-style: none;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    text-align: left;
+    padding-left: 20px;
+    color: var(--text-dark);
 }
 
-.feature-item-large {
-    background-color: rgba(10, 25, 47, 0.8);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+.content-section ul li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 30px;
+}
+
+.content-section ul li::before {
+    content: '→'; /* Futuristic arrow */
+    color: var(--accent-blue);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Parallax Sections (for IIOT_2.jpeg and IIOT_3.jpeg) */
+.parallax-section {
+    height: 60vh; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.parallax-section::before { /* Overlay for better text readability */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Darker overlay for these sections */
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 10;
+    padding: 0 20px;
+}
+
+.parallax-title {
+    font-family: var(--font-orbitron);
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: var(--accent-blue);
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+.parallax-section p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-light);
+}
+
+/* Specific parallax images */
+.parallax-2 {
+    background-image: url('IIOT_2.jpeg');
+}
+
+.parallax-3 {
+    background-image: url('IIOT_3.jpeg');
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 50px auto 30px auto;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    transition: background-color 0.3s ease;
+    gap: 20px;
 }
 
-.feature-item-large:hover {
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.feature-item-large .icon {
-    font-size: 3rem;
-    color: var(--accent-green);
-    margin-bottom: 15px;
-}
-
-.feature-item-large h3 {
-    color: var(--text-light);
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.feature-item-large p {
-    color: var(--text-dark);
-    font-size: 1rem;
-}
-
-/* Beneficios Section */
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 3rem;
-}
-
-.benefit-card {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 25px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    border-left: 5px solid var(--accent-green);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.benefit-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 173, 181, 0.4);
-}
-
-.benefit-card h3 {
-    color: var(--text-light);
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-}
-
-.benefit-card p {
-    color: var(--text-dark);
-    font-size: 0.95rem;
-}
-
-.benefit-card p strong {
-    color: var(--accent-green);
-}
-
-/* Contact Section */
-.contact-form {
-    max-width: 700px;
-    margin: 3rem auto 2rem auto;
-    padding: 30px;
-    background-color: rgba(10, 25, 47, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: var(--text-light);
-    font-weight: 600;
-}
-
-.form-group input, .form-group textarea {
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     border: 1px solid var(--accent-blue);
     border-radius: 5px;
-    background-color: #0d223f; /* Slightly lighter than primary-blue */
+    background-color: var(--primary-dark);
     color: var(--text-light);
-    font-family: var(--font-family-poppins);
-    font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: var(--font-body);
+    font-size: 1em;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.form-group input:focus, .form-group textarea:focus {
-    border-color: var(--accent-green);
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-blue);
+    background-color: var(--secondary-dark);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.3);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form .btn {
+    width: auto;
+    align-self: center;
+    cursor: pointer;
 }
 
 .contact-info {
-    text-align: center;
-    margin-top: 3rem;
-    font-size: 1.1rem;
+    margin-top: 40px;
+    font-size: 1.1em;
     color: var(--text-dark);
-}
-
-.contact-info a {
-    color: var(--accent-blue);
-    font-weight: 600;
 }
 
 /* Footer */
 footer {
-    background-color: var(--background-dark);
+    background-color: var(--primary-dark);
     color: var(--text-dark);
-    padding: 40px 0;
     text-align: center;
-    border-top: 1px solid rgba(0, 173, 181, 0.2);
-}
-
-footer .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-links {
-    margin-top: 20px;
-}
-
-.social-links a {
-    margin: 0 15px;
-    display: inline-block;
-}
-
-.social-links img {
-    width: 28px;
-    height: 28px;
-    transition: transform 0.3s ease;
-}
-
-.social-links img:hover {
-    transform: scale(1.15);
+    padding: 40px 0;
+    border-top: 1px solid rgba(0, 191, 255, 0.1);
 }
 
 /* Responsive Design */
-@media (max-width: 992px) {
-    h1 {
-        font-size: 3rem;
-    }
-    h2 {
-        font-size: 2rem;
-    }
-    .navbar ul {
-        margin-left: auto;
-    }
-    .navbar ul li {
-        margin-left: 20px;
-    }
-    .hero-content p {
-        font-size: 1.2rem;
-    }
-}
-
 @media (max-width: 768px) {
     .navbar .container {
         flex-direction: column;
-        text-align: center;
     }
-    .navbar .logo {
-        margin-bottom: 15px;
-    }
-    .navbar ul {
-        padding-top: 10px;
+
+    .navbar nav ul {
+        margin-top: 15px;
         flex-wrap: wrap;
         justify-content: center;
     }
-    .navbar ul li {
-        margin: 0 10px 10px 10px;
+
+    .navbar nav ul li {
+        margin: 0 15px 10px;
     }
-    h1 {
-        font-size: 2.5rem;
+
+    .hero-title {
+        font-size: 3em;
     }
-    h2 {
-        font-size: 1.8rem;
+
+    .hero-subtitle {
+        font-size: 1.2em;
     }
-    .hero-content {
-        padding: 30px;
+
+    .section-title, .parallax-title {
+        font-size: 2em;
     }
-    .feature-grid, .solution-card-grid, .features-list, .benefits-grid {
-        grid-template-columns: 1fr;
+
+    .parallax-section {
+        height: 50vh;
+    }
+
+    .content-section, .parallax-section {
+        padding: 60px 0;
     }
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 2rem;
+    .hero-title {
+        font-size: 2.5em;
     }
-    h2 {
-        font-size: 1.5rem;
+
+    .hero-subtitle {
+        font-size: 1em;
     }
-    .hero-content p {
-        font-size: 1rem;
-    }
+
     .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        padding: 12px 25px;
+        font-size: 1em;
     }
-    .content-section {
-        padding: 60px 0;
+
+    .section-title, .parallax-title {
+        font-size: 1.8em;
+        margin-bottom: 40px;
     }
-    .feature-item, .solution-card, .feature-item-large, .benefit-card {
-        padding: 20px;
-    }
-    .navbar ul li {
-        margin: 0 8px 8px 8px;
+
+    .content-section p, .parallax-section p {
+        font-size: 1em;
     }
 }
