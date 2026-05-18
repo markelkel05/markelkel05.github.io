@@ -11,11 +11,11 @@ os.makedirs("js", exist_ok=True)
 # --- PASO 2: GENERAR LA WEB CON GEMINI ---
 print("Generando el código de la web...")
 prompt = """
-Eres un desarrollador web experto. Crea una página web para una empresa de IIOT (Industrial Internet of Things) que ha generado un nuevo programa para el mantenimiento y el OEE de las máquinas. 
+Eres un desarrollador web experto. Crea una página web para una empresa de IIOT (Industrial Internet of Things) para la empresa Kentu, que ha generado un nuevo programa para el mantenimiento y el OEE de las máquinas. 
 Somos desarrolladores a pie de planta. El diseño debe ser futurista, similar (casi igual) a "www.Baliatekks.com", con azul oscuro como color principal.
 
-La visualicación esta roto, Tambien necesito que añadas las fotos que hay en el repositorio con el efecto Parallax, una de ellas tiene que ir con el titulo, y los otros como separación entre diferentes
-contenidos. NECESITO QUE AÑADAS LAs FOTOS CON ESE EFECTO EN LOS SITIOS QUE TE HE PEDIDO, YA TE LO HE PEDIDO 7 VECES Y O LOS HAS AÑADIDO. Cambia el css y los js si son necesarios para añadir las fotos.
+Necesito que añadas las imagenes que hay en el repositorio con el efecto Parallax al HTML, pero no rompas la estructura, se ve bien, si vas a cambiar algo, arreglalo cambiando el css o js para que siga siendo visible,
+POR FAVOR AÑADE LAS IMMAGENES DONDE SE DEBEN (El titulo y las separaciones entre contenido, donde estan las cabeceras).
 
 IMPORTANTE: 
 1. Divide el código en HTML, CSS y JavaScript.
