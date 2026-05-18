@@ -299,6 +299,14 @@ a:hover {
     color: var(--accent-blue); /* Different color for heading as requested */
 }
 
+/* Ensure all card/item titles are accent blue as requested by user */
+.feature-card h3,
+.feature-item h3,
+.advantage-card h3,
+.about-vision h3 {
+    color: var(--accent-blue);
+}
+
 /* Hover for cards/items in odd content-sections (i.e., with var(--medium-blue) background) */
 .feature-card:hover, .advantage-card:hover {
     transform: translateY(-5px);
