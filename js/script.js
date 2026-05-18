@@ -1,7 +1,8 @@
-// js/script.js
-
+// script.js
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for navigation links
+    console.log('Kentu IIOT website loaded.');
+
+    // Optional: Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -12,25 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add a class to the navbar on scroll for styling changes (e.g., shadow, background)
+    // Optional: Add a class to navbar on scroll for styling changes
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) { // After scrolling down 50px
+        if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
     });
-
-    // Optional: Add a simple animation for hero elements on load (like fade-in)
-    const heroContent = document.querySelector('.hero-content');
-    if (heroContent) {
-        heroContent.style.opacity = '0';
-        heroContent.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-            heroContent.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
-            heroContent.style.opacity = '1';
-            heroContent.style.transform = 'translateY(0)';
-        }, 100); // Small delay to ensure CSS is loaded
-    }
 });

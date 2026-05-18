@@ -1,18 +1,16 @@
-/* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'); /* For general text */
 
-/* CSS Variables */
 :root {
-    --primary-dark: #000F29; /* Deep dark blue, almost black */
-    --secondary-dark: #051A3B; /* Slightly lighter dark blue */
-    --accent-blue: #00BFFF; /* Deep Sky Blue, similar to Baliatekks */
-    --text-light: #E0E0E0;
-    --text-dark: #A0A0A0;
-    --font-orbitron: 'Orbitron', sans-serif;
-    --font-body: 'Roboto', sans-serif;
+    --primary-blue: #0A0A2A; /* Very dark blue, almost black */
+    --secondary-blue: #1A1A4A; /* Slightly lighter dark blue */
+    --accent-blue: #007BFF; /* Bright blue for accents */
+    --text-color: #E0E0E0; /* Light grey for text */
+    --heading-color: #FFFFFF; /* White for headings */
+    --gradient-start: #000000;
+    --gradient-end: #0A0A2A;
 }
 
-/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -24,37 +22,71 @@ html {
 }
 
 body {
-    font-family: var(--font-body);
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background: var(--gradient-start); /* Dark background */
+    background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
     line-height: 1.6;
-    color: var(--text-light);
-    background-color: var(--primary-dark);
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Container for content centering */
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #4CAF50; /* A green accent on hover, or a lighter blue */
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 2rem;
 }
 
 /* Navbar */
 .navbar {
-    background-color: var(--primary-dark);
-    color: var(--text-light);
-    padding: 15px 0;
     position: fixed;
-    width: 100%;
     top: 0;
     left: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 42, 0.9); /* Slightly transparent dark blue */
+    padding: 1rem 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar.scrolled {
-    background-color: rgba(0, 15, 41, 0.95); /* Slightly transparent dark blue */
+    background-color: rgba(0, 0, 0, 0.95); /* Even darker when scrolled */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-    padding: 10px 0; /* Slightly reduce padding */
 }
 
 .navbar .container {
@@ -64,280 +96,221 @@ body {
 }
 
 .navbar .logo {
-    font-family: var(--font-orbitron);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: var(--heading-color);
     font-weight: 700;
-    font-size: 1.8em;
 }
 
-.navbar .logo a {
-    color: var(--accent-blue);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.navbar .logo a:hover {
-    color: var(--text-light);
-}
-
-.navbar nav ul {
+.nav-links {
     list-style: none;
     display: flex;
 }
 
-.navbar nav ul li {
-    margin-left: 30px;
+.nav-links li {
+    margin-left: 2rem;
 }
 
-.navbar nav ul li a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-size: 1.1em;
-    padding: 5px 0;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar nav ul li a:hover {
-    color: var(--accent-blue);
-    border-bottom: 2px solid var(--accent-blue);
+.nav-links a:hover {
+    background-color: var(--accent-blue);
+    color: var(--heading-color);
 }
 
 /* Hero Section */
-.hero {
+.hero-section {
+    position: relative;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: var(--text-light);
-    background-image: url('IIOT_Prueba.jpeg'); /* First parallax image */
-    background-attachment: fixed;
+    color: var(--heading-color);
+
+    /* Parallax Background 1 */
+    background-image: url('IIOT_Prueba.jpeg'); /* Image 1 */
     background-size: cover;
     background-position: center;
-    position: relative;
-}
-
-.hero::before { /* Overlay for better text readability */
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background-attachment: fixed; /* Parallax effect */
+    -webkit-background-size: cover; /* For older browsers */
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 
 .hero-content {
-    position: relative; /* Bring content above overlay */
-    z-index: 10;
-}
-
-.hero-title {
-    font-family: var(--font-orbitron);
-    font-size: 4.5em;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    color: var(--accent-blue);
-    text-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
-}
-
-.hero-subtitle {
-    font-size: 1.8em;
-    margin-bottom: 40px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
+    padding: 3rem 4rem;
+    border-radius: 10px;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 300;
+    margin-top: 60px; /* Offset for fixed navbar */
 }
 
-.btn {
-    display: inline-block;
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
     background-color: var(--accent-blue);
-    color: var(--primary-dark);
-    padding: 15px 30px;
+    color: var(--heading-color);
+    padding: 1rem 2rem;
+    border: none;
     border-radius: 5px;
-    text-decoration: none;
-    font-family: var(--font-orbitron);
-    font-weight: 700;
-    font-size: 1.1em;
+    font-size: 1.1rem;
+    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
 }
 
-.btn:hover {
-    background-color: #00A6DA; /* Slightly darker accent */
+.cta-button:hover {
+    background-color: #4CAF50; /* A green tint on hover */
     transform: translateY(-3px);
+}
+
+.cta-button.secondary {
+    background-color: var(--secondary-blue);
+    border: 1px solid var(--accent-blue);
+}
+
+.cta-button.secondary:hover {
+    background-color: var(--accent-blue);
+    border-color: var(--secondary-blue);
 }
 
 /* Content Sections */
 .content-section {
-    padding: 100px 0;
-    background-color: var(--secondary-dark);
-    text-align: center;
+    padding: 6rem 0;
+    background-color: var(--secondary-blue); /* Dark blue background for content */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle separator */
 }
 
-.content-section:nth-of-type(even) {
-    background-color: var(--primary-dark);
+.content-section:nth-child(odd) {
+    background-color: var(--primary-blue); /* Alternate background for contrast */
 }
 
-.section-title {
-    font-family: var(--font-orbitron);
-    font-size: 2.8em;
-    margin-bottom: 60px;
-    color: var(--accent-blue);
-    text-align: center;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 3px;
-    background-color: var(--accent-blue);
-    margin: 20px auto 0;
-}
-
-.content-section p {
-    max-width: 900px;
-    margin: 0 auto 30px auto;
-    font-size: 1.1em;
-    color: var(--text-dark);
-}
-
-.content-section ul {
-    list-style: none;
-    max-width: 900px;
-    margin: 0 auto 30px auto;
+.content-section .container {
     text-align: left;
-    padding-left: 20px;
-    color: var(--text-dark);
 }
 
-.content-section ul li {
-    margin-bottom: 15px;
-    position: relative;
-    padding-left: 30px;
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
 }
 
-.content-section ul li::before {
-    content: '→'; /* Futuristic arrow */
+.feature-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.feature-item h3 {
     color: var(--accent-blue);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-    font-size: 1.2em;
+    margin-bottom: 1rem;
 }
 
-/* Parallax Sections (for IIOT_2.jpeg and IIOT_3.jpeg) */
-.parallax-section {
-    height: 60vh; /* Adjust height as needed */
+/* Parallax Dividers */
+.parallax-divider {
+    position: relative;
+    height: 70vh; /* Adjust height for visual impact */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: var(--text-light);
-    background-attachment: fixed;
+    color: var(--heading-color);
     background-size: cover;
     background-position: center;
-    position: relative;
+    background-attachment: fixed; /* Parallax effect */
+    overflow: hidden; /* Ensure content doesn't bleed */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 
-.parallax-section::before { /* Overlay for better text readability */
+.parallax-divider::before { /* Overlay for better text readability */
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Darker overlay for these sections */
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: 1;
 }
 
-.parallax-content {
+.parallax-divider .parallax-content {
     position: relative;
-    z-index: 10;
-    padding: 0 20px;
+    z-index: 2;
+    padding: 2rem;
+    max-width: 800px;
 }
 
-.parallax-title {
-    font-family: var(--font-orbitron);
-    font-size: 3.5em;
-    margin-bottom: 20px;
-    color: var(--accent-blue);
-    text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+.parallax-divider .parallax-content h3 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
 }
 
-.parallax-section p {
-    font-size: 1.4em;
-    margin-bottom: 30px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    color: var(--text-light);
+.parallax-divider .parallax-content p {
+    font-size: 1.4rem;
+    font-weight: 300;
 }
 
-/* Specific parallax images */
+/* Specific Parallax Backgrounds */
 .parallax-2 {
-    background-image: url('IIOT_2.jpeg');
+    background-image: url('IIOT_2.jpeg'); /* Image 2 */
 }
 
 .parallax-3 {
-    background-image: url('IIOT_3.jpeg');
+    background-image: url('IIOT_3.jpeg'); /* Image 3 */
 }
 
-/* Contact Form */
-.contact-form {
-    max-width: 600px;
-    margin: 50px auto 30px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid var(--accent-blue);
-    border-radius: 5px;
-    background-color: var(--primary-dark);
-    color: var(--text-light);
-    font-family: var(--font-body);
-    font-size: 1em;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
-}
-
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
-.contact-form textarea:focus {
-    border-color: var(--accent-blue);
-    background-color: var(--secondary-dark);
-    outline: none;
-}
-
-.contact-form textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-
-.contact-form .btn {
-    width: auto;
-    align-self: center;
-    cursor: pointer;
-}
-
-.contact-info {
-    margin-top: 40px;
-    font-size: 1.1em;
-    color: var(--text-dark);
-}
 
 /* Footer */
-footer {
-    background-color: var(--primary-dark);
-    color: var(--text-dark);
+.footer-section {
+    background-color: var(--primary-blue);
+    color: var(--text-color);
+    padding: 3rem 0;
     text-align: center;
-    padding: 40px 0;
-    border-top: 1px solid rgba(0, 191, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.footer-section p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.social-links a {
+    margin-left: 1.5rem;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.social-links a:hover {
+    color: var(--accent-blue);
 }
 
 /* Responsive Design */
@@ -346,57 +319,65 @@ footer {
         flex-direction: column;
     }
 
-    .navbar nav ul {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+    .nav-links {
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: space-around;
     }
 
-    .navbar nav ul li {
-        margin: 0 15px 10px;
+    .nav-links li {
+        margin: 0 0.5rem;
     }
 
-    .hero-title {
-        font-size: 3em;
+    h1 {
+        font-size: 2.5rem;
     }
 
-    .hero-subtitle {
-        font-size: 1.2em;
+    h2 {
+        font-size: 2rem;
     }
 
-    .section-title, .parallax-title {
-        font-size: 2em;
+    h3 {
+        font-size: 1.5rem;
     }
 
-    .parallax-section {
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .parallax-divider {
         height: 50vh;
     }
 
-    .content-section, .parallax-section {
-        padding: 60px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2.5em;
+    .parallax-divider .parallax-content h3 {
+        font-size: 2rem;
     }
 
-    .hero-subtitle {
-        font-size: 1em;
+    .parallax-divider .parallax-content p {
+        font-size: 1.1rem;
     }
 
-    .btn {
-        padding: 12px 25px;
-        font-size: 1em;
+    .content-section {
+        padding: 4rem 0;
     }
 
-    .section-title, .parallax-title {
-        font-size: 1.8em;
-        margin-bottom: 40px;
+    .footer-section .container {
+        flex-direction: column;
     }
 
-    .content-section p, .parallax-section p {
-        font-size: 1em;
+    .footer-section p {
+        margin-bottom: 1rem;
+    }
+
+    .social-links {
+        margin-top: 1rem;
+    }
+
+    .social-links a {
+        margin: 0 0.8rem;
     }
 }
