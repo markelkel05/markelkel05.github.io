@@ -278,6 +278,12 @@ a:hover {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* Apply accent blue to all feature card and advantage card headings */
+.feature-card h3,
+.advantage-card h3 {
+    color: var(--accent-blue); /* All card headings are now blue */
+}
+
 /* Base styles for feature-item */
 .feature-item {
     background-color: var(--medium-blue-lighter); /* Changed: Lighter than var(--medium-blue) section background */
@@ -288,7 +294,7 @@ a:hover {
     text-align: center; /* Centered content as requested */
 }
 
-/* Specific styling for feature-item headings */
+/* Specific styling for feature-item headings (already blue) */
 .feature-item h3 {
     color: var(--accent-blue); /* Different color for heading as requested */
 }
