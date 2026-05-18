@@ -49,7 +49,15 @@ CÓDIGO JS ACTUAL:
 ARCHIVOS DE IMAGEN DISPONIBLES EN EL REPOSITORIO:
 {texto_imagenes}
 
-La estructura y el contenido esta ben, tambien la paleta de colores y el js, pero si puedes que las imagenes no se vean pixeladas por hacerse mas grande, solucionalo, si no, no hagas ningun cambio.
+Hay un error en el apartado de "Características Clave de la Plataforma Kentu": al visualizarlo, una de las etiquetas tiene un "}", rompiendo las siguentes etiquetas(Alarmas y Notificaciones Inteligentes
+Configura umbrales y recibe notificaciones instantáneas ante desviaciones o posibles fallos.
+
+}
+Informes Personalizados
+Genera informes detallados sobre el rendimiento, el consumo energético y las tendencias de mantenimiento.
+
+Integración Flexible
+Compatible con una amplia gama de equipos y sistemas existentes en tu línea de producción.), soluciona el problema
 
 INSTRUCCIONES EXCLUSIVAS:
 1. Modifica el código anterior para integrar las imágenes de la lista usando el efecto Parallax (background-attachment: fixed).
