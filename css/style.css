@@ -343,6 +343,29 @@ a:hover {
     color: var(--text-light-grey);
 }
 
+/* New style for .about-vision */
+.about-vision {
+    background-color: var(--medium-blue-lighter); /* Consistent with cards */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    margin-top: 40px; /* Add some space from the preceding paragraph */
+    max-width: 800px; /* Limit width like other content */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* Center content */
+}
+
+.about-vision h3 {
+    color: var(--accent-blue); /* Consistent with feature-item headings */
+    margin-bottom: 0.8em;
+}
+
+.about-vision p {
+    color: var(--text-light-grey);
+    margin-bottom: 0;
+}
+
 /* Parallax Sections */
 .parallax-section {
     background-attachment: fixed;
@@ -381,8 +404,14 @@ a:hover {
 
 .separator-content h2 {
     font-size: 3em;
-    margin-bottom: 0;
+    margin-bottom: 0.5em; /* Adjusted margin to accommodate new paragraph */
     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.separator-content p {
+    font-size: 1.2em;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
 /* CTA Section */
