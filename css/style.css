@@ -191,7 +191,7 @@ a:hover {
     text-align: center;
     position: relative;
     color: var(--text-white);
-    background-image: url('img/hero-kentu.jpg'); /* Placeholder image */
+    /* background-image: url('img/hero-kentu.jpg'); Removed as it's now set inline */
     background-size: cover;
     background-position: center;
     padding: 100px 0;
