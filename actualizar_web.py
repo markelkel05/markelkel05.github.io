@@ -16,24 +16,43 @@ if os.path.exists(carpeta_imagenes):
 
 texto_imagenes = "\n".join([f"- {img}" for img in imagenes_disponibles])
 
-# --- PASO 2: LEER CÓDIGO ACTUAL ---
-html_actual = ""
+# --- PASO 2: LEER CÓDIGO ACTUAL DE TODAS LAS PÁGINAS ---
+# Inicializamos todas las variables vacías por si es la primera ejecución
+html_index_actual = ""
+html_mantenimiento_actual = ""
+html_oee_actual = ""
+html_contacto_actual = ""
 css_actual = ""
 js_actual = ""
 
 if os.path.exists("index.html"):
-    with open("index.html", "r", encoding="utf-8") as f: html_actual = f.read()
+    with open("index.html", "r", encoding="utf-8") as f: html_index_actual = f.read()
+if os.path.exists("mantenimiento.html"):
+    with open("mantenimiento.html", "r", encoding="utf-8") as f: html_mantenimiento_actual = f.read()
+if os.path.exists("oee.html"):
+    with open("oee.html", "r", encoding="utf-8") as f: html_oee_actual = f.read()
+if os.path.exists("contacto.html"):
+    with open("contacto.html", "r", encoding="utf-8") as f: html_contacto_actual = f.read()
 if os.path.exists("css/style.css"):
     with open("css/style.css", "r", encoding="utf-8") as f: css_actual = f.read()
 if os.path.exists("js/script.js"):
     with open("js/script.js", "r", encoding="utf-8") as f: js_actual = f.read()
 
-# --- PASO 3: CREAR EL PROMPT PURO DE CÓDIGO ---
-print("Enviando códigos e instrucciones para crear web multipágina a Gemini...")
+# --- PASO 3: CREAR EL PROMPT CON TODO EL CONTEXTO ---
+print("Enviando todos los códigos de la web multipágina e imágenes a Gemini...")
 
 prompt = f"""
-CÓDIGO HTML ACTUAL (Inicio):
-{html_actual}
+CÓDIGO HTML ACTUAL (index.html):
+{html_index_actual}
+
+CÓDIGO HTML ACTUAL (mantenimiento.html):
+{html_mantenimiento_actual}
+
+CÓDIGO HTML ACTUAL (oee.html):
+{html_oee_actual}
+
+CÓDIGO HTML ACTUAL (contacto.html):
+{html_contacto_actual}
 
 CÓDIGO CSS ACTUAL:
 {css_actual}
@@ -44,25 +63,19 @@ CÓDIGO JS ACTUAL:
 ARCHIVOS DE IMAGEN DISPONIBLES EN EL REPOSITORIO:
 {texto_imagenes}
 
-Generame nuevas paginas y metelas al menu.
-
 INSTRUCCIONES EXCLUSIVAS PARA ESTA ACTUALIZACIÓN:
-1. **NUEVAS PÁGINAS:** Separa el contenido en diferentes archivos HTML. Necesito que crees el código para estas páginas:
-   - index.html (Página de inicio principal)
-   - mantenimiento.html (Información sobre Mantenimiento IIOT)
-   - oee.html (Análisis OEE)
-   - contacto.html (Formulario e información de contacto)
-2. **MENÚ DE NAVEGACIÓN:** En TODAS las páginas (HTMLs), actualiza la barra de navegación (menú) para que incluya enlaces funcionales a estas nuevas páginas (ej. <a href="mantenimiento.html">Mantenimiento</a>).
-3. **DISEÑO PARALLAX:** Modifica el código para integrar las imágenes de la lista usando el efecto Parallax (background-attachment: fixed) en los fondos y separadores.
-4. **ESTILOS DE TÍTULOS:** En la sección "Tecnología en el Corazón de Kentu", haz que todos los títulos de las etiquetas (por ejemplo: "Mantenimiento Predictivo Inteligente", "Informes Personalizados", "Integración Flexible", etc.) sean de color azul. Mantén el contenido del texto tal como está.
-5. El CSS y JS deben ser globales y servir para todas las páginas creados sin romper la estructura visual previa. Manten la paleta azul oscuro futurista.
+1. **MANTENER MULTIPÁGINA:** Revisa y actualiza los archivos HTML provistos. Si ya existen, mantén sus estructuras básicas y mejora su contenido basándote en lo que ya tienen escrito.
+2. **MENÚ DE NAVEGACIÓN:** Asegúrate de que en TODAS las páginas (HTMLs), la barra de navegación (menú) tenga los enlaces funcionales correctos entre ellas.
+3. **DISEÑO PARALLAX:** Integra las imágenes de la lista usando el efecto Parallax (background-attachment: fixed) en los fondos y separadores de los archivos que lo requieran.
+4. **ESTILOS DE TÍTULOS:** En la sección "Tecnología en el Corazón de Kentu" (o secciones equivalentes de características), haz que todos los títulos de las etiquetas (por ejemplo: "Mantenimiento Predictivo Inteligente", "Informes Personalizados", "Integración Flexible", etc.) sean de color azul. Mantén el contenido del texto tal como está.
+5. El CSS y JS deben seguir siendo globales, óptimos para todas las páginas y mantener la estética azul oscura futurista.
 
-Devuelve ÚNICAMENTE un objeto JSON válido con esta estructura exacta, añadiendo las claves para los nuevos archivos HTML:
+Devuelve ÚNICAMENTE un objeto JSON válido con esta estructura exacta:
 {{
-  "html_index": "código para index.html aquí",
-  "html_mantenimiento": "código para mantenimiento.html aquí",
-  "html_oee": "código para oee.html aquí",
-  "html_contacto": "código para contacto.html aquí",
+  "html_index": "código para index.html modificado aquí",
+  "html_mantenimiento": "código para mantenimiento.html modificado aquí",
+  "html_oee": "código para oee.html modificado aquí",
+  "html_contacto": "código para contacto.html modificado aquí",
   "css": "código css global modificado aquí",
   "js": "código javascript global modificado aquí"
 }}
@@ -80,11 +93,9 @@ try:
 
     codigo = json.loads(response.text.strip())
     
-    # Asegurar que las carpetas de destino existen antes de escribir
     os.makedirs("css", exist_ok=True)
     os.makedirs("js", exist_ok=True)
     
-    # Guardar todos los archivos HTML por separado
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(codigo.get("html_index", ""))
         
@@ -97,14 +108,13 @@ try:
     with open("contacto.html", "w", encoding="utf-8") as f:
         f.write(codigo.get("html_contacto", ""))
         
-    # Guardar CSS y JS
     with open("css/style.css", "w", encoding="utf-8") as f:
         f.write(codigo.get("css", ""))
         
     with open("js/script.js", "w", encoding="utf-8") as f:
         f.write(codigo.get("js", ""))
         
-    print("¡Sitio web multipágina generado con éxito!")
+    print("¡Sitio web multipágina actualizado con éxito manteniendo todo el contexto!")
 
 except Exception as e:
     print(f"Error en el proceso: {e}")
