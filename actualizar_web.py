@@ -49,7 +49,10 @@ CÓDIGO JS ACTUAL:
 ARCHIVOS DE IMAGEN DISPONIBLES EN EL REPOSITORIO:
 {texto_imagenes}
 
-Las etiquetas donde aparece el contenido, no se diferencian del fondo ue tienen, puedes hacer que tengan un fondo mas claaro (es decir, el fondo donde estan las etiquetas mantenlas asi,
+Las etiquetas donde aparece el contenido(Poniendo uno commo ejemplo: 
+Mantenimiento Proactivo
+Anticipa fallos antes de que ocurran, reduciendo costes y tiempos de inactividad.
+), no se diferencian del fondo que tienen, puedes hacer que tengan un fondo mas claaro (es decir, el fondo donde estan las etiquetas mantenlas asi,
 pero el fondo del contenido de las etiquetas halo algo mas claro para que se puedan diferenciar)
 
 }}
