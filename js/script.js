@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
-            }
+            };
         });
-    }
+    };
 });

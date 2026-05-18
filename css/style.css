@@ -2,6 +2,7 @@
 :root {
     --dark-blue: #0A0F18;
     --medium-blue: #1A2436;
+    --medium-blue-lighter: #2A3446; /* Nuevo color para el fondo de las tarjetas en secciones oscuras */
     --accent-blue: #1E90FF;
     --light-blue: #ADD8E6;
     --text-white: #F8F8F8;
@@ -268,7 +269,7 @@ a:hover {
 }
 
 .feature-card, .advantage-card {
-    background-color: var(--dark-blue);
+    background-color: var(--dark-blue); /* Color por defecto para secciones impares (medium-blue) */
     padding: 30px;
     border-radius: 8px;
     text-align: center;
@@ -276,39 +277,36 @@ a:hover {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+.feature-item {
+    background-color: var(--dark-blue); /* Color por defecto para secciones impares (medium-blue) */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover para tarjetas en secciones impares */
 .feature-card:hover, .advantage-card:hover {
     transform: translateY(-5px);
     background-color: var(--medium-blue);
 }
-
-.feature-card h3, .advantage-card h3 {
-    color: var(--accent-blue);
-    margin-bottom: 10px;
-    font-size: 1.5em;
-}
-
-.feature-item {
-    background-color: var(--dark-blue);
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
-}
-
 .feature-item:hover {
     transform: translateY(-3px);
+    background-color: var(--medium-blue); /* Añadido hover background para feature-item */
 }
 
-.feature-item h3 {
-    color: var(--accent-blue);
-    font-size: 1.3em;
-    margin-bottom: 8px;
+/* Sobrescribe el color de fondo para tarjetas dentro de secciones pares (dark-blue) */
+.content-section:nth-child(even) .feature-card,
+.content-section:nth-child(even) .advantage-card,
+.content-section:nth-child(even) .feature-item {
+    background-color: var(--medium-blue); /* Fondo más claro para mejor contraste en sección oscura */
 }
 
-.feature-item p {
-    text-align: left;
-    font-size: 1em;
-    margin-bottom: 0;
+/* Hover para tarjetas en secciones pares */
+.content-section:nth-child(even) .feature-card:hover,
+.content-section:nth-child(even) .advantage-card:hover,
+.content-section:nth-child(even) .feature-item:hover {
+    background-color: var(--medium-blue-lighter); /* Usa el nuevo azul más claro para el efecto hover */
 }
 
 /* Parallax Sections */
