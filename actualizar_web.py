@@ -63,6 +63,12 @@ CÓDIGO JS ACTUAL:
 ARCHIVOS DE IMAGEN DISPONIBLES EN EL REPOSITORIO:
 {texto_imagenes}
 
+- Cmabios en geeneral:
+- Cambios para index.html:
+- Cambios para mantenimiento.html:
+- Cambios para oee.html:
+- cambios para contacto.html: 
+
 INSTRUCCIONES EXCLUSIVAS PARA ESTA ACTUALIZACIÓN:
 1. **MANTENER MULTIPÁGINA:** Revisa y actualiza los archivos HTML provistos. Si ya existen, mantén sus estructuras básicas y mejora su contenido basándote en lo que ya tienen escrito.
 2. **MENÚ DE NAVEGACIÓN:** Asegúrate de que en TODAS las páginas (HTMLs), la barra de navegación (menú) tenga los enlaces funcionales correctos entre ellas.
