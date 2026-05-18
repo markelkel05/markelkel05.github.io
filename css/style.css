@@ -268,8 +268,9 @@ a:hover {
     margin-top: 40px;
 }
 
+/* Base styles for feature-card, advantage-card */
 .feature-card, .advantage-card {
-    background-color: var(--dark-blue); /* Color por defecto para secciones impares (medium-blue) */
+    background-color: var(--medium-blue-lighter); /* Changed: Lighter than var(--medium-blue) section background */
     padding: 30px;
     border-radius: 8px;
     text-align: center;
@@ -277,36 +278,63 @@ a:hover {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* Base styles for feature-item (kept original padding/shadow) */
 .feature-item {
-    background-color: var(--dark-blue); /* Color por defecto para secciones impares (medium-blue) */
+    background-color: var(--medium-blue-lighter); /* Changed: Lighter than var(--medium-blue) section background */
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Hover para tarjetas en secciones impares */
+/* Hover for cards/items in odd content-sections (i.e., with var(--medium-blue) background) */
 .feature-card:hover, .advantage-card:hover {
     transform: translateY(-5px);
-    background-color: var(--medium-blue);
+    background-color: var(--light-blue); /* Changed: Stronger visual pop */
 }
+.feature-card:hover h3, .advantage-card:hover h3 {
+    color: var(--dark-blue); /* Ensure heading contrast on light hover background */
+}
+.feature-card:hover p, .advantage-card:hover p {
+    color: var(--dark-blue); /* Ensure paragraph contrast on light hover background */
+}
+
 .feature-item:hover {
     transform: translateY(-3px);
-    background-color: var(--medium-blue); /* Añadido hover background para feature-item */
+    background-color: var(--light-blue); /* Changed: Stronger visual pop */
+}
+.feature-item:hover h3 {
+    color: var(--dark-blue); /* Ensure heading contrast on light hover background */
+}
+.feature-item:hover p {
+    color: var(--dark-blue); /* Ensure paragraph contrast on light hover background */
 }
 
-/* Sobrescribe el color de fondo para tarjetas dentro de secciones pares (dark-blue) */
+/* Override for cards/items in even content-sections (i.e., with var(--dark-blue) background) */
 .content-section:nth-child(even) .feature-card,
-.content-section:nth-child(even) .advantage-card,
+.content-section:nth-child(even) .advantage-card {
+    background-color: var(--medium-blue); /* Already lighter than --dark-blue, no change */
+}
 .content-section:nth-child(even) .feature-item {
-    background-color: var(--medium-blue); /* Fondo más claro para mejor contraste en sección oscura */
+    background-color: var(--medium-blue); /* Already lighter than --dark-blue, no change */
 }
 
-/* Hover para tarjetas en secciones pares */
+/* Hover for cards/items in even content-sections */
 .content-section:nth-child(even) .feature-card:hover,
 .content-section:nth-child(even) .advantage-card:hover,
 .content-section:nth-child(even) .feature-item:hover {
-    background-color: var(--medium-blue-lighter); /* Usa el nuevo azul más claro para el efecto hover */
+    background-color: var(--medium-blue-lighter); /* Uses new lighter blue for hover */
+}
+/* Ensure text colors are maintained for even section hovers */
+.content-section:nth-child(even) .feature-card:hover h3,
+.content-section:nth-child(even) .advantage-card:hover h3,
+.content-section:nth-child(even) .feature-item:hover h3 {
+    color: var(--text-white);
+}
+.content-section:nth-child(even) .feature-card:hover p,
+.content-section:nth-child(even) .advantage-card:hover p,
+.content-section:nth-child(even) .feature-item:hover p {
+    color: var(--text-light-grey);
 }
 
 /* Parallax Sections */
