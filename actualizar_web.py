@@ -63,8 +63,7 @@ CÓDIGO JS ACTUAL:
 ARCHIVOS DE IMAGEN DISPONIBLES EN EL REPOSITORIO:
 {texto_imagenes}
 
-- Cambios en general: Las imagenes se ven muy pixeladas, si hay alguna manera de solucionarlo, hazlo, si no, busca en cualquier pagia de imagenes gratis "IIOT" y mete las imagenes (Es decir, conseguir las 
-url y cambiarlas por los archivos que ya esan puesas)
+- Cambios en general: Vuelve a usar las imaagenes que hay en el repositorio en la carpeta "imagenes", tambien, en el menu hay una opcion llamada "sobre nosotros", quitala
 - Cambios para index.html:
 - Cambios para mantenimiento.html:
 - Cambios para oee.html:
