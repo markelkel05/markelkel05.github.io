@@ -11,7 +11,8 @@ os.makedirs("js", exist_ok=True)
 # --- PASO 2: LEER CÓDIGO ACTUAL (LA CLAVE DEL ÉXITO) ---
 # Si ya tienes un diseño que te gusta, la IA necesita verlo para no romperlo.
 html_actual = ""
-css_actual = "/* General Styles */
+css_actual = "
+/* General Styles */
 :root {
     --dark-blue: #0A0F18;
     --medium-blue: #1A2436;
@@ -559,7 +560,60 @@ a:hover {
         justify-content: center;
     }
 }"
-js_actual = ""
+js_actual = "
+document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                // Adjust for fixed header height if necessary
+                const headerHeight = document.querySelector('.main-header').offsetHeight;
+                window.scrollTo({
+                    top: offsetTop - headerHeight - 20, // Added some extra padding
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Hamburger menu functionality
+    const burgerMenu = document.querySelector('.burger-menu');
+    const mainNav = document.querySelector('.main-nav');
+
+    if (burgerMenu) {
+        burgerMenu.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            burgerMenu.classList.toggle('active'); // Optional: Add a class for animating burger icon
+        });
+
+        // Close menu when a nav link is clicked (for mobile)
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    burgerMenu.classList.remove('active');
+                }
+            });
+        });
+    }
+
+    // Optional: Add a class to header on scroll for styling changes (e.g., background blur, shadow)
+    const header = document.querySelector('.main-header');
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    }
+});
+"
 
 try:
     if os.path.exists("index.html"):
