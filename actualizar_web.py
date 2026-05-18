@@ -49,8 +49,8 @@ CÓDIGO JS ACTUAL:
 ARCHIVOS DE IMAGEN DISPONIBLES EN EL REPOSITORIO:
 {texto_imagenes}
 
-Hay un error en el apartado de "Características Clave de la Plataforma Kentu": al visualizarlo, una de las etiquetas tiene un "}}" (solo ahy una llave, pero tengo que poner dos para que este codigo no rompa), rompiendo las siguentes etiquetas(Alarmas y Notificaciones Inteligentes
-Configura umbrales y recibe notificaciones instantáneas ante desviaciones o posibles fallos.
+Las etiquetas donde aparece el contenido, no se diferencian del fondo ue tienen, puedes hacer que tengan un fondo mas claaro (es decir, el fondo donde estan las etiquetas mantenlas asi,
+pero el fondo del contenido de las etiquetas halo algo mas claro para que se puedan diferenciar)
 
 }}
 Informes Personalizados
