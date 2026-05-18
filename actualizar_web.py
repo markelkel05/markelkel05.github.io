@@ -49,8 +49,7 @@ CÓDIGO JS ACTUAL:
 ARCHIVOS DE IMAGEN DISPONIBLES EN EL REPOSITORIO:
 {texto_imagenes}
 
-Añade las imagnes del repositorio en cada sitio que te digo, todos con el efecto Parallax: Detras del titulo, y los que quedan ponlas detras de las cabeceras de separacion 
-de cada cambio de tema del contenido.
+La estructura y el contenido esta ben, tambien la paleta de colores y el js, pero si puedes que las imagenes no se vean pixeladas por hacerse mas grande, solucionalo, si no, no hagas ningun cambio.
 
 INSTRUCCIONES EXCLUSIVAS:
 1. Modifica el código anterior para integrar las imágenes de la lista usando el efecto Parallax (background-attachment: fixed).
