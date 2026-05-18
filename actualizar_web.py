@@ -72,7 +72,11 @@ ARCHIVOS DE IMAGEN DISPONIBLES EN EL REPOSITORIO:
 INSTRUCCIONES EXCLUSIVAS PARA ESTA ACTUALIZACIÓN:
 1. **MANTENER MULTIPÁGINA:** Revisa y actualiza los archivos HTML provistos. Si ya existen, mantén sus estructuras básicas y mejora su contenido basándote en lo que ya tienen escrito.
 2. **MENÚ DE NAVEGACIÓN:** Asegúrate de que en TODAS las páginas (HTMLs), la barra de navegación (menú) tenga los enlaces funcionales correctos entre ellas.
-3. **DISEÑO PARALLAX:** Integra las imágenes de la lista usando el efecto Parallax (background-attachment: fixed) en los fondos y separadores de los archivos que lo requieran.
+3. **DISEÑO PARALLAX SIN PIXELAR:** Integra las imágenes de la lista usando el efecto Parallax. Para evitar que las imágenes se vean pixeladas, estiradas o deformadas, aplica obligatoriamente estas propiedades en el CSS de cada fondo:
+   - `background-attachment: fixed;`
+   - `background-size: cover;` (Esto hace que la imagen se adapte de forma inteligente al tamaño de la pantalla sin deformarse).
+   - `background-position: center;` (Centra la imagen para que se vea lo más importante).
+   - `background-repeat: no-repeat;`
 4. **ESTILOS DE TÍTULOS:** En la sección "Tecnología en el Corazón de Kentu" (o secciones equivalentes de características), haz que todos los títulos de las etiquetas (por ejemplo: "Mantenimiento Predictivo Inteligente", "Informes Personalizados", "Integración Flexible", etc.) sean de color azul. Mantén el contenido del texto tal como está.
 5. El CSS y JS deben seguir siendo globales, óptimos para todas las páginas y mantener la estética azul oscura futurista.
 
