@@ -3,178 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kentu | IIOT para Mantenimiento y OEE</title>
+    <title>Kairos - IIOT para Mantenimiento y OEE</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
+    <header class="navbar" id="navbar">
         <div class="container">
-            <h1 class="logo"><a href="#home">Kentu</a></h1>
-            <nav class="nav-menu">
+            <a href="#hero" class="logo">Kairos IIOT</a>
+            <nav>
                 <ul>
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#about">Sobre Nosotros</a></li>
-                    <li><a href="#program">El Programa</a></li>
-                    <li><a href="#features">Funcionalidades</a></li>
-                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="#problema">El Problema</a></li>
+                    <li><a href="#solucion">Nuestra Solución</a></li>
+                    <li><a href="#caracteristicas">Características</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section id="home" class="hero parallax-bg" style="background-image: url('https://source.unsplash.com/random/1920x1080/?factory,industry,technology,robots');">
-            <div class="hero-content">
-                <p class="hero-subtitle">Reimaginando la Eficiencia Industrial</p>
-                <h2 class="hero-title">Kentu IIOT: Mantenimiento Inteligente y OEE Optimizado</h2>
-                <a href="#program" class="btn btn-primary">Descubre el Programa</a>
-            </div>
-        </section>
+    <section id="hero" class="hero-section">
+        <img src="IIOT_Prueba.jpeg" alt="Tecnología IIOT para la industria" class="parallax-img">
+        <div class="hero-content">
+            <h1>Optimiza Tu Producción con Kairos</h1>
+            <p>Soluciones IIOT para Mantenimiento Predictivo y OEE en Tiempo Real</p>
+            <a href="#solucion" class="btn">Descubre Kairos</a>
+        </div>
+    </section>
 
-        <section id="about" class="section">
-            <div class="container">
-                <h3 class="section-title">Nuestra Visión</h3>
-                <p class="section-description">Somos desarrolladores a pie de planta que entendemos tus desafíos. Kentu IIOT nace de la necesidad real de transformar la gestión de activos y procesos industriales. Nuestra misión es empoderar a tu equipo con datos accionables y herramientas intuitivas para un futuro más productivo y sostenible.</p>
-                <div class="about-grid">
-                    <div class="about-item">
-                        <img src="https://source.unsplash.com/random/400x300/?gear,sensors" alt="Sensores Inteligentes">
-                        <h4>Datos en Tiempo Real</h4>
-                        <p>Recopila información crucial de tus máquinas al instante para decisiones rápidas y precisas.</p>
-                    </div>
-                    <div class="about-item">
-                        <img src="https://source.unsplash.com/random/400x300/?factory,dashboard" alt="Dashboard Interactivo">
-                        <h4>Análisis Accionables</h4>
-                        <p>Convierte datos brutos en insights significativos para optimizar operaciones y rendimiento.</p>
-                    </div>
-                    <div class="about-item">
-                        <img src="https://source.unsplash.com/random/400x300/?maintenance,worker" alt="Mantenimiento Predictivo">
-                        <h4>Control Total</h4>
-                        <p>Obtén una visión completa del estado de tus activos, predice fallos y planifica mantenimientos.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="image-break-section dark-bg">
-            <div class="container full-width-img-container">
-                <img src="IIOT_2.jpeg" alt="Tecnología IIOT 2" class="full-width-image">
-            </div>
-        </section>
-
-        <section id="program" class="section program-section">
-            <div class="container">
-                <h3 class="section-title">El Programa Kentu IIOT: Pilares de la Eficiencia</h3>
-                <div class="program-grid">
-                    <div class="program-item">
-                        <h4>Kentu Vision: Mantenimiento Predictivo Avanzado</h4>
-                        <ul>
-                            <li>Sensores inteligentes y análisis de vibraciones.</li>
-                            <li>Termografía y detección temprana de fallos.</li>
-                            <li>Alertas personalizables y diagnóstico remoto.</li>
-                            <li>Reducción significativa de tiempos de inactividad no planificados.</li>
-                        </ul>
-                    </div>
-                    <div class="program-item">
-                        <h4>Kentu Pulse: Optimización de OEE en Tiempo Real</h4>
-                        <ul>
-                            <li>Monitoreo continuo de Overall Equipment Effectiveness (OEE).</li>
-                            <li>Análisis de causas raíz para pérdidas de productividad.</li>
-                            <li>Informes personalizables y cuadros de mando intuitivos.</li>
-                            <li>Identificación de cuellos de botella y oportunidades de mejora.</li>
-                        </ul>
-                    </div>
-                    <div class="program-item">
-                        <h4>Kentu Connect: Integración y Escalabilidad</h4>
-                        <ul>
-                            <li>Compatible con tus sistemas SCADA, ERP y MES existentes.</li>
-                            <li>API robustas para una integración fluida.</li>
-                            <li>Arquitectura modular y escalable a cualquier tamaño de operación.</li>
-                            <li>Seguridad de datos de nivel industrial.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="centered-cta">
-                    <a href="#contact" class="btn btn-secondary">Agenda una Demostración</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="parallax-section parallax-bg" style="background-image: url('https://source.unsplash.com/random/1920x1080/?assembly,line,manufacturing');">
-            <div class="parallax-content">
-                <h3 class="parallax-title">Transforma tus Operaciones, Optimiza tu Futuro</h3>
-                <p class="parallax-description">Descubre cómo Kentu IIOT te ayuda a alcanzar nuevos niveles de rendimiento y confiabilidad.</p>
-            </div>
-        </section>
-
-        <section class="image-break-section dark-bg">
-            <div class="container full-width-img-container">
-                <img src="IIOT_3.jpeg" alt="Tecnología IIOT 3" class="full-width-image">
-            </div>
-        </section>
-
-        <section id="features" class="section features-section">
-            <div class="container">
-                <h3 class="section-title">Beneficios Clave de Kentu IIOT</h3>
-                <div class="benefits-grid">
-                    <div class="benefit-item">
-                        <i class="icon fas fa-chart-line"></i>
-                        <h4>Aumento de Productividad</h4>
-                        <p>Maximiza el tiempo de actividad de tus máquinas y el rendimiento general de la planta.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="icon fas fa-dollar-sign"></i>
-                        <h4>Reducción de Costos</h4>
-                        <p>Minimiza gastos inesperados por fallas y optimiza el uso de recursos.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="icon fas fa-cogs"></i>
-                        <h4>Mantenimiento Proactivo</h4>
-                        <p>Pasa de un mantenimiento reactivo a uno predictivo y preventivo, extendiendo la vida útil de tus activos.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="icon fas fa-brain"></i>
-                        <h4>Decisiones Informadas</h4>
-                        <p>Accede a análisis profundos para tomar las mejores decisiones estratégicas y operativas.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section contact-section dark-bg">
-            <div class="container">
-                <h3 class="section-title">Contáctanos</h3>
-                <p class="section-description">¿Listo para llevar tu planta al siguiente nivel? Contáctanos hoy para una consulta personalizada o una demostración de nuestro programa Kentu IIOT.</p>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Nombre Completo</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company">Empresa</label>
-                        <input type="text" id="company" name="company">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mensaje</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer dark-bg">
+    <section id="problema" class="content-section">
         <div class="container">
-            <p>&copy; 2023 Kentu. Todos los derechos reservados. | Desarrollado con pasión por la eficiencia.</p>
+            <h2>El Problema Actual: Mantenimiento Reactivo y Datos Incompletos</h2>
+            <p>En el corazón de cada planta industrial, las máquinas son el motor de la producción. Sin embargo, los métodos de mantenimiento tradicionales a menudo conducen a:</p>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Paradas Inesperadas</h3>
+                    <p>Fallas imprevistas que detienen la producción, causando grandes pérdidas y retrasos.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Ineficiencia Operacional</h3>
+                    <p>Dificultad para identificar cuellos de botella y optimizar el rendimiento de los equipos.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Costos Elevados</h3>
+                    <p>Gastos excesivos en reparaciones de emergencia y reemplazo prematuro de componentes.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Falta de Visibilidad</h3>
+                    <p>Ausencia de datos en tiempo real que impiden tomar decisiones informadas sobre el estado de las máquinas.</p>
+                </div>
+            </div>
+            <p class="call-to-action-text">Sabemos porque lo vivimos. Como desarrolladores a pie de planta, hemos experimentado de primera mano estos desafíos y hemos construido Kairos para superarlos.</p>
+        </div>
+    </section>
+
+    <div class="parallax-background" style="background-image: url('https://source.unsplash.com/random/1920x1080/?industry,factory');"></div>
+
+    <section id="solucion" class="content-section bg-gradient">
+        <div class="container">
+            <h2>Kairos: Tu Solución IIOT para la Industria 4.0</h2>
+            <p>Kairos es nuestro programa innovador diseñado para transformar tu estrategia de mantenimiento de reactiva a predictiva, y elevar tu OEE a nuevos niveles. Desarrollado por ingenieros de planta para ingenieros de planta, entendemos tus necesidades y hemos creado una herramienta intuitiva y potente.</p>
+            <div class="solution-card-grid">
+                <div class="solution-card">
+                    <h3>Mantenimiento Predictivo</h3>
+                    <p>Anticípate a las fallas detectando anomalías antes de que ocurran, minimizando el tiempo de inactividad.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Optimización de OEE</h3>
+                    <p>Obtén métricas de OEE en tiempo real, identifica causas de pérdidas y maximiza la eficiencia de tus máquinas.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Datos en Tiempo Real</h3>
+                    <p>Monitorea el rendimiento de tus equipos 24/7 con visualizaciones claras y accesibles.</p>
+                </div>
+            </div>
+            <a href="#contacto" class="btn secondary-btn">Solicita una Demo</a>
+        </div>
+    </section>
+
+    <div class="parallax-background" style="background-image: url('https://source.unsplash.com/random/1920x1080/?technology,data');"></div>
+
+    <section id="caracteristicas" class="content-section">
+        <div class="container">
+            <h2>Características Clave de Kairos</h2>
+            <div class="features-list">
+                <div class="feature-item-large">
+                    <span class="icon">⚡</span>
+                    <h3>Adquisición de Datos Robusta</h3>
+                    <p>Conexión segura y eficiente con PLC, sensores y otros dispositivos industriales.</p>
+                </div>
+                <div class="feature-item-large">
+                    <span class="icon">📈</span>
+                    <h3>Análisis Avanzado de Datos</h3>
+                    <p>Algoritmos de IA y Machine Learning para identificar patrones y predecir fallas.</p>
+                </div>
+                <div class="feature-item-large">
+                    <span class="icon">📊</span>
+                    <h3>Dashboards Personalizables</h3>
+                    <p>Visualiza tus métricas de OEE, estado de máquinas y alertas en paneles intuitivos y adaptados a tu operación.</p>
+                </div>
+                <div class="feature-item-large">
+                    <span class="icon">🚨</span>
+                    <h3>Alertas y Notificaciones Inteligentes</h3>
+                    <p>Recibe avisos instantáneos por correo, SMS o directamente en la plataforma ante cualquier anomalía crítica.</p>
+                </div>
+                <div class="feature-item-large">
+                    <span class="icon">📱</span>
+                    <h3>Acceso Móvil y Remoto</h3>
+                    <p>Monitorea tu planta desde cualquier lugar, en cualquier momento, a través de nuestra aplicación web optimizada.</p>
+                </div>
+                <div class="feature-item-large">
+                    <span class="icon">🛡️</span>
+                    <h3>Seguridad Industrial</h3>
+                    <p>Diseñado con los más altos estándares de ciberseguridad para proteger tus datos críticos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="parallax-background" style="background-image: url('https://source.unsplash.com/random/1920x1080/?factory,automation');"></div>
+
+    <section id="beneficios" class="content-section bg-gradient">
+        <div class="container">
+            <h2>Beneficios Tangibles con Kairos</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Aumenta el Tiempo de Actividad</h3>
+                    <p>Reduce paradas no planificadas en un <strong>hasta 30%</strong>.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Reduce Costos Operacionales</h3>
+                    <p>Disminuye los costos de mantenimiento y repuestos en <strong>hasta 25%</strong>.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Mejora la Calidad de Producción</h3>
+                    <p>Identifica y corrige problemas que afectan la calidad del producto final.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Toma Decisiones Inteligentes</h3>
+                    <p>Basadas en datos reales y análisis predictivos para una gestión más eficiente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="content-section">
+        <div class="container">
+            <h2>Hablemos de Tu Próximo Salto Industrial</h2>
+            <p>¿Listo para transformar tu operación con Kairos? Contáctanos hoy mismo para una demostración personalizada y descubre cómo podemos potenciar tu planta.</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Empresa:</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+            <div class="contact-info">
+                <p>También puedes encontrarnos en:</p>
+                <p>Email: <a href="mailto:info@kairosiiot.com">info@kairosiiot.com</a></p>
+                <p>Teléfono: <a href="tel:+34123456789">+34 123 456 789</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Kairos IIOT. Todos los derechos reservados.</p>
             <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" alt="Twitter"></a>
             </div>
         </div>
     </footer>
