@@ -278,13 +278,19 @@ a:hover {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Base styles for feature-item (kept original padding/shadow) */
+/* Base styles for feature-item */
 .feature-item {
     background-color: var(--medium-blue-lighter); /* Changed: Lighter than var(--medium-blue) section background */
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: center; /* Centered content as requested */
+}
+
+/* Specific styling for feature-item headings */
+.feature-item h3 {
+    color: var(--accent-blue); /* Different color for heading as requested */
 }
 
 /* Hover for cards/items in odd content-sections (i.e., with var(--medium-blue) background) */
