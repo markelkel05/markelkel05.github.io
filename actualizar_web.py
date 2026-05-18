@@ -14,13 +14,8 @@ prompt = """
 Eres un desarrollador web experto. Crea una página web para una empresa de IIOT (Industrial Internet of Things) que ha generado un nuevo programa para el mantenimiento y el OEE de las máquinas. 
 Somos desarrolladores a pie de planta. El diseño debe ser futurista, similar (casi igual) a "www.Baliatekks.com", con azul oscuro como color principal.
 
-Peticion anterior: La visualización de la pagina no se ve bien, nuestra empresa se llama Kentu, usa la fuente "Orbitron" de "Google Fonts" para los titulos y/o cabeceras. Manten las tres imagenes ("IIOT_Prueba.jpeg", "IIOT_2.jpeg", 
-"IIOT_3.jpeg") en su sitio, es decir, la primera imagen estara detras del titulo con el efecto Parallax, y las otras dos estaran e secciones apartadas (Es decir, cuando se cambie el tema del contenido,
-estara la cabecera del conenido con una imagen en effecto Parallax, por ahora seran las imagenes "IIOT_2.jpeg" y "IIOT_3.jpeg". las imagenes se añaden de esta forma: <img src="*el nombre de la imagen con
-su extension*">.
-
-Con la petición anterior la visualización ya esta corregida, pero me faltan las imagenes que te he pedido. SOLO AÑADE LAS IMAGENES COMO EN LA PETICIÓN ATERIOR,  NO CAMBIES EL CONTENIDO Y SOLO
-MODIFICA LA ESRUCTURA PARA AÑADIR LA IMAGEN.
+La visualicación esta roto, Tambien necesito que añadas las fotos que hay en el repositorio con el efecto Parallax, una de ellas tiene que ir con el titulo, y los otros como separación entre diferentes
+contenidos. NECESITO QUE AÑADAS LAs FOTOS CON ESE EFECTO EN LOS SITIOS QUE TE HE PEDIDO, YA TE LO HE PEDIDO 7 VECES Y O LOS HAS AÑADIDO. Cambia el css y los js si son necesarios para añadir las fotos.
 
 IMPORTANTE: 
 1. Divide el código en HTML, CSS y JavaScript.
