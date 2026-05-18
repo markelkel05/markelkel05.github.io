@@ -369,6 +369,7 @@ a:hover {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat; /* Added to prevent pixelation */
     position: relative;
     overflow: hidden;
 }
