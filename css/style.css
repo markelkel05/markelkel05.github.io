@@ -192,7 +192,6 @@ a:hover {
     text-align: center;
     position: relative;
     color: var(--text-white);
-    /* background-image: url('img/hero-kentu.jpg'); Removed as it's now set inline */
     background-size: cover;
     background-position: center;
     padding: 100px 0;
@@ -236,12 +235,12 @@ a:hover {
 /* Content Sections */
 .content-section {
     padding: 80px 0;
-    background-color: var(--medium-blue);
+    background-color: var(--medium-blue); /* Default background */
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-.content-section:nth-child(even) {
-    background-color: var(--dark-blue);
+.content-section-alt {
+    background-color: var(--dark-blue); /* Alternate (darker) background */
 }
 
 .content-section p {
@@ -269,92 +268,77 @@ a:hover {
 }
 
 /* Base styles for feature-card, advantage-card */
-.feature-card, .advantage-card {
-    background-color: var(--medium-blue-lighter); /* Changed: Lighter than var(--medium-blue) section background */
+.feature-card,
+.advantage-card {
+    background-color: var(--medium-blue-lighter); /* Default card background for 'content-section' */
     padding: 30px;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-/* Apply accent blue to all feature card and advantage card headings */
-.feature-card h3,
-.advantage-card h3 {
-    color: var(--accent-blue); /* All card headings are now blue */
+    display: block; /* Make sure a-wrapped cards are block-level */
+    color: inherit; /* Inherit text color for a-wrapped cards */
 }
 
 /* Base styles for feature-item */
 .feature-item {
-    background-color: var(--medium-blue-lighter); /* Changed: Lighter than var(--medium-blue) section background */
+    background-color: var(--medium-blue-lighter); /* Default item background for 'content-section' */
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     transition: transform 0.3s ease, background-color 0.3s ease;
-    text-align: center; /* Centered content as requested */
+    text-align: center;
 }
 
-/* Specific styling for feature-item headings (already blue) */
-.feature-item h3 {
-    color: var(--accent-blue); /* Different color for heading as requested */
-}
-
-/* Ensure all card/item titles are accent blue as requested by user */
+/* Apply accent blue to all feature card and advantage card headings */
 .feature-card h3,
 .feature-item h3,
 .advantage-card h3,
 .about-vision h3 {
-    color: var(--accent-blue);
+    color: var(--accent-blue); /* All card/item headings are now blue */
 }
 
-/* Hover for cards/items in odd content-sections (i.e., with var(--medium-blue) background) */
-.feature-card:hover, .advantage-card:hover {
-    transform: translateY(-5px);
-    background-color: var(--light-blue); /* Changed: Stronger visual pop */
-}
-.feature-card:hover h3, .advantage-card:hover h3 {
-    color: var(--dark-blue); /* Ensure heading contrast on light hover background */
-}
-.feature-card:hover p, .advantage-card:hover p {
-    color: var(--dark-blue); /* Ensure paragraph contrast on light hover background */
-}
-
+/* Hover for cards/items on default 'content-section' background */
+.feature-card:hover,
+.advantage-card:hover,
 .feature-item:hover {
-    transform: translateY(-3px);
-    background-color: var(--light-blue); /* Changed: Stronger visual pop */
+    transform: translateY(-5px);
+    background-color: var(--light-blue); /* Stronger visual pop */
 }
+.feature-card:hover h3,
+.advantage-card:hover h3,
 .feature-item:hover h3 {
     color: var(--dark-blue); /* Ensure heading contrast on light hover background */
 }
+.feature-card:hover p,
+.advantage-card:hover p,
 .feature-item:hover p {
     color: var(--dark-blue); /* Ensure paragraph contrast on light hover background */
 }
 
-/* Override for cards/items in even content-sections (i.e., with var(--dark-blue) background) */
-.content-section:nth-child(even) .feature-card,
-.content-section:nth-child(even) .advantage-card {
-    background-color: var(--medium-blue); /* Already lighter than --dark-blue, no change */
-}
-.content-section:nth-child(even) .feature-item {
-    background-color: var(--medium-blue); /* Already lighter than --dark-blue, no change */
+/* NEW: Styles for cards/items within 'content-section-alt' */
+.content-section-alt .feature-card,
+.content-section-alt .advantage-card,
+.content-section-alt .feature-item {
+    background-color: var(--medium-blue); /* Cards are slightly darker on the darker section */
 }
 
-/* Hover for cards/items in even content-sections */
-.content-section:nth-child(even) .feature-card:hover,
-.content-section:nth-child(even) .advantage-card:hover,
-.content-section:nth-child(even) .feature-item:hover {
-    background-color: var(--medium-blue-lighter); /* Uses new lighter blue for hover */
+/* NEW: Hover for cards/items in 'content-section-alt' */
+.content-section-alt .feature-card:hover,
+.content-section-alt .advantage-card:hover,
+.content-section-alt .feature-item:hover {
+    background-color: var(--medium-blue-lighter); /* Lighter than card itself for hover */
 }
-/* Ensure text colors are maintained for even section hovers */
-.content-section:nth-child(even) .feature-card:hover h3,
-.content-section:nth-child(even) .advantage-card:hover h3,
-.content-section:nth-child(even) .feature-item:hover h3 {
-    color: var(--text-white);
+/* Ensure text colors are maintained for content-section-alt hovers */
+.content-section-alt .feature-card:hover h3,
+.content-section-alt .advantage-card:hover h3,
+.content-section-alt .feature-item:hover h3 {
+    color: var(--text-white); /* White for better contrast on dark hover */
 }
-.content-section:nth-child(even) .feature-card:hover p,
-.content-section:nth-child(even) .advantage-card:hover p,
-.content-section:nth-child(even) .feature-item:hover p {
-    color: var(--text-light-grey);
+.content-section-alt .feature-card:hover p,
+.content-section-alt .advantage-card:hover p,
+.content-section-alt .feature-item:hover p {
+    color: var(--text-light-grey); /* Keep light grey */
 }
 
 /* New style for .about-vision */
@@ -516,6 +500,61 @@ a:hover {
     padding-top: 20px;
     border-top: 1px solid rgba(255,255,255,0.05);
     margin-top: 20px;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    padding: 30px;
+    background-color: var(--medium-blue-lighter);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-white);
+    font-weight: 600;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--medium-blue);
+    border-radius: 5px;
+    background-color: var(--dark-blue);
+    color: var(--text-light-grey);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 2px rgba(30, 144, 255, 0.5);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button.btn-primary {
+    width: auto;
+    display: block;
+    margin: 30px auto 0;
+    font-size: 1.1em;
+    padding: 15px 35px;
 }
 
 /* Responsive Design */
