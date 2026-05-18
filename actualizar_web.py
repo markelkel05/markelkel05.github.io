@@ -5,8 +5,6 @@ from google import genai
 client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
 # --- PASO 1: DETECTAR IMÁGENES EN EL REPOSITORIO ---
-# Supongamos que tus imágenes están en una carpeta llamada 'imagenes'
-# El script listará automáticamente todo lo que haya dentro.
 carpeta_imagenes = "imagenes" 
 imagenes_disponibles = []
 
@@ -21,9 +19,10 @@ if os.path.exists(carpeta_imagenes):
 texto_imagenes = "\n".join([f"- {img}" for img in imagenes_disponibles])
 
 # --- PASO 2: LEER CÓDIGO ACTUAL ---
-html_actual = "index.html"
-css_actual = "css/style.css"
-js_actual = "js/script.js"
+# Corregido: Inicializar como texto vacío para evitar errores si el archivo no existe
+html_actual = ""
+css_actual = ""
+js_actual = ""
 
 if os.path.exists("index.html"):
     with open("index.html", "r", encoding="utf-8") as f: html_actual = f.read()
@@ -36,6 +35,7 @@ if os.path.exists("js/script.js"):
 # --- PASO 3: CREAR EL PROMPT PURO DE CÓDIGO ---
 print("Enviando códigos y nombres de imágenes a Gemini...")
 
+# Aquí está la corrección: Las llaves sueltas ahora son dobles (}})
 prompt = f"""
 CÓDIGO HTML ACTUAL:
 {html_actual}
@@ -49,10 +49,10 @@ CÓDIGO JS ACTUAL:
 ARCHIVOS DE IMAGEN DISPONIBLES EN EL REPOSITORIO:
 {texto_imagenes}
 
-Hay un error en el apartado de "Características Clave de la Plataforma Kentu": al visualizarlo, una de las etiquetas tiene un "}", rompiendo las siguentes etiquetas(Alarmas y Notificaciones Inteligentes
+Hay un error en el apartado de "Características Clave de la Plataforma Kentu": al visualizarlo, una de las etiquetas tiene un "}}" (solo ahy una llave, pero tengo que poner dos para que este codigo no rompa), rompiendo las siguentes etiquetas(Alarmas y Notificaciones Inteligentes
 Configura umbrales y recibe notificaciones instantáneas ante desviaciones o posibles fallos.
 
-}
+}}
 Informes Personalizados
 Genera informes detallados sobre el rendimiento, el consumo energético y las tendencias de mantenimiento.
 
