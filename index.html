@@ -3,90 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kentu - IIOT para Mantenimiento y OEE</title>
+    <title>Kentu IIOT - Mantenimiento y OEE Industrial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="navbar">
+    <header class="main-header">
         <div class="container">
-            <a href="#home" class="logo">Kentu</a>
-            <ul class="nav-links">
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#about">Nuestro Programa</a></li>
-                <li><a href="#features">Características</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <header class="hero-section" id="home">
-        <div class="hero-content">
-            <h1>Kentu</h1>
-            <p>Impulsando el futuro del mantenimiento industrial inteligente.</p>
-            <button class="cta-button">Descubre Más</button>
+            <a href="#" class="logo">Kentu<span>IIOT</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#soluciones">Soluciones</a></li>
+                    <li><a href="#caracteristicas">Características</a></li>
+                    <li><a href="#nosotros">Sobre Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
-    <section class="content-section" id="about">
-        <div class="container">
-            <h2>Nuestro Programa Innovador</h2>
-            <p>En Kentu, hemos desarrollado una solución IIOT de vanguardia diseñada para transformar la forma en que gestionas tus activos industriales. Nuestro programa va más allá del monitoreo básico, ofreciendo un enfoque holístico para el mantenimiento predictivo y la optimización del OEE (Overall Equipment Effectiveness).</p>
-            <p>Con tecnología de punta, análisis de datos en tiempo real y una interfaz intuitiva, empoderamos a los equipos de planta para tomar decisiones informadas, reducir tiempos de inactividad no planificados y maximizar la productividad.</p>
-        </div>
-    </section>
+    <main>
+        <section id="inicio" class="hero parallax-section">
+            <div class="hero-content">
+                <h1>Kentu IIOT: Revolucionando el Mantenimiento y OEE Industrial</h1>
+                <p>Desbloquea el potencial de tus máquinas con nuestra plataforma inteligente de gestión.</p>
+                <a href="#soluciones" class="btn btn-primary">Descubre la Innovación</a>
+            </div>
+        </section>
 
-    <div class="parallax-divider parallax-2">
-        <div class="parallax-content">
-            <h3>Mantenimiento Predictivo</h3>
-            <p>Anticípate a las fallas antes de que ocurran.</p>
-        </div>
-    </div>
-
-    <section class="content-section" id="features">
-        <div class="container">
-            <h2>Características Clave</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <h3>Monitorización en Tiempo Real</h3>
-                    <p>Sensores IIOT avanzados recopilan datos de máquinas 24/7 para una visión completa del rendimiento.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Análisis Predictivo</h3>
-                    <p>Algoritmos de IA detectan patrones y anomalías, alertando sobre posibles fallas antes de que impacten la producción.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Optimización del OEE</h3>
-                    <p>Herramientas de análisis profundas para identificar cuellos de botella y mejorar la disponibilidad, rendimiento y calidad.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Interfaz Intuitiva</h3>
-                    <p>Cuadros de mando personalizables y alertas en tiempo real, accesibles desde cualquier dispositivo.</p>
+        <section id="soluciones" class="content-section">
+            <div class="container">
+                <h2>Nuestro Programa: La Nueva Era del Mantenimiento Predictivo</h2>
+                <p>En Kentu, entendemos los desafíos de la producción moderna. Nuestro programa avanzado de IIOT está diseñado para transformar la forma en que gestionas el mantenimiento y la eficiencia operativa de tus máquinas. Integrando sensores inteligentes, análisis de datos en tiempo real y algoritmos predictivos, te proporcionamos una visión sin precedentes sobre la salud y el rendimiento de tus activos. Di adiós a las paradas no planificadas y optimiza tu OEE como nunca antes.</p>
+                <div class="grid-3-cols">
+                    <div class="feature-card">
+                        <h3>Mantenimiento Proactivo</h3>
+                        <p>Anticipa fallos antes de que ocurran, reduciendo costes y tiempos de inactividad.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>OEE Optimizado</h3>
+                        <p>Identifica cuellos de botella y mejora la eficiencia general de tus equipos.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Decisiones Basadas en Datos</h3>
+                        <p>Accede a métricas claras y accionables para una gestión informada.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="parallax-divider parallax-3">
-        <div class="parallax-content">
-            <h3>Optimización OEE</h3>
-            <p>Maximiza la eficiencia y la productividad de tu planta.</p>
-        </div>
-    </div>
+        <section class="parallax-separator parallax-section" style="background-image: url('img/parallax1.jpg');">
+            <div class="separator-content">
+                <h2>Conectando tu Fábrica al Futuro</h2>
+            </div>
+        </section>
 
-    <section class="content-section" id="contact">
+        <section id="caracteristicas" class="content-section">
+            <div class="container">
+                <h2>Características Clave de la Plataforma Kentu</h2>
+                <p>Nuestra plataforma está equipada con funcionalidades de vanguardia para garantizar una operación sin interrupciones y una toma de decisiones inteligente.</p>
+                <div class="grid-2-cols">
+                    <div class="feature-item">
+                        <h3>Monitoreo en Tiempo Real</h3>
+                        <p>Visualiza el estado de tus máquinas 24/7 con dashboards intuitivos y personalizables.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Análisis Avanzado de OEE</h3>
+                        <p>Calcula y desglosa tu OEE para identificar oportunidades de mejora en disponibilidad, rendimiento y calidad.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Mantenimiento Basado en Condición</h3>
+                        <p>Recibe alertas y recomendaciones para el mantenimiento basadas en el estado real de los componentes.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Alarmas y Notificaciones Inteligentes</h3>
+                        <p>Configura umbrales y recibe notificaciones instantáneas ante desviaciones o posibles fallos.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Informes Personalizados</h3>
+                        <p>Genera informes detallados sobre el rendimiento, el consumo energético y las tendencias de mantenimiento.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Integración Flexible</h3>
+                        <p>Compatible con una amplia gama de equipos y sistemas existentes en tu línea de producción.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="parallax-separator parallax-section" style="background-image: url('img/parallax2.jpg');">
+            <div class="separator-content">
+                <h2>Datos que Impulsan tu Productividad</h2>
+            </div>
+        </section>
+
+        <section id="ventajas" class="content-section">
+            <div class="container">
+                <h2>Ventajas Tangibles para tu Operación</h2>
+                <p>Implementar Kentu IIOT no es solo una mejora tecnológica; es una inversión estratégica que se traduce en beneficios reales y medibles para tu empresa.</p>
+                <div class="grid-3-cols">
+                    <div class="advantage-card">
+                        <h3>Reducción de Costes Operativos</h3>
+                        <p>Minimiza el gasto en reparaciones de emergencia y maximiza la eficiencia energética.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <h3>Aumento de la Vida Útil de los Activos</h3>
+                        <p>Un mantenimiento óptimo prolonga la vida útil de tus máquinas, posponiendo costosas renovaciones.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <h3>Mejora Continua de Procesos</h3>
+                        <p>Identifica patrones y optimiza tus flujos de trabajo con información precisa y oportuna.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <h3>Mayor Seguridad en Planta</h3>
+                        <p>La prevención de fallos críticos reduce riesgos para el personal y el equipo.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <h3>Cumplimiento Normativo</h3>
+                        <p>Facilita la auditoría y el cumplimiento de estándares industriales gracias al registro detallado de datos.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <h3>Visibilidad Total</h3>
+                        <p>Obtén una visión holística de tu planta, desde la alta dirección hasta el personal de mantenimiento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="parallax-separator parallax-section" style="background-image: url('img/parallax3.jpg');">
+            <div class="separator-content">
+                <h2>Innovación al Alcance de tus Manos</h2>
+            </div>
+        </section>
+
+        <section id="nosotros" class="content-section">
+            <div class="container">
+                <h2>Sobre Kentu: Innovación Industrial a tu Servicio</h2>
+                <p>En Kentu, somos un equipo de desarrolladores a pie de planta, apasionados por la tecnología y dedicados a crear soluciones IIOT que realmente marcan la diferencia. Nuestra misión es empoderar a las industrias con herramientas inteligentes que simplifiquen el mantenimiento, optimicen la producción y impulsen la eficiencia. Con años de experiencia en entornos industriales, entendemos tus necesidades y hablamos tu idioma. Confía en Kentu para llevar tu operación al siguiente nivel de la Industria 4.0.</p>
+                <a href="#contacto" class="btn btn-secondary">Conoce a Nuestro Equipo</a>
+            </div>
+        </section>
+
+        <section id="contacto" class="cta-section">
+            <div class="container">
+                <h2>¿Listo para Transformar tu Producción?</h2>
+                <p>Agenda una demostración hoy mismo y lleva tu fábrica al siguiente nivel de eficiencia y productividad.</p>
+                <a href="#" class="btn btn-primary">Solicita una Demo</a>
+                <a href="#" class="btn btn-secondary">Contáctanos</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
         <div class="container">
-            <h2>¿Listo para el Futuro?</h2>
-            <p>Transforma tu operación con Kentu. Nuestro equipo está listo para ayudarte a implementar soluciones IIOT que realmente marcan la diferencia. Contacta con nosotros para una demostración personalizada.</p>
-            <button class="cta-button secondary">Contáctanos Hoy</button>
-        </div>
-    </section>
-
-    <footer class="footer-section">
-        <div class="container">
-            <p>&copy; 2024 Kentu. Todos los derechos reservados.</p>
-            <div class="social-links">
-                <a href="#">LinkedIn</a>
-                <a href="#">Twitter</a>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Kentu IIOT</h3>
+                    <p>Soluciones inteligentes para el mantenimiento y OEE industrial.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#soluciones">Soluciones</a></li>
+                        <li><a href="#caracteristicas">Características</a></li>
+                        <li><a href="#nosotros">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <p>Email: info@kentu.com</p>
+                    <p>Tel: +34 123 456 789</p>
+                    <div class="social-links">
+                        <a href="#"><img src="img/icon-linkedin.png" alt="LinkedIn"></a>
+                        <a href="#"><img src="img/icon-twitter.png" alt="Twitter"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Kentu IIOT. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
