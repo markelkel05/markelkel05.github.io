@@ -14,19 +14,23 @@ prompt = """
 Eres un desarrollador web experto. Crea una página web para una empresa de IIOT (Industrial Internet of Things) que ha generado un nuevo programa para el mantenimiento y el OEE de las máquinas. 
 Somos desarrolladores a pie de planta. El diseño debe ser futurista, similar (casi igual) a "www.Baliatekks.com", con azul oscuro como color principal.
 
-Por ahora la estructura esta bien, las dos imagenes tambien, pero te falta la imagen de titulo, no cambies el contenido ni la estructura, solo añade la imagen llamada "IIOT_Prueba.jpeg"
-detras del titulo con el efecto Parallax (como las otras dos fotos) con un <img src="IIOT_Prueba.jpeg">
+La visualización de la pagina no se ve bien, uestra empresa se llama Kentu, usa la fuente "Orbitron" de "Google Fonts" para los titulos y/o cabeceras. Manten las tres imagenes ("IIOT_Prueba.jpeg", "IIOT_2.jpeg", 
+"IIOT_3.jpeg") en su sitio, es decir, la primera imagen estara detras del titulo con el efecto Parallax, y las otras dos estaran e secciones apartadas (Es decir, cuando se cambie el tema del contenido,
+estara la cabecera del conenido con una imagen en effecto Parallax, por ahora seran las imagenes "IIOT_2.jpeg" y "IIOT_3.jpeg". las imagenes se añaden de esta forma: <img src="*el nombre de la imagen con
+su extension*">*
 
 IMPORTANTE: 
 1. Divide el código en HTML, CSS y JavaScript.
 2. El HTML DEBE estar enlazado a las carpetas correctas: <link rel="stylesheet" href="css/style.css"> y <script src="js/script.js"></script>.
-3. REQUISITO PARALLAX: Incluye secciones con Efecto Parallax amplio (background-attachment: fixed). Usa imágenes gratuitas de Unsplash para los fondos fijos (ejemplo: https://source.unsplash.com/random/1920x1080/?industry,factory,technology).
+3. REQUISITO PARALLAX: Incluye secciones con Efecto Parallax amplio (background-attachment: fixed).
 4. Devuelve ÚNICAMENTE un objeto JSON válido con esta estructura exacta, sin comillas Markdown:
 {
   "html": "código html aquí",
   "css": "código css aquí",
   "js": "código javascript aquí"
 }
+5. Si te digo que la estructura esta bien, no cambies como se ve, solo añade lo que te pida y (si es necesario) haz cambios para que al visualizarlo se vea commo esaba antes con e contenido añadido.
+  Lo mismo pasa con el contenido, a menos de que te diga de cambiar el contenido, no lo cambies (a contenido le digo lo que se muestra en modo texto en la página.
 """
 
 try:
