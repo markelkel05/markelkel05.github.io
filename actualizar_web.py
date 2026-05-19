@@ -70,33 +70,40 @@ CÓDIGO HTML ACTUAL DE LA WEB:
 VÍDEOS DISPONIBLES EN EL REPOSITORIO:
 {mapeo_videos_texto}
 
-INSTRUCCIONES DE ACTUALIZACIÓN:
-- Configuración general: En el menú de navegación, destaca la página actual en la que se encuentra el usuario (cambio de color al texto). Aplica esto en TODAS las páginas. Las imágenes Parallax deben incluir "IIOT" en su nombre y seguir el orden 4, 7 y 6 (o 4 y 7 si solo hay dos).
-    
-- Configuración de index.html: Añade dos fotos que empiecen con "OEE_" (Activo (2).png y HISTORICO.png), dos que empiecen con "MANTENIMIENTO_" (Working y Alarmas_Historico), la imagen de planificación, y la imagen "predictivo_plano" junto a "senal". NO CAMBIES EL TEXTO. Si es necesario, crea un apartado nuevo solo para las imágenes. Aplica un efecto CSS en estas imágenes para que se hagan MUCHO más grandes cuando el cursor pase por encima (efecto hover con transform: scale).
-    
-- Configuración de mantenimiento.html: Mete los dos vídeos que hay en esta página. NO CAMBIES EL CONTENIDO ACTUAL. Si es necesario, añade un nuevo apartado exclusivo para alojar los vídeos.
-    
-- Configuración de oee.html: No añadas imágenes aquí por ahora (se meterá un vídeo en el futuro). Solo actualiza lo del menú de navegación.
+INSTRUCCIONES DE ACTUALIZACIÓN OBLIGATORIAS (ANTI-PEREZA):
+ATENCIÓN: Tu tarea principal es MODIFICAR EL HTML para añadir las etiquetas <img> y <video>. No devuelvas el mismo HTML de antes, DEBES insertar el nuevo contenido donde se te pide.
 
-- Configuración de contacto.html: No modifiques el contenido, solo actualiza el menú de navegación.
+- Configuración general: En el menú de navegación, destaca la página actual en la que se encuentra el usuario (cambio de color al texto). Aplica esto en TODAS las páginas. 
+    Las imágenes Parallax deben incluir "IIOT" en su nombre y seguir el orden 4, 7 y 6 (o 4 y 7 si solo hay dos).
+    
+- Configuración de index.html:
+  1. Busca un buen lugar en el contenido y CREA un apartado nuevo para insertar imágenes.
+  2. AÑADE etiquetas <img> con los nombres exactos que te paso: Usa "OEE_ACTIVO (2).png", "OEE_HISTORICO.png", "MANTENIMIENTO_WORKING_PROGRAM (1).png", "MANTENIMIENTO_ALARMAS_HISTORICO.png", "planificacion.png", "predictivo_plano.png" y "senal.png" (búscalas en el índice de rutas que tienes abajo).
+  3. Aplica una clase CSS a estas imágenes para que tengan un efecto hover (`transform: scale(1.5); transition: transform 0.3s ease;`) para que se hagan MUCHO más grandes al pasar el cursor.
+    
+- Configuración de mantenimiento.html: CREA una sección nueva al final o donde encaje bien e INSERTA etiquetas <video> para los dos vídeos disponibles.
+    
+- Configuración de oee.html y contacto.html: Actualiza SOLO el menú de navegación.
 
 INSTRUCCIONES TÉCNICAS:
-1. MANTENIMIENTO: Usa el "CÓDIGO HTML ACTUAL" como base. Mantén la paleta azul oscuro.
+1. MANTENIMIENTO: Mantiene el texto de los párrafos intacto, pero SÍ debes cambiar el código HTML para inyectar los videos y las fotos.
 2. VÍDEOS: Si es un vídeo de fondo usa `<video src="RUTA" autoplay loop muted playsinline>` con `object-fit: cover`. Si es explicativo usa `<video src="RUTA" controls>`.
 3. PARALLAX: En el CSS usa siempre `background-attachment: fixed; background-size: cover; background-position: center; background-repeat: no-repeat;`.
 
-IMPORTANTE: Devuelve ÚNICAMENTE un objeto JSON válido. Debes devolver obligatoriamente las 4 páginas en el JSON para que el menú se actualice en todas:
+IMPORTANTE: Devuelve ÚNICAMENTE un objeto JSON válido. Debes devolver OBLIGATORIAMENTE LAS 4 PÁGINAS con su código COMPLETO, de principio a fin, sin recortar nada:
 {{
   "paginas": {{
-    "index.html": "código html actualizado aquí...",
-    "mantenimiento.html": "código html actualizado aquí...",
-    "oee.html": "código html actualizado aquí...",
-    "contacto.html": "código html actualizado aquí..."
+    "index.html": "código html COMPLETO y actualizado aquí...",
+    "mantenimiento.html": "código html COMPLETO y actualizado aquí...",
+    "oee.html": "código html COMPLETO y actualizado aquí...",
+    "contacto.html": "código html COMPLETO y actualizado aquí..."
   }},
   "css": "código css global aquí",
   "js": "código javascript global aquí"
 }}
+
+Índice de imágenes adjuntas para saber las RUTAS EXACTAS:
+{mapeo_imagenes_texto}
 """
 
 contenido_multimodal = [prompt] + archivos_subidos_gemini
@@ -117,15 +124,19 @@ try:
     
     paginas_generadas = codigo.get("paginas", {})
     
-    # Comprobación de seguridad para saber si la IA ha devuelto páginas
     if not paginas_generadas:
         print("Error: La IA no ha devuelto ninguna página en el JSON.")
         sys.exit(1)
         
     for nombre_archivo, contenido_html in paginas_generadas.items():
+        # Añadimos un pequeño comentario oculto al final del HTML con cada ejecución
+        # Esto OBLIGA a GitHub a detectar que el archivo HTML ha cambiado y forzar la subida
+        contenido_html += f"\n<!-- Actualizado por IA -->"
+        
         with open(nombre_archivo, "w", encoding="utf-8") as f:
             f.write(contenido_html)
-        print(f"Página guardada con éxito: {nombre_archivo}")
+        # El chivato nos dirá si la IA ha devuelto páginas vacías o con poco texto
+        print(f"Página guardada con éxito: {nombre_archivo} (Tamaño: {len(contenido_html)} caracteres)")
         
     with open("css/style.css", "w", encoding="utf-8") as f:
         f.write(codigo.get("css", ""))
@@ -135,6 +146,5 @@ try:
     print("¡Generación completada! Imágenes y vídeos han sido integrados.")
 
 except Exception as e:
-    # Ahora sí, si hay un error, GitHub se pondrá en rojo y nos avisará
     print(f"Error CRÍTICO en el proceso: {e}")
     sys.exit(1)
