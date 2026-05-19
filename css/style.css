@@ -372,7 +372,7 @@ a:hover {
 }
 
 #galeria-pantallas .feature-item:hover img {
-    transform: scale(1.15); /* Slightly larger scale for emphasis */
+    transform: scale(1.5); /* Changed from 1.15 to 1.5 for stronger visual pop */
 }
 
 /* New style for .about-vision */
