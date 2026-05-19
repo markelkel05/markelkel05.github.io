@@ -70,6 +70,22 @@ CÓDIGO HTML ACTUAL DE LA WEB:
 VÍDEOS DISPONIBLES EN EL REPOSITORIO:
 {mapeo_videos_texto}
 
+    - Configuración general (aqui te dire de cosas que cambiar en general, a pesar  que te diga que no cambies una pagina e especifico, esta seccion tiene mas importancia): Las imagenes que aparecen de 
+        fondo (Parallax) tienen que seguir estos pasos:
+            - Que en su nombre tengan IIOT
+            - Que sigan este orden: 4, 7 y 6. Si la pagina solo tiene 2, que sean 4 y 7, daa igual el orden.
+        
+    - Configuración de index.html: Aquí quiero que aparezcan dos fotos que empiecen con OEE_, dos que empiecen con MANTENIMIENTO_, la imagen de planificación, la imagen de predictivo_plano junto a la
+        imagen senal. NO CAMBIES EL CONTENIDO, Y SOLO CAMBIA LA ESTRUCTURA PARA AÑADIR ESAS FOTOS Si ves que es mejor añadir un apartado para las imagenes, le puedes añadir un texto, 
+        pero SOLO a ese apartado, los otros no los toques).
+        
+    - Configuración de mantenimiento.html: Mete los dos videos que hay en esta página. NO CAMBIES EL CONTENIDO,  SOLO CAMBIA LA ESTRUCTURA PARA AÑADIR ESTOS VIDEOS (Si ves que es mejor añadir un apartado
+        para los videos, le puedes añadir un texto, pero SOLO a ese apartado, los otros no los toques).
+        
+    - Configuración de oee.html: A pesar de haber unas imagenes, NO LAS AÑADAS, aqui tengo pensado meter un vido, a si que por ahora no toques este html.
+
+    - Configuración de contacto.html: o hay nada que añadr en esta pagina por ahora, a si que no lo modifiques.
+
 INSTRUCCIONES EXCLUSIVAS Y ANÁLISIS VISUAL:
 1. **MANTENIMIENTO DE CONTENIDO:** Usa el "CÓDIGO HTML ACTUAL" como base. Mantén los textos, la paleta azul oscuro y la estructura, pero mejora la maquetación.
 2. **USO DE IMÁGENES:** Analiza las imágenes que te he adjuntado visualmente. Usa las más amplias/oscuras para fondos Parallax y las más técnicas para acompañar textos.
