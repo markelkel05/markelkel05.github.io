@@ -78,8 +78,7 @@ ATENCIÓN: Tu tarea principal es MODIFICAR EL HTML para añadir las etiquetas <i
 - Configuración de index.html:
   1. Busca un buen lugar en el contenido y CREA un apartado nuevo para insertar imágenes.
   2. AÑADE etiquetas <img> con los nombres exactos que te paso: Usa "OEE_ACTIVO (2).png", "OEE_HISTORICO.png", "MANTENIMIENTO_WORKING_PROGRAM (1).png", "MANTENIMIENTO_ALARMAS_HISTORICO.png", "planificacion.png", "predictivo_plano.png" y "senal.png" (búscalas en el índice de rutas que tienes abajo).
-  3. Aplica una clase CSS a estas imágenes para que cuando sean clickadas, aparezca una "ventana" donde aparezca la imagen en su tamaño 100% (cuando digo ventana, es como una pestaña emergente que se pone
-      delante de toda la pagina, y que haya una opcion de cerrar esa ventana).
+  3. En el CSS de esta página, elimina lo que hace que con el hover se hagan mas grandes, pero manten que la etiqueta se destaque.
     
 - Configuración de mantenimiento.html: CREA una sección nueva al final o donde encaje bien e INSERTA etiquetas <video> para los dos vídeos disponibles.
     
