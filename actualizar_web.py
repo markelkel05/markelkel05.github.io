@@ -74,7 +74,7 @@ INSTRUCCIONES DE ACTUALIZACIÓN OBLIGATORIAS (ANTI-PEREZA):
 ATENCIÓN: Tu tarea principal es MODIFICAR EL HTML para añadir las etiquetas <img> y <video>. No devuelvas el mismo HTML de antes, DEBES insertar el nuevo contenido donde se te pide.
 
 - Configuración general: En el menu necesito estos cambios: inicio -> Solución Kentu, Manenimiento -> IIOT para el mantenimiento, OEE Industrial -> Análisis OEE, añadir I+D+I, añadir Ayudas y subvenciones. Por ahora los añadidos no tienen pagina, pero muestralas. 
-En las Imagenes Parallax, el orden tiene que ser IIOT_4.jpeg, IIOT_7.jpeg y si hay tres el siguiente es IIOT_5.jpeg. 
+En las Imagenes Parallax, el orden tiene que ser IIOT_4.jpeg, IIOT_6.jpeg y si hay tres el siguiente es IIOT_7.jpeg. 
 Hay un problema con el js, cada vez que se inicia una pagina, salta la ventana de las imagenes sin nada, solo quiero que esa ventana salga cuanndo se clickea una immagen.
 
 - Configuración de index.html:
