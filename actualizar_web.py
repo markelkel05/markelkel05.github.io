@@ -73,8 +73,10 @@ VÍDEOS DISPONIBLES EN EL REPOSITORIO:
 INSTRUCCIONES DE ACTUALIZACIÓN OBLIGATORIAS (ANTI-PEREZA):
 ATENCIÓN: Tu tarea principal es MODIFICAR EL HTML para añadir las etiquetas <img> y <video>. No devuelvas el mismo HTML de antes, DEBES insertar el nuevo contenido donde se te pide.
 
-- Configuración general: Al destacar la pagina, solo quiero el cambio de color, no quiero que quede subrayado (la animacion con el hover). Eso si, si el over ocurre, si que quiero que ocurra la animacion
-    
+- Configuración general: En el menu necesito estos cambios: inicio -> Solución Kentu, Manenimiento -> IIOT para el mantenimiento, OEE Industrial -> Análisis OEE, añadir I+D+I, añadir Ayudas y subvenciones. Por ahora los añadidos no tienen pagina, pero muestralas. 
+En las Imagenes Parallax, el orden tiene que ser IIOT_4.jpeg, IIOT_7.jpeg y si hay tres el siguiente es IIOT_5.jpeg. 
+Hay un problema con el js, cada vez que se inicia una pagina, salta la ventana de las imagenes sin nada, solo quiero que esa ventana salga cuanndo se clickea una immagen.
+
 - Configuración de index.html:
   1. Busca un buen lugar en el contenido y CREA un apartado nuevo para insertar imágenes.
   2. AÑADE etiquetas <img> con los nombres exactos que te paso: Usa "OEE_ACTIVO (2).png", "OEE_HISTORICO.png", "MANTENIMIENTO_WORKING_PROGRAM (1).png", "MANTENIMIENTO_ALARMAS_HISTORICO.png", "planificacion.png", "predictivo_plano.png" y "senal.png" (búscalas en el índice de rutas que tienes abajo).
