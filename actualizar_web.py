@@ -63,7 +63,7 @@ CÓDIGO JS ACTUAL:
 ARCHIVOS DE IMAGEN DISPONIBLES EN EL REPOSITORIO:
 {texto_imagenes}
 
-- Cambios en general: He metido unas nuevas imagenes (del 4 a 6 antes de la extension de archivos) ue son mas grandes que el resto, cambialas por las immagenes que ya hay puestas para qu no se vean pixeladas
+- Cambios en general: Cambia todas las instancias donde aparece la imagen IIOT_5 por la imageen IIOT_7
 - Cambios para index.html:
 - Cambios para mantenimiento.html:
 - Cambios para oee.html:
