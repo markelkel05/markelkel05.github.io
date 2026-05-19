@@ -58,20 +58,33 @@ CÓDIGO HTML ACTUAL DE LA WEB:
 
 INSTRUCCIONES DE ACTUALIZACIÓN OBLIGATORIAS:
 
+INSTRUCCIONES DE ACTUALIZACIÓN OBLIGATORIAS:
+
 1. **CONFIGURACIÓN DEL MENÚ (GENERAL):** - El menú debe contener EXACTAMENTE estos enlaces: "Solución Kentu", "IIOT para el mantenimiento", "Análisis OEE", "I+D+I", "Ayudas y subvenciones", "Contacto".
    - Destaca la página actual solo con cambio de color, sin subrayado permanente.
 
-2. **LIBERTAD CREATIVA PARA FONDOS PARALLAX (¡MUY IMPORTANTE!):**
+2. **LIBERTAD CREATIVA PARA FONDOS PARALLAX (ADVERTENCIA! : ESTE APARTADO YA ESTA SOLCIONADO! NO HAGAS CASO A ESTE PASO):**
    - Te he adjuntado varias imágenes. OBSÉRVALAS VISUALMENTE.
-   - Quiero que decidas tú mismo qué imágenes encajan mejor como fondo (Parallax) para las cabeceras y separadores de las páginas. Quiero que decidas tú mismo qué imágenes encajan mejor... OBLIGATORIO: Compara las imágenes que ya están puestas en el CÓDIGO HTML ACTUAL y elige unas DIFERENTES para esta nueva versión. La web debe cambiar de aspecto visual respecto a la versión anterior(Y recuerda ue el apartado "Innovación al Alcance de tus Manos" en el HTML tambien tiene que ir con una foto e effecto Parallax). 
+   - Quiero que decidas tú mismo qué imágenes encajan mejor como fondo (Parallax) para las cabeceras y separadores de las páginas (en este caso te permito hacer cambios a codigo ya prestablecido, pero por favor, mira bien las extensiones). 
    - Usa la lógica de diseño: elige imágenes oscuras, abstractas o de fábricas amplias para que el texto blanco se lea bien por encima. NO uses las capturas de pantalla del programa para los fondos Parallax.
    - Aplica las rutas que elijas en los `style="background-image: url('RUTA');"` de las secciones `.parallax-section`.
+   - OBLIGATORIO: Asegúrate de que las imágenes elegidas aporten dinamismo a la web.
 
 3. **LIMPIEZA DE CONTENIDO:**
    - ELIMINA cualquier sección, apartado, div o galería dedicada a mostrar imágenes de la aplicación por ahora.
    - ELIMINA cualquier sección o etiqueta <video> que haya en el código.
    - ELIMINA del HTML, CSS y JS cualquier código relacionado con "Modales", "Lightboxes" o "Ventanas emergentes".
    - Quiero que dejes las páginas limpias, estructuradas únicamente con sus textos, tarjetas de servicios y diseño azul oscuro con los fondos Parallax que acabas de elegir.
+
+4. **CORRECCIÓN DE TEXTOS (¡ESTRICTO!):**
+   - En la página de mantenimiento (`mantenimiento.html`), busca el título que dice "Desde el desarrollo a pie de planta". 
+   - REEMPLAZA OBLIGATORIAMENTE la palabra "planta" por "máquina". El texto final debe ser exactamente: "Desde el desarrollo a pie de máquina". 
+   - Revisa también el resto del código: si aparece "pie de planta" en algún otro lado, cámbialo a "pie de máquina". No ignores esta regla.
+
+5. **AÑADIR IMAGENES DETRAS DE LOS BOTONES**
+    - En la página mantenimiento.html, hacia el final de la pagina, hay un apartado con el titulo "¿Quieres Verlo en Acción?" con un boton, quiero que ahí metas la imagen "MANTENIMIENTO_WORKING_PROGRAM (1).png".
+    - En la página oee.html, hacia el final e la pagina, hay un apartado con el titulo "¿Listo para Aumentar la Productividad de tu Planta?" y un boton, detras de eso quiero que metas la imagen "OEE_ACTIVO (2).png".
+    - IMPORTANTE: OBSÉRVA LAS IMÁGENES VISUALMENTE, los fondos de esta iagen son blancas, y quiero que sean más oscuros
 
 Índice de rutas disponibles (úsalas para elegir los fondos):
 {mapeo_imagenes_texto}
