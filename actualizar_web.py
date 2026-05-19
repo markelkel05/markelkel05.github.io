@@ -73,13 +73,13 @@ VÍDEOS DISPONIBLES EN EL REPOSITORIO:
 INSTRUCCIONES DE ACTUALIZACIÓN OBLIGATORIAS (ANTI-PEREZA):
 ATENCIÓN: Tu tarea principal es MODIFICAR EL HTML para añadir las etiquetas <img> y <video>. No devuelvas el mismo HTML de antes, DEBES insertar el nuevo contenido donde se te pide.
 
-- Configuración general: En el menú de navegación, destaca la página actual en la que se encuentra el usuario (cambio de color al texto). Aplica esto en TODAS las páginas. 
-    Las imágenes Parallax deben incluir "IIOT" en su nombre y seguir el orden 4, 7 y 6 (o 4 y 7 si solo hay dos).
+- Configuración general: Al destacar la pagina, solo quiero el cambio de color, no quiero que quede subrayado (la animacion con el hover). Eso si, si el over ocurre, si que quiero que ocurra la animacion
     
 - Configuración de index.html:
   1. Busca un buen lugar en el contenido y CREA un apartado nuevo para insertar imágenes.
   2. AÑADE etiquetas <img> con los nombres exactos que te paso: Usa "OEE_ACTIVO (2).png", "OEE_HISTORICO.png", "MANTENIMIENTO_WORKING_PROGRAM (1).png", "MANTENIMIENTO_ALARMAS_HISTORICO.png", "planificacion.png", "predictivo_plano.png" y "senal.png" (búscalas en el índice de rutas que tienes abajo).
-  3. Aplica una clase CSS a estas imágenes para que tengan un efecto hover (`transform: scale(1.5); transition: transform 0.3s ease;`) para que se hagan MUCHO más grandes al pasar el cursor.
+  3. Aplica una clase CSS a estas imágenes para que cuando sean clickadas, aparezca una "ventana" donde aparezca la imagen en su tamaño 100% (cuando digo ventana, es como una pestaña emergente que se pone
+      delante de toda la pagina, y que haya una opcion de cerrar esa ventana).
     
 - Configuración de mantenimiento.html: CREA una sección nueva al final o donde encaje bien e INSERTA etiquetas <video> para los dos vídeos disponibles.
     
