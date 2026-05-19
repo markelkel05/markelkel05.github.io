@@ -49,4 +49,16 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         });
     };
+
+    // NEW: Highlight active navigation link
+    const currentPath = window.location.pathname.split('/').pop(); // Get filename (e.g., "index.html")
+    const navLinks = document.querySelectorAll('.main-nav ul li a');
+
+    navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href').split('/').pop();
+        // Handle empty path for index.html (e.g., when visiting root URL "/")
+        if (currentPath === linkPath || (currentPath === '' && linkPath === 'index.html')) {
+            link.classList.add('current-page');
+        }
+    });
 });

@@ -166,6 +166,24 @@ a:hover {
     width: 100%;
 }
 
+/* NEW: Active navigation link styles */
+.main-nav ul li a.current-page {
+    color: var(--accent-blue); /* Highlight text color */
+}
+
+.main-nav ul li a.current-page::after {
+    width: 100%; /* Ensure underline is always visible for the current page */
+}
+
+.main-nav ul li a.current-page:hover {
+    color: var(--light-blue); /* Maintain hover effect for text color */
+}
+
+.main-nav ul li a.current-page:hover::after {
+    background-color: var(--light-blue); /* Adjust underline color on hover if needed */
+}
+
+
 /* Burger Menu (for mobile) */
 .burger-menu {
     display: none;
@@ -339,6 +357,22 @@ a:hover {
 .content-section-alt .advantage-card:hover p,
 .content-section-alt .feature-item:hover p {
     color: var(--text-light-grey); /* Keep light grey */
+}
+
+/* NEW: Image hover effect for gallery items in #galeria-pantallas */
+#galeria-pantallas .feature-item {
+    overflow: hidden; /* Clips content that scales beyond boundaries */
+    transform: none; /* Disable translateY from parent card for gallery items */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Adjust transition for parent */
+}
+
+#galeria-pantallas .feature-item img {
+    transition: transform 0.3s ease;
+    display: block; /* Ensure block level for full width */
+}
+
+#galeria-pantallas .feature-item:hover img {
+    transform: scale(1.15); /* Slightly larger scale for emphasis */
 }
 
 /* New style for .about-vision */
