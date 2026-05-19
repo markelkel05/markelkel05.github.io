@@ -27,7 +27,7 @@ if os.path.exists("imagenes"):
 print("Buscando archivos de vídeo...")
 mapeo_videos_texto = ""
 # Buscamos vídeos tanto en "imagenes" como en una posible carpeta "videos"
-carpetas_a_buscar = ["imagenes", "videos"]
+carpetas_a_buscar = ["imagenes", "video"]
 for carpeta in carpetas_a_buscar:
     if os.path.exists(carpeta):
         for archivo in os.listdir(carpeta):
