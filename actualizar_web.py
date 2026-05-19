@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 from google import genai
 
@@ -26,8 +27,7 @@ if os.path.exists("imagenes"):
 # --- PASO 2: DETECTAR VÍDEOS EN EL REPOSITORIO ---
 print("Buscando archivos de vídeo...")
 mapeo_videos_texto = ""
-# Buscamos vídeos tanto en "imagenes" como en una posible carpeta "videos"
-carpetas_a_buscar = ["imagenes", "video"]
+carpetas_a_buscar = ["imagenes", "video", "videos"]
 for carpeta in carpetas_a_buscar:
     if os.path.exists(carpeta):
         for archivo in os.listdir(carpeta):
@@ -70,35 +70,29 @@ CÓDIGO HTML ACTUAL DE LA WEB:
 VÍDEOS DISPONIBLES EN EL REPOSITORIO:
 {mapeo_videos_texto}
 
-    - Configuración general (aqui te dire de cosas que cambiar en general, a pesar  que te diga que no cambies una pagina e especifico, esta seccion tiene mas importancia): Quiero que en el apartado de
-        menu, se destaque la pagina en la que estas (preferiblemente con un cambio de color al texto).
-        
-    - Configuración de index.html: Las imagenes que hay puestas (sin efecto Parallax) se ven muy pequeñas, se me ocurren dos opciones, si a ti se te ocurre unaa mejor idea, hazla:
-        - Imagenes que se hacen MUCHO mas grande cuando el cursor pase por encima.
-        - Al clickar la imagen, se hae mas grande, y al clickarla de nuevo, se haga mas pequeña.
-        
-    - Configuración de mantenimiento.html: No cambies nada sobre esta pagina(excepto lo qeu te pida el apartado general
-        
-    - Configuración de oee.html: A pesar de haber unas imagenes, NO LAS AÑADAS, aqui tengo pensado meter un vido, a si que por ahora no toques este html (Solo haz cambios del apartado general).
+INSTRUCCIONES DE ACTUALIZACIÓN:
+- Configuración general: En el menú de navegación, destaca la página actual en la que se encuentra el usuario (cambio de color al texto). Aplica esto en TODAS las páginas. Las imágenes Parallax deben incluir "IIOT" en su nombre y seguir el orden 4, 7 y 6 (o 4 y 7 si solo hay dos).
+    
+- Configuración de index.html: Añade dos fotos que empiecen con "OEE_" (Activo (2).png y HISTORICO.png), dos que empiecen con "MANTENIMIENTO_" (Working y Alarmas_Historico), la imagen de planificación, y la imagen "predictivo_plano" junto a "senal". NO CAMBIES EL TEXTO. Si es necesario, crea un apartado nuevo solo para las imágenes. Aplica un efecto CSS en estas imágenes para que se hagan MUCHO más grandes cuando el cursor pase por encima (efecto hover con transform: scale).
+    
+- Configuración de mantenimiento.html: Mete los dos vídeos que hay en esta página. NO CAMBIES EL CONTENIDO ACTUAL. Si es necesario, añade un nuevo apartado exclusivo para alojar los vídeos.
+    
+- Configuración de oee.html: No añadas imágenes aquí por ahora (se meterá un vídeo en el futuro). Solo actualiza lo del menú de navegación.
 
-    - Configuración de contacto.html: o hay nada que añadr en esta pagina por ahora, a si que no lo modifiques (Solo haz cambios del apartado general).
+- Configuración de contacto.html: No modifiques el contenido, solo actualiza el menú de navegación.
 
-INSTRUCCIONES EXCLUSIVAS Y ANÁLISIS VISUAL:
-1. **MANTENIMIENTO DE CONTENIDO:** Usa el "CÓDIGO HTML ACTUAL" como base. Mantén los textos, la paleta azul oscuro y la estructura, pero mejora la maquetación.
-2. **USO DE IMÁGENES:** Analiza las imágenes que te he adjuntado visualmente. Usa las más amplias/oscuras para fondos Parallax y las más técnicas para acompañar textos.
-   Índice de imágenes adjuntas para las rutas:
-   {mapeo_imagenes_texto}
-3. **INTEGRACIÓN DE VÍDEOS (NUEVO):** Tienes una lista de vídeos disponibles. Úsalos inteligentemente en el código HTML. 
-   - Si por el nombre del archivo parece un vídeo de fondo o ambiente, ponlo como fondo de una sección (detrás del texto) usando la etiqueta HTML5: `<video src="RUTA" autoplay loop muted playsinline></video>` con el CSS necesario para que cubra el fondo (`object-fit: cover`).
-   - Si parece un vídeo explicativo o demo, ponlo dentro del contenido con controles: `<video src="RUTA" controls></video>`.
-4. **DISEÑO PARALLAX SIN PIXELAR:** En el CSS de las imágenes de fondo usa siempre: `background-attachment: fixed; background-size: cover; background-position: center; background-repeat: no-repeat;`.
-5. **MENÚ DE NAVEGACIÓN:** Unifica el menú para que conecte de forma coherente todas las páginas HTML.
+INSTRUCCIONES TÉCNICAS:
+1. MANTENIMIENTO: Usa el "CÓDIGO HTML ACTUAL" como base. Mantén la paleta azul oscuro.
+2. VÍDEOS: Si es un vídeo de fondo usa `<video src="RUTA" autoplay loop muted playsinline>` con `object-fit: cover`. Si es explicativo usa `<video src="RUTA" controls>`.
+3. PARALLAX: En el CSS usa siempre `background-attachment: fixed; background-size: cover; background-position: center; background-repeat: no-repeat;`.
 
-Devuelve ÚNICAMENTE un objeto JSON válido con la estructura:
+IMPORTANTE: Devuelve ÚNICAMENTE un objeto JSON válido. Debes devolver obligatoriamente las 4 páginas en el JSON para que el menú se actualice en todas:
 {{
   "paginas": {{
     "index.html": "código html actualizado aquí...",
-    "mantenimiento.html": "código html actualizado aquí..."
+    "mantenimiento.html": "código html actualizado aquí...",
+    "oee.html": "código html actualizado aquí...",
+    "contacto.html": "código html actualizado aquí..."
   }},
   "css": "código css global aquí",
   "js": "código javascript global aquí"
@@ -122,6 +116,12 @@ try:
     os.makedirs("js", exist_ok=True)
     
     paginas_generadas = codigo.get("paginas", {})
+    
+    # Comprobación de seguridad para saber si la IA ha devuelto páginas
+    if not paginas_generadas:
+        print("Error: La IA no ha devuelto ninguna página en el JSON.")
+        sys.exit(1)
+        
     for nombre_archivo, contenido_html in paginas_generadas.items():
         with open(nombre_archivo, "w", encoding="utf-8") as f:
             f.write(contenido_html)
@@ -135,4 +135,6 @@ try:
     print("¡Generación completada! Imágenes y vídeos han sido integrados.")
 
 except Exception as e:
-    print(f"Error en el proceso: {e}")
+    # Ahora sí, si hay un error, GitHub se pondrá en rojo y nos avisará
+    print(f"Error CRÍTICO en el proceso: {e}")
+    sys.exit(1)
