@@ -63,12 +63,13 @@ INSTRUCCIONES DE ACTUALIZACIÓN OBLIGATORIAS:
 1. **CONFIGURACIÓN DEL MENÚ (GENERAL):** - El menú debe contener EXACTAMENTE estos enlaces: "Solución Kentu", "IIOT para el mantenimiento", "Análisis OEE", "I+D+I", "Ayudas y subvenciones", "Contacto".
    - Destaca la página actual solo con cambio de color, sin subrayado permanente.
 
-2. **LIBERTAD CREATIVA PARA FONDOS PARALLAX (ADVERTENCIA! : ESTE APARTADO YA ESTA SOLCIONADO! NO HAGAS CASO A ESTE PASO):**
+2. **LIBERTAD CREATIVA PARA FONDOS PARALLAX:**
    - Te he adjuntado varias imágenes. OBSÉRVALAS VISUALMENTE.
    - Quiero que decidas tú mismo qué imágenes encajan mejor como fondo (Parallax) para las cabeceras y separadores de las páginas (en este caso te permito hacer cambios a codigo ya prestablecido, pero por favor, mira bien las extensiones). 
    - Usa la lógica de diseño: elige imágenes oscuras, abstractas o de fábricas amplias para que el texto blanco se lea bien por encima. NO uses las capturas de pantalla del programa para los fondos Parallax.
    - Aplica las rutas que elijas en los `style="background-image: url('RUTA');"` de las secciones `.parallax-section`.
    - OBLIGATORIO: Asegúrate de que las imágenes elegidas aporten dinamismo a la web.
+   - OBLIGATORIO PARA EVITAR PIXELADO: Para los fondos Parallax (cabeceras y separadores) utiliza ÚNICAMENTE imágenes que sepas que son de alta resolución o formato horizontal amplio (como 'iot-in-manufacturing-feat-image-scaled-1-1920x836.jpeg'). PROHIBIDO usar imágenes pequeñas, con resolución baja o nombres tipo '360_F_...' porque se pixelan al estirarse en la web.
 
 3. **LIMPIEZA DE CONTENIDO:**
    - ELIMINA cualquier sección, apartado, div o galería dedicada a mostrar imágenes de la aplicación por ahora.
