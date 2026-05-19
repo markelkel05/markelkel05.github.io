@@ -63,7 +63,7 @@ INSTRUCCIONES DE ACTUALIZACIÓN OBLIGATORIAS:
 
 2. **LIBERTAD CREATIVA PARA FONDOS PARALLAX (¡MUY IMPORTANTE!):**
    - Te he adjuntado varias imágenes. OBSÉRVALAS VISUALMENTE.
-   - Quiero que decidas tú mismo qué imágenes encajan mejor como fondo (Parallax) para las cabeceras y separadores de las páginas. 
+   - Quiero que decidas tú mismo qué imágenes encajan mejor como fondo (Parallax) para las cabeceras y separadores de las páginas (en este caso te permito hacer cambios a codigo ya prestablecido, pero por favor, mir bien las extensiones). 
    - Usa la lógica de diseño: elige imágenes oscuras, abstractas o de fábricas amplias para que el texto blanco se lea bien por encima. NO uses las capturas de pantalla del programa para los fondos Parallax.
    - Aplica las rutas que elijas en los `style="background-image: url('RUTA');"` de las secciones `.parallax-section`.
 
