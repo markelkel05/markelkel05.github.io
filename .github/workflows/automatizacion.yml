@@ -9,10 +9,16 @@ on:
 jobs:
   update-website:
     runs-on: ubuntu-latest
+    
+    # IMPORTANTE: Esto asegura que el bot tenga permisos para escribir en el repositorio
+    permissions:
+      contents: write
 
     steps:
     - name: 1. Descargar el repositorio
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # Descarga todo el historial para evitar errores al hacer push
 
     - name: 2. Configurar Python
       uses: actions/setup-python@v5
@@ -33,5 +39,4 @@ jobs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add .
         git commit -m "Actualización automática: Web modular generada por IA" || echo "No hay cambios para subir"
-        git pull --rebase origin main
-        git push
+        git push origin HEAD
