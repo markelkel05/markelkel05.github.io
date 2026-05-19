@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     navLinks.forEach(link => {
         const linkPath = link.getAttribute('href').split('/').pop();
-        // Handle empty path for index.html (e.g., when visiting root URL "/")
+        // Handle empty path for index.html (e.g., when visiting root URL ")
         if (currentPath === linkPath || (currentPath === '' && linkPath === 'index.html')) {
             link.classList.add('current-page');
         }
