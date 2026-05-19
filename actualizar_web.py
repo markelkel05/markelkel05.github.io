@@ -63,7 +63,7 @@ INSTRUCCIONES DE ACTUALIZACIÓN OBLIGATORIAS:
 
 2. **LIBERTAD CREATIVA PARA FONDOS PARALLAX (¡MUY IMPORTANTE!):**
    - Te he adjuntado varias imágenes. OBSÉRVALAS VISUALMENTE.
-   - Quiero que decidas tú mismo qué imágenes encajan mejor como fondo (Parallax) para las cabeceras y separadores de las páginas. Quiero que decidas tú mismo qué imágenes encajan mejor... OBLIGATORIO: Compara las imágenes que ya están puestas en el CÓDIGO HTML ACTUAL y elige unas DIFERENTES para esta nueva versión. La web debe cambiar de aspecto visual respecto a la versión anterior.. 
+   - Quiero que decidas tú mismo qué imágenes encajan mejor como fondo (Parallax) para las cabeceras y separadores de las páginas. Quiero que decidas tú mismo qué imágenes encajan mejor... OBLIGATORIO: Compara las imágenes que ya están puestas en el CÓDIGO HTML ACTUAL y elige unas DIFERENTES para esta nueva versión. La web debe cambiar de aspecto visual respecto a la versión anterior(Y recuerda ue el apartado "Innovación al Alcance de tus Manos" en el HTML tambien tiene que ir con una foto e effecto Parallax). 
    - Usa la lógica de diseño: elige imágenes oscuras, abstractas o de fábricas amplias para que el texto blanco se lea bien por encima. NO uses las capturas de pantalla del programa para los fondos Parallax.
    - Aplica las rutas que elijas en los `style="background-image: url('RUTA');"` de las secciones `.parallax-section`.
 
