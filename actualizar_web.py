@@ -63,7 +63,7 @@ CÓDIGO JS ACTUAL:
 ARCHIVOS DE IMAGEN DISPONIBLES EN EL REPOSITORIO:
 {texto_imagenes}
 
-- Cambios en general: Vuelve a usar las imaagenes que hay en el repositorio en la carpeta "imagenes", tambien, en el menu hay una opcion llamada "sobre nosotros", quitala
+- Cambios en general: He metido unas nuevas imagenes (del 4 a 6 antes de la extension de archivos) ue son mas grandes que el resto, cambialas por las immagenes que ya hay puestas para qu no se vean pixeladas
 - Cambios para index.html:
 - Cambios para mantenimiento.html:
 - Cambios para oee.html:
