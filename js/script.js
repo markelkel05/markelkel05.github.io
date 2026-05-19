@@ -61,32 +61,4 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('current-page');
         }
     });
-
-    // NEW: Image Lightbox functionality
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("modalImage");
-    const span = document.getElementsByClassName("modal-close")[0];
-
-    document.querySelectorAll('.gallery-image').forEach(img => {
-        img.addEventListener('click', function(){
-            modal.style.display = "flex"; // Use flex to center
-            modalImg.src = this.src;
-            modalImg.alt = this.alt;
-        });
-    });
-
-    if (span) {
-        span.addEventListener('click', () => {
-            modal.style.display = "none";
-        });
-    }
-
-    // Close modal when clicking outside of the image
-    if (modal) {
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = "none";
-            }
-        });
-    }
 });

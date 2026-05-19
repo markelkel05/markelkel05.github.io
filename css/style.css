@@ -360,27 +360,6 @@ a:hover {
     color: var(--text-light-grey); /* Keep light grey */
 }
 
-/* NEW: Image hover effect for gallery items in #galeria-pantallas */
-#galeria-pantallas .feature-item {
-    overflow: hidden; /* Clips content that scales beyond boundaries */
-    transform: none; /* Disable translateY from parent card for gallery items */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Adjust transition for parent */
-}
-
-#galeria-pantallas .feature-item img {
-    transition: transform 0.3s ease;
-    display: block; /* Ensure block level for full width */
-    cursor: pointer; /* Indicate image is clickable */
-    width:100%; 
-    height:auto; 
-    border-radius: 5px; 
-    margin-top: 15px;
-}
-
-#galeria-pantallas .feature-item:hover img {
-    /* Removed transform: scale(1.5); as per instructions */
-}
-
 /* New style for .about-vision */
 .about-vision {
     background-color: var(--medium-blue-lighter); /* Consistent with cards */
@@ -652,13 +631,6 @@ a:hover {
     .grid-3-cols, .grid-2-cols {
         grid-template-columns: 1fr;
     }
-
-    .video-background-section {
-        height: 40vh; /* Adjust for smaller screens */
-    }
-    .video-content h2 {
-        font-size: 2.2em;
-    }
 }
 
 @media (max-width: 768px) {
@@ -706,154 +678,5 @@ a:hover {
 
     .social-links {
         justify-content: center;
-    }
-
-    .video-background-section {
-        height: 30vh; /* Adjust for smaller screens */
-    }
-    .video-content h2 {
-        font-size: 1.8em;
-    }
-}
-
-/* NEW: Video background section */
-.video-background-section {
-    position: relative;
-    overflow: hidden;
-    height: 60vh; /* Adjust height as needed */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--text-white);
-    padding: 80px 0;
-}
-
-.video-background-section video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: 0;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    object-fit: cover; /* Ensures the video covers the entire container */
-}
-
-.video-background-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
-    z-index: 1;
-}
-
-.video-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    padding: 20px;
-}
-
-.video-content h2 {
-    font-size: 3em;
-    margin-bottom: 0.5em;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-}
-
-.video-content p {
-    font-size: 1.2em;
-    margin-bottom: 0;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-}
-
-/* For embedded videos */
-.embedded-video-container {
-    max-width: 900px;
-    margin: 40px auto;
-    background-color: var(--medium-blue-lighter);
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    padding: 20px;
-}
-
-.embedded-video-container video {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 5px;
-}
-
-/* Image Modal Styles */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 2000; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-    align-items: center; /* Center vertically when display is flex */
-    justify-content: center; /* Center horizontally when display is flex */
-}
-
-.modal-content {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px; /* Consistent with other elements */
-}
-
-/* Add Animation */
-.modal-content {
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-    from {-webkit-transform:scale(0)}
-    to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-    from {transform:scale(0)}
-    to {transform:scale(1)}
-}
-
-.modal-close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: var(--text-white);
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.modal-close:hover,
-.modal-close:focus {
-    color: var(--accent-blue);
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Responsive for modal */
-@media only screen and (max-width: 700px){
-    .modal-content {
-        width: 100%;
     }
 }
