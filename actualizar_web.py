@@ -70,15 +70,12 @@ CÓDIGO HTML ACTUAL DE LA WEB:
 VÍDEOS DISPONIBLES EN EL REPOSITORIO:
 {mapeo_videos_texto}
 
-    - Configuración general (aqui te dire de cosas que cambiar en general, a pesar  que te diga que no cambies una pagina e especifico, esta seccion tiene mas importancia): Las imagenes que aparecen de 
-        fondo (Parallax) tienen que seguir estos pasos:
-            - Que en su nombre tengan IIOT
-            - Que sigan este orden: 4, 7 y 6. Si la pagina solo tiene 2, que sean 4 y 7, daa igual el orden.
+    - Configuración general (aqui te dire de cosas que cambiar en general, a pesar  que te diga que no cambies una pagina e especifico, esta seccion tiene mas importancia): Quiero que en el apartado de
+        menu, se destaque la pagina en la que estas (preferiblemente con un cambio de color al texto).
         
-    - Configuración de index.html: Aquí quiero que aparezcan dos fotos que empiecen con OEE_ (preferiblemente los que son Acivo y Histoico), dos que empiecen con MANTENIMIENTO_(Preferiblemente los que
-        tengan working y historico en su nombre), la imagen de planificación, la imagen de predictivo_plano junto a la imagen senal. NO CAMBIES EL CONTENIDO, 
-        Y SOLO CAMBIA LA ESTRUCTURA PARA AÑADIR ESAS FOTOS (Si ves que es mejor añadir un apartado para las imagenes, le puedes añadir un texto, pero SOLO a ese apartado, los otros no los toques. Tambien
-        implementa los cambios del apartado general).
+    - Configuración de index.html: Las imagenes que hay puestas (sin efecto Parallax) se ven muy pequeñas, se me ocurren dos opciones, si a ti se te ocurre unaa mejor idea, hazla:
+        - Imagenes que se hacen MUCHO mas grande cuando el cursor pase por encima.
+        - Al clickar la imagen, se hae mas grande, y al clickarla de nuevo, se haga mas pequeña.
         
     - Configuración de mantenimiento.html: No cambies nada sobre esta pagina(excepto lo qeu te pida el apartado general
         
