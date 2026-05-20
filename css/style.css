@@ -386,7 +386,7 @@ a:hover {
 /* Parallax Sections */
 .parallax-section {
     background-attachment: fixed;
-    background-size: auto 100%; /* Ancho: automático (mantiene proporción) | Alto: 100% */
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #0b132b; /* ¡IMPORTANTE! Añade tu color azul oscuro de fondo */
