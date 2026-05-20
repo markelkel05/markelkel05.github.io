@@ -392,6 +392,7 @@ a:hover {
     background-color: #0b132b; /* ¡IMPORTANTE! Añade tu color azul oscuro de fondo */
     position: relative;
     overflow: hidden;
+    min-height: 100vh;
 }
 
 .parallax-section::before {
