@@ -111,7 +111,19 @@ for intento in range(max_reintentos):
                 "response_mime_type": "application/json",
             }
         )
-        codigo = json.loads(response.text.strip())
+        
+        # 1. Limpiamos el texto por si la IA ha puesto etiquetas markdown como ```json
+        texto_ia = response.text.strip()
+        if texto_ia.startswith("```json"):
+            texto_ia = texto_ia[7:]
+        if texto_ia.startswith("```"):
+            texto_ia = texto_ia[3:]
+        if texto_ia.endswith("```"):
+            texto_ia = texto_ia[:-3]
+            
+        # 2. Convertimos el texto a JSON. 
+        # ¡IMPORTANTE! strict=False evita el error de los "Invalid control characters"
+        codigo = json.loads(texto_ia.strip(), strict=False)
         break 
         
     except Exception as e:
