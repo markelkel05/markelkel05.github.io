@@ -55,7 +55,7 @@ INSTRUCCIONES DE ACTUALIZACIÓN OBLIGATORIAS:
 1. **CONFIGURACIÓN DEL MENÚ (GENERAL):** - El menú debe contener EXACTAMENTE estos enlaces: "Solución Kentu", "IIOT para el mantenimiento", "Análisis OEE", "I+D+I", "Ayudas y subvenciones", "Contacto".
    - Destaca la página actual solo con cambio de color, sin subrayado permanente.
 
-2. **LIBERTAD CREATIVA PARA FONDOS PARALLAX:**
+2. **LIBERTAD CREATIVA PARA FONDOS PARALLAX (esta opción ya esta completada a nuestro gusto, no lo apliques):**
    - Te he proporcionado un listado de rutas de imágenes disponibles más abajo.
    - Quiero que decidas tú mismo qué imágenes encajan mejor como fondo (Parallax) para las cabeceras y separadores de las páginas (en este caso te permito hacer cambios a codigo ya prestablecido, pero por favor, mira bien las extensiones y los nombres). 
    - Usa la lógica de diseño: elige imágenes oscuras, abstractas o de fábricas amplias para que el texto blanco se lea bien por encima. NO uses las capturas de pantalla del programa para los fondos Parallax.
