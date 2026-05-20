@@ -393,6 +393,7 @@ a:hover {
     position: relative;
     overflow: hidden;
     min-height: 100vh;
+    image-rendering: high-quality;
 }
 
 .parallax-section::before {
@@ -406,8 +407,14 @@ a:hover {
     z-index: 1;
 }
 
+/* FIX PARA EVITAR IMÁGENES PIXELADAS EN MÓVILES Y TABLETS */
+@media (pointer: coarse), (max-width: 1024px) {
+    .parallax-section {
+        background-attachment: scroll;
+    }
+}
+
 .parallax-separator {
-    height: 50vh; /* Adjust height for separation */
     display: flex;
     align-items: center;
     justify-content: center;
