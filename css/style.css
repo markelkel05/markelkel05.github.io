@@ -1,8 +1,7 @@
-/* General Styles */
 :root {
     --dark-blue: #0A0F18;
     --medium-blue: #1A2436;
-    --medium-blue-lighter: #2A3446; /* Nuevo color para el fondo de las tarjetas en secciones oscuras */
+    --medium-blue-lighter: #2A3446;
     --accent-blue: #1E90FF;
     --light-blue: #ADD8E6;
     --text-white: #F8F8F8;
@@ -166,26 +165,23 @@ a:hover {
     width: 100%;
 }
 
-/* NEW: Active navigation link styles */
 .main-nav ul li a.current-page {
-    color: var(--accent-blue); /* Highlight text color */
+    color: var(--accent-blue);
 }
 
 .main-nav ul li a.current-page::after {
-    width: 0; /* No underline by default for current page */
+    width: 0;
 }
 
 .main-nav ul li a.current-page:hover {
-    color: var(--light-blue); /* Maintain hover effect for text color */
+    color: var(--light-blue);
 }
 
 .main-nav ul li a.current-page:hover::after {
-    width: 100%; /* Underline on hover for current page */
-    background-color: var(--light-blue); /* Adjust underline color on hover if needed */
+    width: 100%;
+    background-color: var(--light-blue);
 }
 
-
-/* Burger Menu (for mobile) */
 .burger-menu {
     display: none;
     flex-direction: column;
@@ -254,12 +250,12 @@ a:hover {
 /* Content Sections */
 .content-section {
     padding: 80px 0;
-    background-color: var(--medium-blue); /* Default background */
+    background-color: var(--medium-blue);
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .content-section-alt {
-    background-color: var(--dark-blue); /* Alternate (darker) background */
+    background-color: var(--dark-blue);
 }
 
 .content-section p {
@@ -286,22 +282,21 @@ a:hover {
     margin-top: 40px;
 }
 
-/* Base styles for feature-card, advantage-card */
+/* Base styles for cards */
 .feature-card,
 .advantage-card {
-    background-color: var(--medium-blue-lighter); /* Default card background for 'content-section' */
+    background-color: var(--medium-blue-lighter);
     padding: 30px;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transition: transform 0.3s ease, background-color 0.3s ease;
-    display: block; /* Make sure a-wrapped cards are block-level */
-    color: inherit; /* Inherit text color for a-wrapped cards */
+    display: block;
+    color: inherit;
 }
 
-/* Base styles for feature-item */
 .feature-item {
-    background-color: var(--medium-blue-lighter); /* Default item background for 'content-section' */
+    background-color: var(--medium-blue-lighter);
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -309,72 +304,66 @@ a:hover {
     text-align: center;
 }
 
-/* Apply accent blue to all feature card and advantage card headings */
 .feature-card h3,
 .feature-item h3,
 .advantage-card h3,
 .about-vision h3 {
-    color: var(--accent-blue); /* All card/item headings are now blue */
+    color: var(--accent-blue);
 }
 
-/* Hover for cards/items on default 'content-section' background */
 .feature-card:hover,
 .advantage-card:hover,
 .feature-item:hover {
     transform: translateY(-5px);
-    background-color: var(--light-blue); /* Stronger visual pop */
+    background-color: var(--light-blue);
 }
 .feature-card:hover h3,
 .advantage-card:hover h3,
 .feature-item:hover h3 {
-    color: var(--dark-blue); /* Ensure heading contrast on light hover background */
+    color: var(--dark-blue);
 }
 .feature-card:hover p,
 .advantage-card:hover p,
 .feature-item:hover p {
-    color: var(--dark-blue); /* Ensure paragraph contrast on light hover background */
+    color: var(--dark-blue);
 }
 
-/* NEW: Styles for cards/items within 'content-section-alt' */
 .content-section-alt .feature-card,
 .content-section-alt .advantage-card,
 .content-section-alt .feature-item {
-    background-color: var(--medium-blue); /* Cards are slightly darker on the darker section */
+    background-color: var(--medium-blue);
 }
 
-/* NEW: Hover for cards/items in 'content-section-alt' */
 .content-section-alt .feature-card:hover,
 .content-section-alt .advantage-card:hover,
 .content-section-alt .feature-item:hover {
-    background-color: var(--medium-blue-lighter); /* Lighter than card itself for hover */
+    background-color: var(--medium-blue-lighter);
 }
-/* Ensure text colors are maintained for content-section-alt hovers */
 .content-section-alt .feature-card:hover h3,
 .content-section-alt .advantage-card:hover h3,
 .content-section-alt .feature-item:hover h3 {
-    color: var(--text-white); /* White for better contrast on dark hover */
+    color: var(--text-white);
 }
 .content-section-alt .feature-card:hover p,
 .content-section-alt .advantage-card:hover p,
 .content-section-alt .feature-item:hover p {
-    color: var(--text-light-grey); /* Keep light grey */
+    color: var(--text-light-grey);
 }
 
-/* New style for .about-vision */
 .about-vision {
-    background-color: var(--medium-blue-lighter); /* Consistent with cards */
+    background-color: var(--medium-blue-lighter);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    margin-top: 40px; /* Add some space from the preceding paragraph */
-    max-width: 800px; /* Limit width like other content */
+    margin-top: 40px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    text-align: center; /* Center content */
+    text-align: center;
 }
 
 .about-vision h3 {
-    color: var(--accent-blue); /* Consistent with feature-item headings */
+    color: var(--accent-blue);
     margin-bottom: 0.8em;
 }
 
@@ -389,7 +378,7 @@ a:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #0b132b; /* ¡IMPORTANTE! Añade tu color azul oscuro de fondo */
+    background-color: #0b132b;
     position: relative;
     overflow: hidden;
     min-height: 100vh;
@@ -407,7 +396,6 @@ a:hover {
     z-index: 1;
 }
 
-/* FIX PARA EVITAR IMÁGENES PIXELADAS EN MÓVILES Y TABLETS */
 @media (pointer: coarse), (max-width: 1024px) {
     .parallax-section {
         background-attachment: scroll;
@@ -431,7 +419,7 @@ a:hover {
 
 .separator-content h2 {
     font-size: 3em;
-    margin-bottom: 0.5em; /* Adjusted margin to accommodate new paragraph */
+    margin-bottom: 0.5em;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
@@ -441,11 +429,35 @@ a:hover {
     text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
-/* CTA Section */
+/* CTA Section with backgrounds */
 .cta-section {
     background: var(--gradient-bg);
     padding: 100px 0;
     text-align: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 15, 24, 0.85);
+    z-index: -1;
+}
+
+.cta-mantenimiento {
+    background-image: url('../imagenes/programa/MANTENIMIENTO_WORKING_PROGRAM (1).png');
+}
+
+.cta-oee {
+    background-image: url('../imagenes/programa/OEE_ACTIVO (2).png');
 }
 
 .cta-section h2 {
@@ -552,8 +564,8 @@ a:hover {
     font-weight: 600;
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
+.contact-form input[type='text'],
+.contact-form input[type='email'],
 .contact-form textarea {
     width: 100%;
     padding: 12px;
@@ -566,8 +578,8 @@ a:hover {
     transition: border-color 0.3s ease;
 }
 
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
+.contact-form input[type='text']:focus,
+.contact-form input[type='email']:focus,
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--accent-blue);
